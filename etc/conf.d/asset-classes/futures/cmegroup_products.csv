@@ -1,0 +1,1540 @@
+Product Name,Venue,Electronic,Open Outcry,Clearing,Exchange or
+,,,,,Exchange Rules
+,,,,,
+Butter Spot Call ,Chicago Trading Floor ,  ,AA ,AA ,CME
+Cash-Settled Butter Futures,"CME Globex, Chicago Trading Floor",CB,CB ,CB,CME
+Cash-Settled Butter Options,"CME Globex, Chicago Trading Floor ",CB,CB ,CB ,CME
+Cash-Settled Cheese Futures,CME Globex,CSC,,CSC ,CME
+Cash-Settled Cheese Options ,"CME Globex, Chicago Trading Floor ",CSC ,CSC,CSC ,CME
+Cheese Spot Call ,Chicago Trading Floor ,,Blocks = KB,KB,CME
+Cheese Spot Call ,Chicago Trading Floor,,Barrels = RB ,KB,CME
+Class III Milk Futures,"CME Globex, Chicago Trading Floor",DC,DA ,DA,CME
+Class III Milk Options ,"CME Globex, Chicago Trading Floor ",DC ,DA ,DA,CME
+Class IV Milk Futures,"CME Globex, Chicago Trading Floor ",GDK,DK ,DK,CME
+Class IV Milk Options ,"CME Globex, Chicago Trading Floor",GDK ,DK,DK ,CME
+Cleared OTC Dow Jones-UBS Commodity Index Swap ,CME ClearPort Clearing ,  ,  ,DGS ,CBOT
+Cocoa Futures ,"CME Globex, New York Trading Floor ",CJ ,CJ ,CJ ,NYMEX
+Coffee Futures ,"CME Globex, New York Trading Floor ",KT ,KT ,KT ,NYMEX
+Corn Futures,"CME Globex, Chicago Trading Floor",ZC,C,C,CBOT
+Corn Options ,"CME Globex, Chicago Trading Floor ",OZC ,CY/PY ,C ,CBOT
+Corn Calendar Swaps ,CME ClearPort Clearing ,  ,  ,CCS ,CME
+Soybean Calendar Swaps ,CME ClearPort Clearing ,  ,  ,SNS ,CME
+Wheat Calendar Swaps ,CME ClearPort Clearing ,  ,  ,WCS ,CME
+Crude Palm Oil ,CME Globex ,CPC ,  ,  ,CME
+Distillers' Dried Grain ,CME Globex ,DDG ,  ,  ,CBOT
+Dow Jones-UBS Commodity Index Futures ,CME Globex ,AW ,  ,  ,CBOT
+Eastern Nebraska Basis Swap ,CME ClearPort Clearing ,  ,  ,ENE ,CME
+Eastern South Dakota Basis Swap ,CME ClearPort Clearing ,  ,  ,ESC ,CME
+Northeastern Iowa Basis Swap ,CME ClearPort Clearing ,  ,  ,NEC ,CME
+Northwestern Iowa Basis Swap ,CME ClearPort Clearing ,  ,  ,NWI ,CME
+Southern Iowa Basis Swap ,CME ClearPort Clearing ,  ,  ,SIC ,CME
+Southern Minnesota ,CME ClearPort Clearing ,  ,  ,SMN ,CME
+Cotton Futures ,"CME Globex, New York Trading Floor ",TT ,TT ,TT ,NYMEX
+Dry Whey Futures,"CME Globex, Chicago Trading Floor ",DY,DY ,DY,CME
+Dry Whey Options ,"CME Globex, Chicago Trading Floor",DY ,DY,DY ,CME
+Feeder Cattle Futures,"CME Globex, Chicago Trading Floor",GF,FC,62,CME
+Feeder Cattle Options ,"CME Globex, Chicago Trading Floor ",GF,KF/JF ,62,CME
+Hardwood Pulp Futures,"CME Globex, Chicago Trading Floor",HWP ,HWP,HWP,CME
+Hardwood Pulp Options ,"CME Globex, Chicago Trading Floor ",HWP ,HWP,HWP ,CME
+International Skimmed Milk Powder Futures,CME Globex,ISM,,,CME
+International Skimmed Milk Powder Options ,CME Globex ,ISM ,,,CME
+Lean Hogs Futures,"CME Globex, Chicago Trading Floor ",HE,LH,LN,CME
+Lean Hogs Options ,"CME Globex, Chicago Trading Floor",HE ,CH/PH ,LN ,CME
+Live Cattle Futures,"CME Globex, Chicago Trading Floor ",LE,LC,48,CME
+Live Cattle Options ,"CME Globex, Chicago Trading Floor",LE ,CK/PK ,48,CME
+Mini-sized Corn Futures ,"CME Globex, Chicago Trading Floor ",XC ,YC ,YC ,CBOT
+Mini-sized Soybean ,"CME Globex, Chicago Trading Floor ",XK ,YK ,YK ,CBOT
+Mini-sized Wheat ,"CME Globex, Chicago Trading Floor ",XW ,YW ,YW ,CBOT
+Nonfat Dry Milk Futures,"CME Globex, Chicago Trading Floor ",GNF,GNF ,NF ,CME
+Nonfat Dry Milk Options ,"CME Globex, Chicago Trading Floor",GNF,NF ,NF,CME
+Nonfat Dry Milk Spot Call ,Chicago Trading Floor ,  ,Grade Extra = NX,NF ,CME
+,,,Grade A = NM ,,
+Oat Futures,"CME Globex, Chicago Trading Floor ",ZO,O,O,CBOT
+Oat Options ,"CME Globex, Chicago Trading Floor",OZO ,OO/OV ,O ,CBOT
+Random Length Lumber Futures,"CME Globex, Chicago Trading Floor ",LBS ,LB,LB,CME
+Random Length Lumber Options ,"CME Globex, Chicago Trading Floor",LBS ,KL/JL ,LB,CME
+Rough Rice Futures,"CME Globex, Chicago Trading Floor ",ZR,RR,14,CBOT
+Rough Rice Options ,"CME Globex, Chicago Trading Floor",OZR ,RRC/RRP ,14,CBOT
+S&P GSCI Crude Oil ER Swap,CME ClearPort Clearing ,  ,GCO ,GCO ,NYMEX
+S&P GSCI ER Gold Swap,"CME Globex, Chicago Trading Floor ",  ,GDI ,GDI ,NYMEX
+S&P GSCI Excess Return Forward,"CME Globex, Chicago Trading Floor ",  ,ERF ,ERF ,NYMEX
+S&P-GSCI ER Index 2 Month Forward Swaps,CME Clearport ,  ,  ,SE2 ,CME
+S&P-GSCI ER Index 3 Month Forward Swaps,CME Clearport ,  ,  ,SE3 ,CME
+S&P-GSCI Futures,"CME Globex, Chicago Trading Floor ",GD ,GI,GI,CME
+S&P-GSCI Options ,"CME Globex, Chicago Trading Floor",GD ,GI,GI,CME
+S&P-GSCI Excess Return Index Futures ,"CME Globex, Chicago Trading Floor ",GIE ,  ,GA ,CME
+S&P-GSCI Excess Return Index Swap ,Cleared Only ,  ,  ,SES ,CME
+Soybean Futures,"CME Globex, Chicago Trading Floor ",ZS,S,S,CBOT
+Soybean Options ,"CME Globex, Chicago Trading Floor",OZS,CZ/PZ ,S,CBOT
+Soybean Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SNS ,SNS ,NYMEX
+Soybean Crush Futures,Chicago Trading Floor ,,BCX,BCX ,CBOT
+Soybean Crush Options ,Chicago Trading Floor,,BC/BP ,BCX ,CBOT
+Soybean Meal Futures,"CME Globex, Chicago Trading Floor ",ZM,SM,6,CBOT
+Soybean Meal Options ,"CME Globex, Chicago Trading Floor",OZM ,MY/MZ ,6,CBOT
+Soybean Oil Futures,"CME Globex, Chicago Trading Floor ",ZL,BO,7,CBOT
+Soybean Oil Options ,"CME Globex, Chicago Trading Floor",OZL ,OY/OZ ,7,CBOT
+Sugar #11 Futures ,New York Trading Floor ,YO ,YO ,YO ,NYMEX
+Wheat Futures,Chicago Trading Floor , ZW,W,W,CBOT
+Wheat Options ,Chicago Trading Floor,OZW ,WY/WZ ,W,CBOT
+Softwood Pulp Futures,Chicago Trading Floor ,,WP ,WP,CME
+Softwood Pulp Options ,Chicago Trading Floor,,WP ,WP,CME
+Weekly Corn Options ,"CME Globex, Chicago Trading Floor ",ZC1-5 ,PY1-5,WP ,CBOT
+, ,,WP ,,CME
+Weekly Soybean Options ,"CME Globex, Chicago Trading Floor ",ZS1-5 ,CZ1-5,WP ,CBOT
+, ,,WP ,,CME
+Weekly Wheat Options ,"CME Globex, Chicago Trading Floor ",ZW1-5 ,WZ1-5,WP ,CBOT
+, ,,WP ,,CME
+,,,,,
+Economic Events,,,,,
+Nonfarm Payroll Futures,"CME Globex, Chicago Trading Floor ",NFP,NFP,NFP ,CME
+Nonfarm Payroll Options ,"CME Globex, Chicago Trading Floor",NFP,NFP,NFP ,CME
+,,,,,
+,,,,,
+Energy,,,,,
+1% Fuel Oil (Platts) Cargoes FOB NWE Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FI ,FI ,NYMEX
+1% Fuel Oil Rdam vs. 1% Fuel Oil NWE (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,33,33,NYMEX
+1% Fuel Oil (Platts) Cargoes CIF MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1W ,1W ,NYMEX
+1% Fuel Oil (Platts) Cargoes CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1X ,1X ,NYMEX
+1.0% Fuel Oil (Platts) Cargoes FOB NWE Crack Spread (1000mt) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FVB ,FVB ,NYMEX
+3.5% Fuel Oil (Platts) CIF MED BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8D ,8D ,NYMEX
+3.5% Fuel Oil FOB Med Crack Spread Swap ,"CME ClearPort, Open Outcry (New York) ",  ,FL ,FL ,NYMEX
+3.5% Fuel Oil (Platts) CIF MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7D ,7D ,NYMEX
+European 3.5% Fuel Oil (Platts) Barges FOB Rdam Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,Q6 ,Q6 ,NYMEX
+3.5% Fuel Oil (Platts) Barges FOB Rdam Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FO ,FO ,NYMEX
+3.5% Fuel Oil (Platts) Barges FOB Rdam Crack Spread (1000mt) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BOB ,BOB ,NYMEX
+3.5% Fuel Oil Barges FOB Rdam vs. 3.5% FOB MED Spread (Platts) Swap Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,FK ,FK ,NYMEX
+3.5% Fuel Oil Rdam vs. 3.5% FOB MED Spread (Platts) BALMO Swap Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,63,63,NYMEX
+AECO NIT Daily Natural Gas Futures ,CME ClearPort Clearing ,  ,ZP ,ZP ,NYMEX
+PJM AEP Dayton Hub Peak Calendar-Month LMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,OT ,OT ,NYMEX
+PJM AEP Dayton Hub Calendar-Day Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VD ,VD ,NYMEX
+PJM AEP Dayton Hub Off-Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VP ,VP ,NYMEX
+PJM AEP Dayton Hub Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VM ,VM ,NYMEX
+Alberta Natural Gas Pipe Options ,"CME ClearPort Trading, Open Outcry (New York) ",  ,Pl ,Pl ,NYMEX
+Alberta Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort Trading, Open Outcry (New York) ",  ,K5 ,K5 ,NYMEX
+Algonquin City-gates Natural Gas Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B4 ,B4 ,NYMEX
+Algonquin City-Gates Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N7 ,N7 ,NYMEX
+Algonquin City-Gates Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C8 ,C8 ,NYMEX
+Annual NOX Emissions Allowance Vintage 2009 Futures ,"CME Globex, CME ClearPort (New York) ",  ,WW ,WW ,NYMEX
+Annual NOX Emissions Allowance Vintage 2010 Futures ,"CME Globex, CME ClearPort (New York) ",  ,YP ,YP ,NYMEX
+Annual NOX Emissions Allowance Vintage 2011 Futures ,"CME Globex, CME ClearPort (New York) ",  ,YQ ,YQ ,NYMEX
+Annual NOX Emissions Allowance Vintage 2012 Futures ,"CME Globex, CME ClearPort (New York) ",  ,YR ,YR ,NYMEX
+"ANR, Louisiana Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,M6 ,M6 ,NYMEX
+"ANR, Louisiana Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,K6 ,K6 ,NYMEX
+ANR Louisiana Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ND ,ND ,NYMEX
+ANR OK Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NE ,NE ,NYMEX
+ANR Okahoma Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IQ ,IQ ,NYMEX
+ANR OK Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SQ ,SQ ,NYMEX
+Argus Biodiesel RME FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1A ,1A ,NYMEX
+Argus Gasoline Eurobob Oxy Barges NWE Crack Spread (1000mt) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AES ,AES ,NYMEX
+Argus Gasoline Eurobob Oxy Barges NWE Crack Spread (1000mt) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EOB ,EOB ,NYMEX
+Argus LLS vs. WTI (Argus) Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E5 ,E5 ,NYMEX
+Argus Propane Far East Index Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7E ,7E ,NYMEX
+Argus Propane Far East Index BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,22,22,NYMEX
+Argus Propane Far East Index vs. European Propane CIF ARA (Argus) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,91,91,NYMEX
+Argus Propane (Saudi Aramco) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,9N ,9N ,NYMEX
+"Argus Sour Crude Index (""ASCI"") Calendar Month Swap Futures ","CME ClearPort, Open Outcry (New York) ",  ,37,37,NYMEX
+"Argus Sour Crude Index (""ASCI"") Financial Futures ","CME Globex, CME ClearPort, Open Outcry (New York) ",  ,A0 ,A0 ,NYMEX
+"Argus Sour Crude Index (""ASCI"") Trade Month Swap Futures ","CME ClearPort, Open Outcry (New York) ",  ,29,29,NYMEX
+"Argus Sour Crude Index (""ASCI"") vs. WTI Diff Spread Calendar Month Swap Futures ","CME ClearPort, Open Outcry (New York) ",  ,38,38,NYMEX
+"Argus Sour Crude Index (""ASCI"") vs. WTI Diff Spread Trade Month Swap Futures ","CME ClearPort, Open Outcry (New York) ",  ,36,36,NYMEX
+Argus WTI Formula Basis Calendar Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,39,39,NYMEX
+Brent CFD (Platts) vs. Brent Second Month (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6W ,6W ,NYMEX
+Brent CFD (Platts) vs. Brent Front Month (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1C ,1C ,NYMEX
+Brent CFD (Platts) vs. Brent Third Month (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,59,59,NYMEX
+Brent Crude Oil Penultimate Financial Futures ,"CME Globex, CME ClearPort Clearing ",  ,BB ,BB ,NYMEX
+Brent-Dubai (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DB ,DB ,NYMEX
+Brent (ICE) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CY ,CY ,NYMEX
+Brent Crude Oil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,J9 ,J9 ,NYMEX
+Brent Crude Oil 12 Month CSO ,"CME ClearPort, Open Outcry (New York) ",  ,AZ ,AZ ,NYMEX
+Brent Crude Oil Calendar Spread Financially Settled Option Contract 12 Mon ,"CME ClearPort, Open Outcry (New York) ",  ,9Y ,9Y ,NYMEX
+Brent Crude Oil 1 Month CSO ,"CME ClearPort, Open Outcry (New York) ",  ,AA ,AA ,NYMEX
+Brent Crude Oil Cal Spread Financially Settled Option Contract 1 Mon ,"CME ClearPort, Open Outcry (New York) ",  ,9C ,9C ,NYMEX
+Brent Crude Oil 2 Month CSO ,"CME ClearPort, Open Outcry (New York) ",  ,AB ,AB ,NYMEX
+Brent Crude Oil Calendar Spread Financially Settled Option Contract 2 Mon ,"CME ClearPort, Open Outcry (New York) ",  ,9B ,9B ,NYMEX
+Brent Crude Oil 3 Month CSO ,"CME ClearPort, Open Outcry (New York) ",  ,AC ,AC ,NYMEX
+Brent Crude Oil Calendar Spread Financially Settled Option Contract 3 Mon ,"CME ClearPort, Open Outcry (New York) ",  ,9D ,9D ,NYMEX
+Brent Crude Oil 6 Month CSO ,"CME ClearPort, Open Outcry (New York) ",  ,AM ,AM ,NYMEX
+Brent Crude Oil Calendar Spread Financially Settled Option Contract 6 Mon ,"CME ClearPort, Open Outcry (New York) ",  ,9L ,9L ,NYMEX
+Brent Crude Oil Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,BA ,BA ,NYMEX
+Brent Look-Alike Crude Oil Option ,"CME ClearPort, Open Outcry (New York) ",  ,BE ,BE ,NYMEX
+Brent Crude Oil Last Day Financial Futures ,"CME Globex, CME ClearPort Clearing, Open Outcry (New York) ",  ,BZ ,BZ ,NYMEX
+Brent Crude Oil Option ,"CME ClearPort, Open Outcry (New York) ",  ,OS ,OS ,NYMEX
+Brent - Financial ,"CME ClearPort, Open Outcry (New York) ",  ,BB ,BB ,NYMEX
+Brent (ICE) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CY ,CY ,NYMEX
+CAISO NP15 EZ GEN 5 MW Off-Peak Calendar Day Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2Z ,2Z ,NYMEX
+CAISO NP15 EZ Gen Hub 5 MW Off-Peak Calendar-Day Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2J ,2J ,NYMEX
+CAISO NP15 EZ Gen Hub 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,3X ,3X ,NYMEX
+CAISO NP15EZGenHub 5 MW Off-Peak Calendar-Month Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2D ,2D ,NYMEX
+CAISO NP15 EZ Gen Hub 5 MW Peak Calendar-Day Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,3Z ,3Z ,NYMEX
+CAISO NP15 EZ Gen Hub 5 MW Peak Calendar-Day Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2F ,2F ,NYMEX
+CAISO NP15 EZ Gen Hub 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,4X ,4X ,NYMEX
+CAISO NP15 EZ Gen Hub 5 MW Peak Calendar-Month Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,1Y ,1Y ,NYMEX
+CAISO SP15 EZ GEN 5 MW Off-Peak Calendar Day Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,4Z ,4Z ,NYMEX
+CAISO SP15 EZ Gen Hub 5 MW Off-Peak Calendar-Day Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2K ,2K ,NYMEX
+CAISO SP15 EZ Gen Hub 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,5X ,5X ,NYMEX
+CAISO SP15 EZ GenHub 5 MW Off-Peak Calendar-Month Real-time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2E ,2E ,NYMEX
+CAISO SP15 EZ Gen Hub 5 MW Peak Calendar-Day Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,9Z ,9Z ,NYMEX
+CAISO SP15 EZ Gen Hub 5 MW Peak Calendar-Day Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,2H ,2H ,NYMEX
+CAISO SP15 EZ Gen Hub 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,9X ,9X ,NYMEX
+CAISO SP15 EZ Gen Hub 5 MW Peak Calendar-Month Real-Time LMP Swap Futures ,CME ClearPort and Open Outcry (New York) ,  ,1Z ,1Z ,NYMEX
+Capesize Timecharter Average (Baltic) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M0 ,M0 ,NYMEX
+Capesize Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CSU ,CSU ,NYMEX
+CBOT Denatured Fuel Ethanol Futures,CME Globex ,EH ,,EH ,CBOT
+CBOT Standard Options on Denatured Fuel Ethanol Futures ,CME Globex,EH ,,EH ,CBOT
+CBOT Denatured Fuel Ethanol Forward Month Swaps ,OTC: Cleared Only ,  ,  ,71,CBOT
+Certified Emission Reduction (CER) Futures ,"CME Globex, CME ClearPort ",  ,VA ,VA ,NYMEX
+European Union Allowance (EUA) Futures ,"CME Globex, CME ClearPort ",  ,RC ,RC ,NYMEX
+CenterPoint Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,II ,II ,NYMEX
+CenterPoint Natural Gas Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PW ,PW ,NYMEX
+CenterPoint Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VX ,VX ,NYMEX
+Central Appalachian Coal Futures ,"CME Globex, CME ClearPort ",  ,QL ,QL ,NYMEX
+Central Appalachian Coal Option on Calendar Futures Strip ,"CME Globex, CME ClearPort ",  ,6M ,6M ,NYMEX
+Central Appalachian Coal Option on Quarterly Futures Strip Options ,"CME ClearPort, Open Outcry (New York) ",  ,6K ,6K ,NYMEX
+Central Appalachian Coal Option ,"CME Globex, CME ClearPort ",  ,C1 ,C1 ,NYMEX
+"Chicago ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,PY ,PY ,NYMEX
+Chicago Ethanol (Platts) Swap Futures ,CME ClearPort ,  ,CU ,CU ,NYMEX
+Chicago Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NB ,NB ,NYMEX
+Chicago Natural Gas Index (Platts Gas Daily/IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IS ,IS ,NYMEX
+Chicago Natural Gas Swing (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SS ,SS ,NYMEX
+Chicago Unleaded Gasoline (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2C ,2C ,NYMEX
+Chicago Unleaded Gasoline (Platts) vs. RBOB Gasoline Spread Swap ,"CME ClearPort, Open Outcry (New York) ",  ,3C ,3C ,NYMEX
+Chicago ULSD (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4C ,4C ,NYMEX
+Chicago ULSD (Platts) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5C ,5C ,NYMEX
+CIG Rockies Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Z8 ,Z8 ,NYMEX
+CIG Rockies Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U8 ,U8 ,NYMEX
+Midwest ISO Cinergy Hub Calendar-Day Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CC ,CC ,NYMEX
+Midwest ISO Cinergy Hub Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EM ,EM ,NYMEX
+Midwest ISO Cinergy Hub Peak Option on Calendar Futures Strip Options ,"CME ClearPort, Open Outcry (New York) ",  ,OEM ,OEM ,NYMEX
+Midwest ISO Cinergy Hub Peak Calendar-Month LMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,OY ,OY ,NYMEX
+Midwest ISO Cinergy Hub 5 MW Off-Peak Calendar Month Real-Time Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,H4 ,H4 ,NYMEX
+Midwest ISO Cinergy Hub 5 MW Peak Calendar-Month Day-Ahead Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,H5 ,H5 ,NYMEX
+Midwest ISO Cinergy Hub 5 MW Peak Calendar-Month Real-Time Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",H3N ,H3 ,H3 ,NYMEX
+Midwest ISO Cinergy Hub Off-Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EJ ,EJ ,NYMEX
+Cleared OTC London Gold Forwards ,CME ClearPort ,  ,GB ,GB ,NYMEX
+CIG Rockies Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CI ,CI ,NYMEX
+Columbia Gas TCO Basis (Platts IFERC) Option ,"CME Group ClearPort, Open Outcry (New York) ",  ,5D ,5D ,NYMEX
+Columbia Gas TCO Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,TC ,TC ,NYMEX
+"Columbia Gulf, Louisiana Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME Globex, CME ClearPort ",  ,S9 ,S9 ,NYMEX
+Columbia Gulf Louisiana Basis Swap (Platts IFERC) Futures ,"CME ClearPort, CME Globex ",  ,GL ,GL ,NYMEX
+"Columbia Gulf, Louisiana Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,J6 ,J6 ,NYMEX
+Columbia Gulf Mainline Natural Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5Z ,5Z ,NYMEX
+"Columbia Gulf, Mainline Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,L2 ,L2 ,NYMEX
+"Columbia Gulf, Mainline Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,X2 ,X2 ,NYMEX
+Copper Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,HG ,HG ,NYMEX
+Copper Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,HX ,HX ,NYMEX
+Conway Normal Butane (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8M ,8M ,NYMEX
+Conway Natural Gasoline (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8L ,8L ,NYMEX
+Conway Propane (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8K ,8K ,NYMEX
+Conway Propane (OPIS) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,CPR ,CPR ,NYMEX
+Conway Natural Gasoline (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CGB ,CGB ,NYMEX
+Conway Normal Butane (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CBB ,CBB ,NYMEX
+Conway Propane (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CPB ,CPB ,NYMEX
+Conway Physical Propane In-Well (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CPP ,CPP ,NYMEX
+Crude Oil Financial Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,WS ,WS ,NYMEX
+Crude Oil Option on Quarterly Futures Strip ,"CME ClearPort Clearing, New York Trading Floor ",  ,6E ,6E ,NYMEX
+Crude Oil Option on Calendar Futures Strip ,"CME ClearPort Clearing, New York Trading Floor ",  ,6F ,6F ,NYMEX
+Crude Oil Last Day Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,26,26,NYMEX
+Daily Mont Belvieu LDH Propane (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C3D ,C3D ,NYMEX
+Daily Mont Belvieu Natural Gasoline (Non-LDH) (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C5D ,C5D ,NYMEX
+Daily Mont Belvieu Normal Butane (Non-LDH) (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C4D ,C4D ,NYMEX
+Daily WTI Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DCL ,DCL ,NYMEX
+Dated Brent (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UB ,UB ,NYMEX
+Dated Brent (Platts) Daily Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7G ,7G ,NYMEX
+Dated to Frontline Brent Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FY ,FY ,NYMEX
+Dawn Natural Gas Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DW ,DW ,NYMEX
+Dawn Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IO ,IO ,NYMEX
+Dawn Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,OW ,OW ,NYMEX
+Demarc Natural Gas index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DI ,DI ,NYMEX
+Demarc Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DT ,DT ,NYMEX
+Diesel 10ppm (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U7 ,U7 ,NYMEX
+Diesel 10ppm (Platts) Barges FOB Rdam vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7X ,7X ,NYMEX
+Diesel 10ppm NWE Le Havre (Platts) CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,S1 ,S1 ,NYMEX
+Diesel 10ppm NWE Le Havre (Platts) CIF NWE vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,S3 ,S3 ,NYMEX
+Diesel 10ppm NWE Le Havre (Platts) CIF NWE vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,S5 ,S5 ,NYMEX
+Diesel 10ppm UK (Platts) CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,S6 ,S6 ,NYMEX
+Diesel 10ppm UK (Platts) CIF NWE vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,S8 ,S8 ,NYMEX
+Diesel 10ppm UK (Platts) CIF NWE vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T1 ,T1 ,NYMEX
+"Dominion, South Point Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,SH ,SH ,NYMEX
+Dominion Basis Swap (Platts IFERC) Futures) ,"CME ClearPort, Open Outcry (New York) ",  ,PG ,PG ,NYMEX
+Dominion Natural Gas Index Swap (Platt Gas Daily/Platts IFERC) Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,IH ,IH ,NYMEX
+Dow Jones Mid-Columbia Electricity Price Index Swap Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,DO ,DO ,NYMEX
+Dubai Crude Oil (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DC ,DC ,NYMEX
+Dubai Crude Oil (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BI ,BI ,NYMEX
+East-West Fuel Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EW ,EW ,NYMEX
+E-mini RBOB Gasoline Futures ,CME Globex ,  ,QU ,QU ,NYMEX
+CSX Coal (Platts OTC Broker Index) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,QX ,QX ,NYMEX
+East-West Fuel Oil Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EW ,EW ,NYMEX
+EIA Flat Tax On-Highway Diesel Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A5 ,A5 ,NYMEX
+Permian Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PM ,PM ,NYMEX
+Permian Natural Gas Index (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IL ,IL ,NYMEX
+El Paso/Permian Swing Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SL ,SL ,NYMEX
+ERCOT Broker Houston Index Peak (SNL Energy) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ZH ,ZH ,NYMEX
+ERCOT Broker North Index Peak (SNL Energy) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ZF ,ZF ,NYMEX
+ERCOT Broker South Index Peak (SNL Energy) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ZT ,ZT ,NYMEX
+ERCOT Houston Calendar-Day Peak Swap (Platts Megawatt Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HE ,HE ,NYMEX
+ERCOT Houston Peak Swap (Platts Megawatt Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HT ,HT ,NYMEX
+ERCOT Houston Zone MCPE 5 MW Off-Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I4 ,I4 ,NYMEX
+ERCOT Houston Zone MCPE 5 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I2 ,I2 ,NYMEX
+ERCOT Houston Zone MCPE 5 MW Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I3 ,I3 ,NYMEX
+ERCOT Houston Zone MCPE 5 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I1 ,I1 ,NYMEX
+ERCOT Houston Zone MCPE 50 MW Off-Peak Calendar Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3E ,3E ,NYMEX
+ERCOT Houston Zone MCPE 50 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2W ,2W ,NYMEX
+ERCOT Houston Zone MCPE 50 MW Peak Calendar Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2S ,2S ,NYMEX
+ERCOT Houston Zone MCPE 50 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2N ,2N ,NYMEX
+ERCOT North Calendar-Day Peak Swap (Platts Megawatt Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MC ,MC ,NYMEX
+ERCOT North Peak Swap (Platts Megawatt Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MT ,MT ,NYMEX
+ERCOT North Zone MCPE 5 MW Off-Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I8 ,I8 ,NYMEX
+ERCOT North Zone MCPE 5 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I6 ,I6 ,NYMEX
+ERCOT North Zone MCPE 5 MW Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I7 ,I7 ,NYMEX
+ERCOT North Zone MCPE 5 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I5 ,I5 ,NYMEX
+ERCOT North Zone MCPE 50 MW Off-Peak Calendar Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3F ,3F ,NYMEX
+ERCOT North Zone MCPE 50 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2X ,2X ,NYMEX
+ERCOT North Zone MCPE 50 MW Peak Calendar Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2T ,2T ,NYMEX
+ERCOT North Zone MCPE 50 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2P ,2P ,NYMEX
+ERCOT Broker Houston Index Peak Calendar-Day (SNL Energy) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VH ,VH ,NYMEX
+ERCOT Broker North Index Peak Calendar-Day (SNL Energy) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VF ,VF ,NYMEX
+ERCOT Broker South Index Peak Calendar-Day (SNL Energy) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VJ ,VJ ,NYMEX
+ERCOT South Zone MCPE 5 MW Off-Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M1 ,M1 ,NYMEX
+ERCOT South Zone MCPE 5 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,J1 ,J1 ,NYMEX
+ERCOT South Zone MCPE 5 MW Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,K1 ,K1 ,NYMEX
+ERCOT South Zone MCPE 5 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,I9 ,I9 ,NYMEX
+ERCOT South Zone MCPE 50 MW Off-Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3H ,3H ,NYMEX
+ERCOT South Zone MCPE 50 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2Y ,2Y ,NYMEX
+ERCOT South Zone MCPE 50 MW Peak Calendar Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2U ,2U ,NYMEX
+ERCOT South Zone MCPE 50 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2Q ,2Q ,NYMEX
+ERCOT West Zone MCPE 5 MW Off-Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R4 ,R4 ,NYMEX
+ERCOT West Zone MCPE 5 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,O1 ,O1 ,NYMEX
+ERCOT West Zone MCPE 5 MW Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R1 ,R1 ,NYMEX
+ERCOT West Zone MCPE 5 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N1 ,N1 ,NYMEX
+ERCOT West Zone MCPE 50 MW Off-Peak Calendar-Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3J ,3J ,NYMEX
+ERCOT West Zone MCPE 50 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3D ,3D ,NYMEX
+ERCOT West Zone MCPE 50 MW Peak Calendar Day Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2V ,2V ,NYMEX
+ERCOT West Zone MCPE 50 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2R ,2R ,NYMEX
+Ethanol (Platts) T1 FOB Rdam Excluding Duty Swap Futures ,CME ClearPort ,  ,2M ,2M ,NYMEX
+Ethanol (Platts) T2 FOB Rdam Including Duty Swap Futures ,CME ClearPort ,  ,Z1 ,Z1 ,NYMEX
+EuroBob Gasoline 10 ppm (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7P ,7P ,NYMEX
+European 1% Fuel Oil (Platts) Cargoes FOB NWE BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KX ,KX ,NYMEX
+European 1% Fuel Oil (Platts) Cargoes FOB NWE Calendar Swap Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,UF ,UF ,NYMEX
+European 1% Fuel Oil NWE Crack Spread ,"CME ClearPort, Open Outcry (New York) ",  ,FI ,FI ,NYMEX
+European 1% Fuel Oil (Platts) Barges FOB Rdam Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UH ,UH ,NYMEX
+European 1% Fuel Oil (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6L ,6L ,NYMEX
+European 3.5% Fuel Oil (Platts) Cargoes FOB MED Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UI ,UI ,NYMEX
+European 3.5% Fuel Oil (Platts) Barges FOB Rdam Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UV ,UV ,NYMEX
+European 3.5% Fuel Oil (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KR ,KR ,NYMEX
+European 3.5% Fuel Oil Rdam Crack Swap ,"CME ClearPort, Open Outcry (New York) ",  ,FO ,FO ,NYMEX
+3.5% Fuel Oil Rdam vs. 3.5% FOB Med Spread Swap ,"CME ClearPort, Open Outcry (New York) ",  ,FK ,FK ,NYMEX
+3.5% Fuel Oil (Platts) FOB MED Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FL ,FL ,NYMEX
+European Gasoil (ICE) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GX ,GX ,NYMEX
+European Gasoil (ICE) Futures ,"CME ClearPort Clearing, CME Globex ",  ,7F ,7F ,NYMEX
+European Diesel 10 ppm (Platts) Barges FOB Rdam vs Gasoil Futures Swap ,"CME ClearPort, Open Outcry (New York) ",  ,ET ,ET ,NYMEX
+European Diesel 10 ppm (Platts) Barges FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GT ,GT ,NYMEX
+European Gasoil Bullet Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BG ,BG ,NYMEX
+European Gasoil Calendar (1 month) Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,GXA ,GXA ,NYMEX
+European Gasoil Calendar (2 month) Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,GXB ,GXB ,NYMEX
+European Gasoil Calendar (3 month) Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,GXC ,GXC ,NYMEX
+European Gasoil Calendar (6 month) Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,GXM ,GXM ,NYMEX
+European Gasoil Calendar (12 month) Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,GXZ ,GXZ ,NYMEX
+European Gasoil Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GZ ,GZ ,NYMEX
+Jet Cargoes (Platts) CIF NWE vs. Gasoil Futures Swap ,"CME ClearPort, Open Outcry (New York) ",  ,JC ,JC ,NYMEX
+European Jet Kerosene (Platts) Cargoes CIF NWE Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,30,30,NYMEX
+European Jet Kerosene (Platts) Cargoes CIF NWE Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UJ ,UJ ,NYMEX
+European Jet Kerosene (Platts) Barges FOB Rdam Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UR ,UR ,NYMEX
+Jet Barges (Platts) FOB Rdam vs. Gasoil Futures Swap ,"CME ClearPort, Open Outcry (New York) ",  ,JR ,JR ,NYMEX
+European Naphtha (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UN ,UN ,NYMEX
+European Naphtha (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KZ ,KZ ,NYMEX
+European Naphtha (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EN ,EN ,NYMEX
+European Naphtha (Platts) Crack Spread BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,43,43,NYMEX
+European Propane CIF ARA (Argus) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,32,32,NYMEX
+European Propane CIF ARA (Argus) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PS ,PS ,NYMEX
+European-Style Gasoil Option ,"CME ClearPort, Open Outcry (New York) ",  ,F8 ,F8 ,NYMEX
+Singapore Fuel Oil 180 cst (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UA ,UA ,NYMEX
+Singapore Fuel Oil 180 cst (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BS ,BS ,NYMEX
+FAME 0 (Argus) Biodiesel FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2L ,2L ,NYMEX
+FGT Zone 3 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FP ,FP ,NYMEX
+Florida Gas Zone 2 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8A ,8A ,NYMEX
+Florida Gas Zone 2 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C3 ,C3 ,NYMEX
+Florida Gas Zone 2 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X5 ,X5 ,NYMEX
+Florida Gas Zone 3 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q9 ,Q9 ,NYMEX
+"Florida Gas, Zone 3 Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,J8 ,J8 ,NYMEX
+Freight Route TC1 (Platts) Swap Futures ,CME ClearPort ,  ,TG ,TG ,NYMEX
+Freight Route TC1 (Platts) Forward ,CME ClearPort ,  ,FPA ,FPA ,NYMEX
+Freight Route TC2 (Baltic) Forward ,CME ClearPort ,  ,FC2 ,FC2 ,NYMEX
+Freight Route TC4 (Platts) Forward ,CME ClearPort ,  ,FC4 ,FC4 ,NYMEX
+Freight Route TC5 (Platts) Forward ,CME ClearPort ,  ,FC5 ,FC5 ,NYMEX
+Freight Route TC6 (Baltic) Forward ,CME ClearPort ,  ,FC6 ,FC6 ,NYMEX
+Freight Route TD10 (Baltic) Forward ,CME ClearPort ,  ,FDD ,FDD ,NYMEX
+Freight Route TD3 (Baltic) Forward ,CME ClearPort ,  ,FT3 ,FT3 ,NYMEX
+Freight Route TD5 (Baltic) Forward ,CME ClearPort ,  ,FT5 ,FT5 ,NYMEX
+Freight Route TD7 (Baltic) Forward ,CME ClearPort ,  ,FT7 ,FT7 ,NYMEX
+Freight Route TD9 (Baltic) Forward ,CME ClearPort ,  ,FB9 ,FB9 ,NYMEX
+Gasoil 0.1 (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B8 ,B8 ,NYMEX
+Gasoil 0.1 (Platts) Barges FOB Rdam vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,WQ ,WQ ,NYMEX
+Gasoil 0.1 (Platts) Cargoes FOB NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,WR ,WR ,NYMEX
+Gasoil 0.1 (Platts) Cargoes FOB NWE vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,WT ,WT ,NYMEX
+Gasoil 0.1 (Platts) Barges FOB Rdam vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6V ,6V ,NYMEX
+Gasoil 0.1 (Platts) CIF MED BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X6 ,X6 ,NYMEX
+Gasoil 0.1 (Platts) Cargoes CIF NWE vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TU ,TU ,NYMEX
+Gasoil 0.1 (Platts) Cargoes CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TW ,TW ,NYMEX
+Gasoil 0.1 (Platts) Cargoes CIF NWE vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4V ,4V ,NYMEX
+Gasoil 0.1 (Platts) Barges FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VL ,VL ,NYMEX
+Gasoil 0.1% (Platts) Barges FOB Rdam Crack Spread (1000mt) Swap Futures ,CME ClearPort ,  ,GOB ,GOB ,NYMEX
+Gasoil 0.1 (Platts) Cargoes CIF NWE BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B7 ,B7 ,NYMEX
+Gasoil 0.1 (Platts) Cargoes CIF MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Z4 ,Z4 ,NYMEX
+Gasoil 0.1 (Platts) CIF MED vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Z5 ,Z5 ,NYMEX
+ULSD 10ppm (Platts) Cargoes CIF NWE vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TP ,TP ,NYMEX
+ULSD 10ppm (Platts) Cargoes CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TY ,TY ,NYMEX
+Gasoil 0.1% (Platts) Cargoes CIF NWE Crack Spread (1000mt) Swap Futures ,CME ClearPort ,  ,GEB ,GEB ,NYMEX
+Gasoil 0.1 (Platts) CIF MED vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8W ,8W ,NYMEX
+ULSD 10ppm Cargoes CIF NWE vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3V ,3V ,NYMEX
+Gasoil Average Price Option ,"CME Globex, CME ClearPort ",  ,F7 ,F7 ,NYMEX
+Gasoil Crack Spread Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,3U ,3U ,NYMEX
+Gasoil (ICE) Crack Spread (1000mt) Swap Futures ,CME ClearPort ,  ,GOC ,GOC ,NYMEX
+Gasoil (ICE) Mini Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,QA ,QA ,NYMEX
+Gasoline Euro-bob Oxy (Argus) NWE Barges Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7H ,7H ,NYMEX
+Gasoline Euro-bob Oxy (Argus) NWE Barges Crack Spread BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7I ,7I ,NYMEX
+Gasoline Euro-bob Oxy (Argus) NWE Barges BALMO Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7R ,7R ,NYMEX
+Gasoline Euro-bob Oxy (Argus) NWE Barges Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7K ,7K ,NYMEX
+Gulf Coast Unl 87 (Argus) Up-Down Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UZ ,UZ ,NYMEX
+Group Three ULSD (Platts) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A6 ,A6 ,NYMEX
+Group Three ULSD (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A7 ,A7 ,NYMEX
+Group Three Unleaded Gasoline (Platts) vs. RBOB Gasoline Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A8 ,A8 ,NYMEX
+Group Three Unleaded Gasoline (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A9 ,A9 ,NYMEX
+Gulf Coast 3.0% Fuel Oil (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VZ ,VZ ,NYMEX
+Gulf Coast CBOB Gasoline A1 (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CBC ,CBC ,NYMEX
+Gulf Coast CBOB Gasoline A1 (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CBO ,CBO ,NYMEX
+Gulf Coast CBOB Gasoline A1 (Platts) vs. RBOB Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CBA ,CBA ,NYMEX
+Gulf Coast CBOB Gasoline A2 (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GCG ,GCG ,NYMEX
+Gulf Coast CBOB Gasoline A2 (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CRG ,CRG ,NYMEX
+Gulf Coast CBOB Gasoline A2 (Platts) vs. RBOB Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CRB ,CRB ,NYMEX
+Gulf Coast Unl 87 Gasoline M2 (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GCC ,GCC ,NYMEX
+Gulf Coast Unl 87 Gasoline M2 (Platts) Swap Futures Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GCM ,GCM ,NYMEX
+Gulf Coast Unl 87 Gasoline M2 (Platts) vs. RBOB Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RVG ,RVG ,NYMEX
+Gulf Coast Unl 87 (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RU ,RU ,NYMEX
+Gulf Coast Unl 87 (Argus) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AW ,AW ,NYMEX
+Gulf Coast Unl 87 (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GS ,GS ,NYMEX
+Gulf Coast Gasoline Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LR ,LR ,NYMEX
+Gulf Coast Unl 87 (Argus) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CK ,CK ,NYMEX
+Gulf Coast 87 Gasoline Crack Spread Calendar Swap Futures (Platts) ,"CME ClearPort, Open Outcry (New York) ",  ,RU ,RU ,NYMEX
+Gulf Coast Unl 87 vs. Gulf Coast Heating Oil Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MD ,MD ,NYMEX
+Gulf Coast No. 2 (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RD ,RD ,NYMEX
+Gulf Coast Heating Oil (Argus) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4U ,4U ,NYMEX
+Gulf Coast Heating Oil (Argus) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7U ,7U ,NYMEX
+Gulf Coast Heating Oil (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7O ,7O ,NYMEX
+Gulf Coast Heating Oil (OPIS) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7Y ,7Y ,NYMEX
+Gulf Coast Heating Oil (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GP ,GP ,NYMEX
+Gulf Coast Jet Fuel (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GE ,GE ,NYMEX
+Gulf Coast Jet (Argus) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AF ,AF ,NYMEX
+Gulf Coast Jet (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R9 ,R9 ,NYMEX
+Gulf Coast Jet (OPIS) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,W7 ,W7 ,NYMEX
+Jet Fuel Up-Down BALMO Calendar Swap Contract ,"CME ClearPort, Open Outcry (New York) ",  ,1M ,1M ,NYMEX
+Gulf Coast Jet (Platts) Up-Down BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AF ,AF ,NYMEX
+Gulf Coast Jet (Platts) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ME ,ME ,NYMEX
+Gulf Coast No. 6 Fuel Oil 3.0% (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MF ,MF ,NYMEX
+Gulf Coast No. 6 Fuel Oil 3.0% (Platts) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,FG ,FG ,NYMEX
+Gulf Coast No. 6 Fuel Oil (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MG ,MG ,NYMEX
+Gulf Coast Sour Crude Oil Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,MB ,MB ,NYMEX
+Gulf Coast ULSD (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5P ,5P ,NYMEX
+Gulf Coast ULSD (OPIS) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5Q ,5Q ,NYMEX
+Gulf Coast Ultra Low Sulfur Diesel (ULSD) Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,LU ,LU ,NYMEX
+Gulf Coast ULSD (Argus) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AJ ,AJ ,NYMEX
+Gulf Coast ULSD (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LY ,LY ,NYMEX
+Gulf Coast ULSD (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GY ,GY ,NYMEX
+Gulf Coast ULSD (Argus) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CF ,CF ,NYMEX
+Gulf Coast ULSD (Platts) Up-Down Balmo Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1L ,1L ,NYMEX
+Gulf Coast ULSD vs. Gulf Coast Jet Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VV ,VV ,NYMEX
+Gulf Coast Unl 87 (Platts) Crack Spread BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1J ,1J ,NYMEX
+Gulf Coast Unl 87 (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4E ,4E ,NYMEX
+Gulf Coast Unl 87 (Platts) Up-Down BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1K ,1K ,NYMEX
+Gulf Coast Unl 87 (OPIS) vs. RBOB Gasoline Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4F ,4F ,NYMEX
+Handysize Timecharter Average (Baltic) BALMO Swap Futures ,CME ClearPort ,  ,Q0 ,Q0 ,NYMEX
+Handysize Timecharter Average (Baltic) Swap Futures ,CME ClearPort ,  ,HFT ,HFT ,NYMEX
+HDPE High Density Polyethylene (PCW) Calendar Swap Futures ,CME ClearPort ,  ,HPE ,HPE ,NYMEX
+Heating Oil Arb: NYMEX Heating Oil vs. ICE Gasoil ,"CME ClearPort, Open Outcry (New York) ",  ,HA ,HA ,NYMEX
+Heating Oil Oil Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,AT ,AT ,NYMEX
+Heating Oil BALMO Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,1G ,1G ,NYMEX
+Heating Oil Calendar Spread Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,FA ,FA ,NYMEX
+Heating Oil Calendar Spread Option ,"CME ClearPort, Open Outcry (New York) ",  ,"FB, FC, FM, FZ ","FB, FC, FM, FZ ",NYMEX
+Heating Oil Crack Spread Average Price Option ,"ME Globex, CME ClearPort, Open Outcry (New York) ",  ,3W ,3W ,NYMEX
+Heating Oil Crack Spread BALMO Swap Futures ,New York Trading Floor ,  ,1H ,1H ,NYMEX
+Heating Oil Crack Spread Option ,"CME Globex,CME ClearPort, Open Outcry (New York) ",  ,CH ,CH ,NYMEX
+Heating Oil Look-Alike Option ,"CME ClearPort, Open Outcry (New York) ",  ,LB ,LB ,NYMEX
+Heating Oil Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BH ,BH ,NYMEX
+Heating Oil Futures ,"CME Globex, CME Globex, Open Outcry (New York) ",  ,HO ,HO ,NYMEX
+Heating Oil Option ,"CME Globex, CME Globex, Open Outcry (New York) ",  ,OH ,OH ,NYMEX
+Heating Oil Last Day Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,23,23,NYMEX
+Henry Hub Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HB ,HB ,NYMEX
+Henry Hub Natural Gas Index (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IN ,IN ,NYMEX
+Henry Hub Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5E ,5E ,NYMEX
+Henry Hub Natural Gas Look-Alike Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,LN ,LN ,NYMEX
+Henry Hub Natural Gas Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,NG ,NG ,NYMEX
+Henry Hub Natural Gas Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,ON ,ON ,NYMEX
+Henry Hub Natural Gas Last-day - Financial Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,G4 ,G4 ,NYMEX
+Henry Hub Natural Gas Last Day Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HH ,HH ,NYMEX
+Henry Hub Natural Gas Last Day Financial Option ,"CME ClearPort, Open Outcry (New York) ",  ,E7 ,E7 ,NYMEX
+Henry Hub Natural Gas Penultimate Financial Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",HP ,HP ,HP ,NYMEX
+Henry Hub Natural Gas Quadultimate Option ,"CME ClearPort, Open Outcry (New York) ",  ,HHQ ,HHQ ,NYMEX
+Henry Hub Natural Gas Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,NN ,NN ,NYMEX
+Henry Hub Swing Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SN ,SN ,NYMEX
+Henry Hub Natural Gas Calendar Spread Option ,"CME Globex, CME ClearPort Clearing, Open Outcry (New York) ",  ,IA ,IA ,NYMEX
+Henry Hub Natural Gas Calendar Spread Options ,"CME ClearPort Clearing, Open Outcry (New York) ",  ,"IB, IC,",,
+"IMM, IMZ, IZZ ","IB, IC,",,,,
+"IMM, IMZ, IZZ ",NYMEX,,,,
+Henry Hub Natural Gas Penultimate Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NP ,NP ,NYMEX
+Henry Hub Natural Gas Swap Futures ,"CME ClearPort, CME Globex, Open Outcry (New York) ",  ,NN ,NN ,NYMEX
+Houston Ship Channel Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,NH ,NH ,NYMEX
+Houston Ship Channel Natural Gas Index (Platts Gas Daily/Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,IP ,IP ,NYMEX
+Houston Ship Channel Natural Gas Basis (Platts IFERC) Options ,"CME ClearPort, Open Outcry (New York) ",  ,5F ,5F ,NYMEX
+"Houston Ship Channel ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,PK ,PK ,NYMEX
+Houston Ship Channel Swing Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SM ,SM ,NYMEX
+ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U9 ,U9 ,NYMEX
+"Iron Ore 62% Fe, CFR China (TSI) Swap Futures ","CME ClearPort, Open Outcry (New York) ",  ,TIO ,TIO ,NYMEX
+Midwest ISO Illinois Hub Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,OM ,OM ,NYMEX
+Midwest ISO Illinois Hub Off-Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,OJ ,OJ ,NYMEX
+ISO New England Peak Calendar-Month LMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,OE ,OE ,NYMEX
+ISO New England internal Hub Calendar-Day Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CE ,CE ,NYMEX
+ISO New England Internal Hub Off-Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KI ,KI ,NYMEX
+ISO New England Internal Hub Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NI ,NI ,NYMEX
+Japan C&F Naphtha (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JA ,JA ,NYMEX
+Japan C&F Naphtha (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JB ,JB ,NYMEX
+Japan Naphtha (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E6 ,E6 ,NYMEX
+Jet Aviation Fuel (Platts) Cargoes FOB MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1T ,1T ,NYMEX
+Jet Aviation Fuel (Platts) Cargoes FOB MED vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1V ,1V ,NYMEX
+Jet Fuel (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X9 ,X9 ,NYMEX
+Jet Fuel (Platts) Barges FOB Rdam vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,9Q ,9Q ,NYMEX
+Jet Fuel (Platts) Cargoes CIF NWE BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,F3 ,F3 ,NYMEX
+Jet Fuel (Platts) Cargoes CIF NWE vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6X ,6X ,NYMEX
+Gulf Coast Jet (Argus) Up-Down Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JU ,JU ,NYMEX
+Kern Opal Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SR ,SR ,NYMEX
+Kern River Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NV ,NV ,NYMEX
+Argus LLS Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A4 ,A4 ,NYMEX
+LLDPE Linear Low Density Polyethylene (PCW) Calendar Swap Futures ,CME ClearPort ,  ,LPE ,LPE ,NYMEX
+LLS (Argus) Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LI ,LI ,NYMEX
+Light Sweet Crude Oil (WTI) - Financial Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,7A ,7A ,NYMEX
+Light Sweet Crude Oil (WTI) 2 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,7B ,7B ,NYMEX
+Light Sweet Crude Oil (WTI) 3 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,7C ,7C ,NYMEX
+Light Sweet Crude Oil (WTI) 6 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,7M ,7M ,NYMEX
+Light Sweet Crude Oil (WTI) 12 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,7Z ,7Z ,NYMEX
+WTI Calendar Spread Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,WA ,WA ,NYMEX
+Light Sweet Crude Oil 2 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,WB ,WB ,NYMEX
+Light Sweet Crude Oil 3 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,WC ,WC ,NYMEX
+Light Sweet Crude Oil 6 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,WM ,WM ,NYMEX
+Light Sweet Crude Oil 12 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,WZ ,WZ ,NYMEX
+WTI Average Price Option ,"CME Group ClearPort, Open Outcry (New York) ",  ,AO ,AO ,NYMEX
+Daily Crude Oil Option ,"CME Group ClearPort, Open Outcry (New York) ",  ,CD ,CD ,NYMEX
+Light Sweet Crude Oil Calendar Spread Options ,"CME ClearPort Clearing, New York Trading Floor ",  ,"WA, WB, WC,",,
+"WMM, WMZ, WZZ ","WA, WB, WC,",,,,
+"WMM, WMZ, WZZ ",NYMEX,,,,
+WTI Look-Alike Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,LC ,LC ,NYMEX
+Light Sweet Crude Oil Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,LO ,LO ,NYMEX
+Light Sweet Crude Oil Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,CL ,CL ,NYMEX
+LLS (Argus) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,XA ,XA ,NYMEX
+LLS (Argus) vs. WTI Spread Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,WJ ,WJ ,NYMEX
+Los Angeles CARB Diesel (OPIS) Outright Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LX ,LX ,NYMEX
+Los Angeles CARB Diesel (OPIS) Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KL ,KL ,NYMEX
+Los Angeles CARBOB Gasoline (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MH ,MH ,NYMEX
+Los Angeles CARBOB Gasoline (OPIS) Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JL ,JL ,NYMEX
+Los Angeles Jet (OPIS) Outright Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LL ,LL ,NYMEX
+Los Angeles Jet (OPIS) Spread Swap ,"CME ClearPort, Open Outcry (New York) ",  ,JS ,JS ,NYMEX
+Los Angeles Jet Fuel (Platts) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MQ ,MQ ,NYMEX
+Malin Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,V8 ,V8 ,NYMEX
+Malin Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,W9 ,W9 ,NYMEX
+Mars (Argus) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MX ,MX ,NYMEX
+Mars (Argus) Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MO ,MO ,NYMEX
+Mars (Argus) vs. WTI Spread Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YX ,YX ,NYMEX
+Mars (Argus) vs. WTI Spread Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YV ,YV ,NYMEX
+MichCon Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y8 ,Y8 ,NYMEX
+MichCon Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T8 ,T8 ,NYMEX
+MichCon Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,4W ,4W ,NYMEX
+MichCon Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NF ,NF ,NYMEX
+Midwest ISO Michigan Hub Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HM ,HM ,NYMEX
+Midwest ISO Michigan Hub Off-Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HJ ,HJ ,NYMEX
+Midwest ISO Illinois Hub 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4R ,4R ,NYMEX
+Midwest ISO Illinois Hub 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4Q ,4Q ,NYMEX
+Mini Capesize Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CSF ,CSF ,NYMEX
+Mini Handysize Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,H0 ,H0 ,NYMEX
+Mini Panamax Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,F0 ,F0 ,NYMEX
+Mini Supramax Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,G0 ,G0 ,NYMEX
+Mini European 1% Fuel Oil (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,0A ,0A ,NYMEX
+Mini European 1% Fuel Oil (Platts) Barges FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T0 ,T0 ,NYMEX
+Mini European 1% Fuel Oil (Platts) Cargoes FOB NWE BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,0C ,0C ,NYMEX
+Mini European 1% Fuel Oil (Platts) Cargoes FOB NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,0B ,0B ,NYMEX
+Mini European 3.5% Fuel Oil (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,0E ,0E ,NYMEX
+Mini European 3.5% Fuel Oil (Platts) Barges FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,0D ,0D ,NYMEX
+Mini Singapore Fuel Oil 180 cst (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5L ,5L ,NYMEX
+Mini Singapore Fuel Oil 180 cst (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,0F ,0F ,NYMEX
+Midwest ISO Minnesota Hub Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LM ,LM ,NYMEX
+Midwest ISO Minnesota Hub Off-Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LJ ,LJ ,NYMEX
+Midwest ISO Cinergy Hub 5 MW Off-Peak Calendar-Month Day-Ahead Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,K2 ,K2 ,NYMEX
+Mont Belvieu Ethane 5 Decimals (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C0 ,C0 ,NYMEX
+Mont Belvieu Ethane (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8C ,8C ,NYMEX
+Mont Belvieu Ethane 5 Decimals (OPIS) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,4J ,4J ,NYMEX
+Mont Belvieu Ethylene Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1F ,1F ,NYMEX
+Mont Belvieu Iso-Butane 5 Decimal (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8I ,8I ,NYMEX
+Mont Belvieu LDH Propane (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8O ,8O ,NYMEX
+Mont Belvieu LDH Propane (OPIS) vs. Argus Propane Far East Index Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,31,31,NYMEX
+Mont Belvieu LDH Propane (OPIS) vs. European Propane CIF ARA (Argus) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,51,51,NYMEX
+Mont Belview LDH Propane 5 Decimals (OPIS) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,4H ,4H ,NYMEX
+Mont Belvieu Mini LDH Propane (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,81,81,NYMEX
+Mont Belvieu Natural Gasoline 5 Decimal (OPIS) Swaps Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7Q ,7Q ,NYMEX
+Mont Belvieu Natural Gasoline 5 Decimals (OPIS) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,4K ,4K ,NYMEX
+Mont Belvieu Natural Gasoline 5 Decimals (OPIS) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,4I ,4I ,NYMEX
+Mont Belvieu Normal Butane 5 Decimals (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D0 ,D0 ,NYMEX
+Mont Belvieu Normal Butane (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8J ,8J ,NYMEX
+Mont Belvieu Physical Ethane (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3Q ,3Q ,NYMEX
+Mont Belvieu Physical Iso-Butane (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3L ,3L ,NYMEX
+Mont Belvieu Physical LDH Propane (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3N ,3N ,NYMEX
+Mont Belvieu Physical Natural Gasoline (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3R ,3R ,NYMEX
+Mont Belvieu Physical Non-LDH Propane (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3P ,3P ,NYMEX
+Mont Belvieu Physical Normal Butane (OPIS) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3M ,3M ,NYMEX
+Mont Belvieu Natural Gasoline (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R0 ,R0 ,NYMEX
+Mont Belvieu Spot Ethylene In-Well Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MBE ,MBE ,NYMEX
+Naphtha (Platts) Cargoes CIF NWE Crack Spread (1000mt) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NBB ,NBB ,NYMEX
+Naphtha (Platts) Cargoes CIF NWE Crack Spread (1000mt) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NOB ,NOB ,NYMEX
+National Balancing Point (NBP) Henry Hub Basis Option ,"CME ClearPort, Open Outcry (New York) ",  ,V1 ,V1 ,NYMEX
+National Balancing Point (NBP) Henry Hub Basis Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E2 ,E2 ,NYMEX
+Natural Gas 1 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,IA ,IA ,NYMEX
+Natural Gas 2 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,IB ,IB ,NYMEX
+Natural Gas 3 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,IC ,IC ,NYMEX
+Natural Gas 5 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,IE ,IE ,NYMEX
+Natural Gas 6 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,IM ,IM ,NYMEX
+Natural Gas 12 Month Calendar Spread Options ,"CME ClearPort, Open Outcry (New York) ",  ,IZ ,IZ ,NYMEX
+Natural Gas Calendar Spread Financially Settled 2 Month Options ,"CME ClearPort, Open Outcry (New York) ",  ,G2 ,G2 ,NYMEX
+Natural Gas Calendar Spread Financially Settled 3 Month Options ,"CME ClearPort, Open Outcry (New York) ",  ,G3 ,G3 ,NYMEX
+Natural Gas Calendar Spread Financially Settled 5 Month Options ,"CME ClearPort, Open Outcry (New York) ",  ,G5 ,G5 ,NYMEX
+Natural Gas Calendar Spread Financially Settled 6 Month Options ,"CME ClearPort, Open Outcry (New York) ",  ,G6 ,G6 ,NYMEX
+Natural Gas Calendar Spread Financially Settled 12 Month Options ,"CME ClearPort, Open Outcry (New York) ",  ,G7 ,G7 ,NYMEX
+Natural Gas Option on Calendar Futures Strip ,"CME ClearPort, Open Outcry (New York) ",  ,6J ,6J ,NYMEX
+Daily Natural Gas Option ,"CME ClearPort, Open Outcry (New York) ",  ,KD ,KD ,NYMEX
+NGPL Louisiana Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NY ,NY ,NYMEX
+NGPL Mid-Con Basis Swap (Platts IFERC) Futures) ,"CME Globex, CME ClearPort ",  ,NL ,NL ,NYMEX
+NGPL Mid-Con Basis (Platts IFERC Option ,"CME ClearPort, Open Outcry (New York) ",  ,5G ,5G ,NYMEX
+NGPL TexOk Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PD ,PD ,NYMEX
+NGPL TexOk Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5H ,5H ,NYMEX
+Natural Gas Option on Summer Futures Strip ,"CME ClearPort, Open Outcry (New York) ",  ,4D ,4D ,NYMEX
+Natural Gas Option on Winter Futures Strip ,"CME ClearPort, Open Outcry (New York) ",  ,6I ,6I ,NYMEX
+ISO New England Connecticut Zone 5 MW Off-Peak Calendar-Month Day Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P3 ,P3 ,NYMEX
+ISO New England Connecticut Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P2 ,P2 ,NYMEX
+ISO New England Internal Hub 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,H2 ,H2 ,NYMEX
+ISO New England Internal Hub 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",U6N ,U6 ,U6 ,NYMEX
+ISO New England Maine Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,W2 ,W2 ,NYMEX
+ISO New England Maine Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P9 ,P9 ,NYMEX
+ISO New England North East Massachusetts Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P8 ,P8 ,NYMEX
+ISO New England North East Massachusetts Zone 5 MW Peak Calendar-Month Day-Ahead Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P7 ,P7 ,NYMEX
+ISO New England New Hampshire Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U3 ,U3 ,NYMEX
+ISO New England New Hampshire Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U2 ,U2 ,NYMEX
+ISO New England Rhode Island Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U5 ,U5 ,NYMEX
+ISO New England Rhode Island Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U4 ,U4 ,NYMEX
+ISO New England South East Massachusetts Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P5 ,P5 ,NYMEX
+ISO New England South East Massachusetts Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P4 ,P4 ,NYMEX
+ISO New England West Central Massachusetts Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R6 ,R6 ,NYMEX
+ISO New England West Central Massachusetts Zone 5 MW Off-Peak Calendar-Month Day Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,L9 ,L9 ,NYMEX
+NGPL Mid-Con Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IW ,IW ,NYMEX
+NGPL Mid-Con Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PX ,PX ,NYMEX
+NGPL STX Natural Gas Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T5 ,T5 ,NYMEX
+NGPL STX Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N6 ,N6 ,NYMEX
+NGPL STX Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q7 ,Q7 ,NYMEX
+NGPL TexOk Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,OI ,OI ,NYMEX
+NY 0.3% Fuel Oil HiPr (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8N ,8N ,NYMEX
+NY 3.0% Fuel Oil (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,H1 ,H1 ,NYMEX
+NY Ethanol (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EZ ,EZ ,NYMEX
+New York Harbor 1.0% Fuel Oil (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VK ,VK ,NYMEX
+New York Harbor Conv. Gasoline (Platts) vs. RBOB Gasoline Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RZ ,RZ ,NYMEX
+Heating Oil Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MP ,MP ,NYMEX
+Heating Oil Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,HK ,HK ,NYMEX
+New York Harbor Residual Fuel 1.0% (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MM ,MM ,NYMEX
+New York Harbor Residual Fuel (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ML ,ML ,NYMEX
+New York Harbor Ultra-Low Sulfur Diesel (ULSD) Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,LH ,LH ,NYMEX
+Gulf Coast No. 2 (Platts) Up-Down Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UT ,UT ,NYMEX
+NYISO Zone A Calendar-Day Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AN ,AN ,NYMEX
+NYISO Zone A Off-Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KB ,KB ,NYMEX
+NYISO Zone A Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KA ,KA ,NYMEX
+NYISO Zone G Calendar-Day Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GN ,GN ,NYMEX
+NYISO Zone G Off-Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KH ,KH ,NYMEX
+NYISO Zone G Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KG ,KG ,NYMEX
+NYISO Zone J Calendar-Day Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JN ,JN ,NYMEX
+NYISO Zone J Off-Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KK ,KK ,NYMEX
+NYISO Zone J Peak LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KJ ,KJ ,NYMEX
+NY ULSD (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YU ,YU ,NYMEX
+NGPL TexOk Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,OX ,OX ,NYMEX
+Demarc Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,PE ,PE ,NYMEX
+Panamax Timecharter Average (Baltic) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N0 ,N0 ,NYMEX
+Panamax Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PFU ,PFU ,NYMEX
+Pine Prairie Energy Center (PPEC) Physically Delivered Natural Gas Monthly Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",PPM ,PPM ,PPM ,NYMEX
+Pine Prairie Energy Center (PPEC) Physically Delivered Natural Gas Daily/Weekend Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",PPD ,PPD ,PPD ,NYMEX
+Pine Prairie Energy Center (PPEC) Physically Delivered Natural Gas BALMO Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",PPB ,PPB ,PPB ,NYMEX
+PJM Northern Illinois Hub Calendar-Day Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UD ,UD ,NYMEX
+PJM Northern Illinois Hub Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UM ,UM ,NYMEX
+PJM Northern Illinois Hub Off-Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UO ,UO ,NYMEX
+PJM Northern Illinois Hub Peak Calendar-Month LMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,OU ,OU ,NYMEX
+Ventura Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,PF ,PF ,NYMEX
+"Rockies ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,ZR ,ZR ,NYMEX
+Northwest Europe Fuel Oil High-Low Sulfur Spread (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,88,88,NYMEX
+Northwest Europe Fuel Oil High-Low Sulfer Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FS ,FS ,NYMEX
+Sumas Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NK ,NK ,NYMEX
+Rockies Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,NR ,NR ,NYMEX
+Rockies Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5I ,5I ,NYMEX
+NYISO Zone A 5 MW Off-Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,K4 ,K4 ,NYMEX
+NYISO Zone A 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",K3X ,K3 ,K3 ,NYMEX
+NYISO Zone A 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,9T ,9T ,NYMEX
+NYISO Zone C 5 MW Off-Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A3 ,A3 ,NYMEX
+NYISO Zone C 5 MW Peak Calendar-Month Day-Ahead Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q5 ,Q5 ,NYMEX
+NYISO Zone E 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,55,55,NYMEX
+NYISO Zone E 5 MW Off-Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,58,58,NYMEX
+NYISO Zone F 5 MW Off-Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4M ,4M ,NYMEX
+NYISO Zone F 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4L ,4L ,NYMEX
+NYISO Zone G 5 MW Off-Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D2 ,D2 ,NYMEX
+NYISO Zone G 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,9U ,9U ,NYMEX
+NYISO Zone G 5 MW Peak Calendar-Month Day Ahead LBMP Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",T3N ,T3 ,T3 ,NYMEX
+NYISO Zone J 5 MW Off-Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D4 ,D4 ,NYMEX
+NYISO Zone J 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D3 ,D3 ,NYMEX
+NYISO Zone J 5 MW Peak Calendar-Month Day-Ahead LBMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",  ,9V ,9V ,NYMEX
+NY 0.3% Fuel Oil (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VQ ,VQ ,NYMEX
+NY 0.7% Fuel Oil (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y4 ,Y4 ,NYMEX
+NY 2.2% Fuel Oil (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y3 ,Y3 ,NYMEX
+NY 1% Fuel Oil vs. Gulf Coast 3% Fuel Oil Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VR ,VR ,NYMEX
+NY Heating Oil (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YF ,YF ,NYMEX
+NY Heating Oil (Platts) vs. NYMEX Heating Oil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YH ,YH ,NYMEX
+NY Jet Fuel (Argus) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4Y ,4Y ,NYMEX
+NY Jet Fuel (Argus) vs. Heating Oil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5U ,5U ,NYMEX
+NY Jet Fuel (Platts) vs. Heating Oil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1U ,1U ,NYMEX
+NY Jet Fuel (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1Q ,1Q ,NYMEX
+NYMEX Cocoa Futures ,"CME Globex , CME ClearPort ",  ,CJ ,CJ ,NYMEX
+NYMEX Cotton Futures ,"CME Globex , CME ClearPort ",  ,TT ,TT ,NYMEX
+NYMEX Crude Oil Backwardation/Contango (B/C) Index ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,XK ,XK ,NYMEX
+NYMEX Crude Oil MACI Index ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,XC ,XC ,NYMEX
+New York Harbor Ethanol Futures ,"CME Globex, CME ClearPort ",  ,QE ,QE ,NYMEX
+NY ULSD (Argus) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,5Y ,5Y ,NYMEX
+NY ULSD (Platts CIF MED vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7Y ,7Y ,NYMEX
+NY ULSD (Platts) vs. NYMEX Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,UY ,UY ,NYMEX
+"OneOk, Oklahoma Basis Swap (Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,8X ,8X ,NYMEX
+"OneOk, Oklahoma Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,M3 ,M3 ,NYMEX
+"Oneok, Oklahoma Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,C7 ,C7 ,NYMEX
+E-mini Heating Oil Futures ,CME Globex ,  ,QH ,QH ,NYMEX
+PG&E Citygate Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PC ,PC ,NYMEX
+PG&E Citygate Natural Gas Index Swap (Platts Gas Daily/IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IK ,IK ,NYMEX
+Pacific Gas & Electric (PG&E) Citygate Natural Gas Swing Contract (Platts Gas Daily) ,"CME ClearPort, Open Outcry (New York) ",  ,SK ,SK ,NYMEX
+Malin Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,PB ,PB ,NYMEX
+Panhandle Basis Swap Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,PH ,PH ,NYMEX
+"Panhandle ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,PU ,PU ,NYMEX
+Panhandle Natural Gas Index (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IV ,IV ,NYMEX
+Panhandle Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5K ,5K ,NYMEX
+Panhandle Natural Gas Pipe Options ,"CME ClearPort, Open Outcry (New York) ",  ,5U ,5U ,NYMEX
+Panhandle Natural Gas Swing (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SV ,SV ,NYMEX
+"PG&E CityGate Natural Gas ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,CW ,CW ,NYMEX
+PJM AEP Dayton Hub 5 MW Off-Peak Calendar-Month Real-Time LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,V3 ,V3 ,NYMEX
+PJM AEP Dayton Hub 5MW Peak Calendar-Month Real-Time LMP Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",Z9 ,Z9 ,Z9 ,NYMEX
+PJM Off-Peak Calendar-Month LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JP ,JP ,NYMEX
+PJM Peak Calendar-Month LMP Swap Futures,"CME ClearPort, Open Outcry (New York) ",,JM,JM,NYMEX
+PJM Calendar-Month LMP Swap Option ,"CME ClearPort, Open Outcry (New York) ",,JO,JO,NYMEX
+PJM AECO Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y1 ,Y1 ,NYMEX
+PJM AECO Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X1 ,X1 ,NYMEX
+PJM AEP Dayton Hub Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D7 ,D7 ,NYMEX
+PJM AEP Dayton Hub Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R7 ,R7 ,NYMEX
+PJM APS Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,S4 ,S4 ,NYMEX
+PJM APS Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,W4 ,W4 ,NYMEX
+PJM BGE Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E3 ,E3 ,NYMEX
+PJM Peak Calendar-Day LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JD ,JD ,NYMEX
+PJM Comed Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D9 ,D9 ,NYMEX
+PJM Comed Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D8 ,D8 ,NYMEX
+PJM DOM Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,U1 ,U1 ,NYMEX
+PJM DOM Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R5 ,R5 ,NYMEX
+PJM BGE Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R3 ,R3 ,NYMEX
+PJM DPL Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,L8 ,L8 ,NYMEX
+PJM DPL Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E8 ,E8 ,NYMEX
+PJM Eastern Hub Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E9 ,E9 ,NYMEX
+PJM Duquesne 5 MW Off-Peak Cal-Mon Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D6 ,D6 ,NYMEX
+PJM Duquesne 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,D5 ,D5 ,NYMEX
+PJM Eastern Hub Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,F4 ,F4 ,NYMEX
+PJM JCPL Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,J2 ,J2 ,NYMEX
+PJM JCPL Zone Peak Calendar-Month Day-Ahead LMP Swap Options ,"CME ClearPort, Open Outcry (New York) ",  ,JCL ,JCL ,NYMEX
+PJM Electricity Option on Calendar Futures Strip ,"CME ClearPort, Open Outcry (New York) ",  ,6O ,6O ,NYMEX
+PJM JCPL Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,F2 ,F2 ,NYMEX
+PJM METED Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,46,46,NYMEX
+PJM METED Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,47,47,NYMEX
+PJM PENELEC Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,49,49,NYMEX
+PJM PENELEC Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,50,50,NYMEX
+PJM Northern Illinois Hub 5 MW Off-Peak Calendar-Month Real-Time LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B6 ,B6 ,NYMEX
+PJM Northern Illinois Hub 5 MW Peak Calendar-Month Real-Time LMP Swap Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",B3 ,B3 ,B3 ,NYMEX
+PJM Northern Illinois Hub Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N3 ,N3 ,NYMEX
+PJM Northern Illinois Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,L3 ,L3 ,NYMEX
+PJM PEPCO Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,R8 ,R8 ,NYMEX
+PJM PEPCO Zone Peak Calendar-Month Day-Ahead LMP Swap Options ,"CME ClearPort, Open Outcry (New York) ",  ,PEP ,PEP ,NYMEX
+PJM PECO Zone 5 MW Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4P ,4P ,NYMEX
+PJM PECO Zone 5 MW Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4N ,4N ,NYMEX
+PJM PEPCO Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q8 ,Q8 ,NYMEX
+PJM PPL Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,L5 ,L5 ,NYMEX
+PJM PPL Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,F5 ,F5 ,NYMEX
+PJM PSEG Zone Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,L6 ,L6 ,NYMEX
+PJM PSEG Zone Peak Calendar-Month Day-Ahead LMP Swap Options ,"CME ClearPort, Open Outcry (New York) ",  ,PSG ,PSG ,NYMEX
+PJM Western Hub 50 MW Peak Calendar Month Real Time LMP Swap Futures ,"CME Globex , CME ClearPort Clearing ",  ,4S ,4S ,NYMEX
+PJM PSEG Zone Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,W6 ,W6 ,NYMEX
+PJM Western Hub Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,J4 ,J4 ,NYMEX
+PJM Western Hub Off-Peak Calendar-Month Day-Ahead LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,E4 ,E4 ,NYMEX
+PJM Western Hub Peak Calendar-Month Real-Time LMP Swap Futures ,"CME Globex, CME ClearPort ",  ,L1 ,L1 ,NYMEX
+PJM Western Hub Off-Peak Calendar-Month Real-Time LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N9 ,N9 ,NYMEX
+PME Biodiesel (Argus) FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,25,25,NYMEX
+Polypropylene Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P1 ,P1 ,NYMEX
+High Density Polythylene (HDPE) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P6 ,P6 ,NYMEX
+Premium Unleaded Gasoline 10 ppm (Platts) Cargoes CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,4G ,4G ,NYMEX
+Premium Unleaded Gasoline 10 ppm (Platts) Cargoes CIF NWE BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6D ,6D ,NYMEX
+Premium Unleaded Gasoline 10ppm (Platts) CIF MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,2G ,2G ,NYMEX
+Premium Unleaded Gasoline 10 ppm (Platts) CIF MED BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6G ,6G ,NYMEX
+Premium Unleaded Gasoline 10ppm (Platts) FOB MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,3G ,3G ,NYMEX
+Premium Unleaded Gasoline 10ppm (Platts) FOB MED BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8G ,8G ,NYMEX
+Premium Unleaded Gasoline 10 ppm (Platts) Barges FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7L ,7L ,NYMEX
+Premium Unleaded Gasoline 10 ppm (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7N ,7N ,NYMEX
+Propane Non-LDH Mont Belview (OPIS) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1S ,1S ,NYMEX
+Propane Non-LDH Mont Belview (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1R ,1R ,NYMEX
+Questar Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TA ,TA ,NYMEX
+Questar Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N8 ,N8 ,NYMEX
+Questar Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C6 ,C6 ,NYMEX
+RBOB Gasoline Futures,,,,,
+RBOB Gasoline Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,RB,,
+OB ,RB,,,,
+OB ,NYMEX,,,,
+NYMEX,,,,,
+RBOB Gasoline Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RT ,RT ,NYMEX
+RBOB Gasoline Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RL ,RL ,NYMEX
+RBOB Gasoline Crack Spread Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,RX ,RX ,NYMEX
+RBOB Gasoline Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RM ,RM ,NYMEX
+RBOB Gasoline Calendar Spread Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,ZA ,ZA ,NYMEX
+RBOB Calendar Spread Option ,"CME ClearPort, Open Outcry (New York) ",  ,"ZB,",,
+"ZC, ZM ","ZB,",,,,
+"ZC, ZM ",NYMEX,,,,
+RBOB Gasoline Look-Alike European Option ,"CME ClearPort, Open Outcry (New York) ",  ,RF ,RF ,NYMEX
+RBOB Gasoline Crack Spread Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,3Y ,3Y ,NYMEX
+RBOB Gasoline Last Day Financial Futures ,"CME ClearPort, Open Outcry (New York) ",  ,27,27,NYMEX
+Gulf Coast Unl 87 (Platts) vs. RBOB Gasoline Swap Futures ,"CME ClearPort Clearing, New York Trading Floor ",  ,RV ,RV ,NYMEX
+RBOB Gasoline vs. Heating Oil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RH ,RH ,NYMEX
+RBOB Gasoline Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,RA ,RA ,NYMEX
+RBOB Calendar Spread Options ,"CME ClearPort Clearing, New York Trading Floor ",  ,"ZA, ZB,",,
+"ZC, ZM ","ZA, ZB,",,,,
+"ZC, ZM ",NYMEX,,,,
+RBOB Gasoline BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1D ,1D ,NYMEX
+RBOB Gasoline Crack Spread BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1E ,1E ,NYMEX
+NY RBOB (Platts) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RY ,RY ,NYMEX
+NY RBOB (Platts) vs. NYMEX RBOB Gasoline Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RI ,RI ,NYMEX
+REBCO Financial Futures ,"CME Globex, CME ClearPort ",  ,R2 ,R2 ,NYMEX
+Rockies Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IR ,IR ,NYMEX
+REBCO Futures ,"CME Globex, CME ClearPort ",  ,RE ,RE ,NYMEX
+San Juan Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NJ ,NJ ,NYMEX
+San Juan Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IJ ,IJ ,NYMEX
+"San Juan ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,PJ ,PJ ,NYMEX
+San Juan Natural Gas Swing Contract (Platts Gas Daily) ,"CME ClearPort, Open Outcry (New York) ",  ,SJ ,SJ ,NYMEX
+Singapore Fuel 180 cst vs. 380 cst Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SD ,SD ,NYMEX
+Singapore Fuel Oil 180 cst (Platts) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,C5 ,C5 ,NYMEX
+Singapore Fuel Oil 380 cst Futures ,"CME Globex, CME ClearPort ",  ,HZ ,HZ ,NYMEX
+Singapore Fuel Oil cst (Platts) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,8H ,8H ,NYMEX
+Singapore Fuel Oil 380 cst (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SE ,SE ,NYMEX
+Singapore Fuel Oil 380 cst (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BT ,BT ,NYMEX
+Singapore Gasoil (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SG ,SG ,NYMEX
+Singapore Gasoil (Platts) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,M2 ,M2 ,NYMEX
+Singapore Gasoil (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VU ,VU ,NYMEX
+Singapore Gasoil (Platts) vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GA ,GA ,NYMEX
+Singapore Jet Kerosene (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KS ,KS ,NYMEX
+Singapore Jet Kerosene (Platts) Average Price Option ,"CME ClearPort, Open Outcry (New York) ",  ,N2 ,N2 ,NYMEX
+Singapore Jet Kerosene (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BX ,BX ,NYMEX
+Singapore Jet Kerosene vs. Gasoil Spread (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Z0 ,Z0 ,NYMEX
+Singapore Jet Kerosene vs. Gasoil Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,RK ,RK ,NYMEX
+Singapore Mogas 92 Unleaded (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1N ,1N ,NYMEX
+Singapore Mogas 92 Unleaded (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,1P ,1P ,NYMEX
+Singapore Mogas 95 Unleaded (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,W0 ,W0 ,NYMEX
+Singapore Mogas 95 Unleaded (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,V0 ,V0 ,NYMEX
+Singapore Mogas 97 Unleaded (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y0 ,Y0 ,NYMEX
+Singapore Mogas 97 Unleaded (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X0 ,X0 ,NYMEX
+Singapore Naphtha (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SP ,SP ,NYMEX
+Singapore Naphtha (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KU ,KU ,NYMEX
+SME Biodiesel (Argus) FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,24,24,NYMEX
+SoCal City-Gate Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,9A ,9A ,NYMEX
+SoCal Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NS ,NS ,NYMEX
+SoCal Natural Gas Index Swap (Platt Gas Daily/IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IF ,IF ,NYMEX
+SoCal Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SF ,SF ,NYMEX
+SoCal City-Gate Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N5 ,N5 ,NYMEX
+SoCal City-Gate Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T9 ,T9 ,NYMEX
+SoCal Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5M ,5M ,NYMEX
+"SoCal ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,ZN ,ZN ,NYMEX
+Sonat Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SZ ,SZ ,NYMEX
+"Southern Natural, LA. Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,K8 ,K8 ,NYMEX
+"Southern Natural, Louisiana Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,M8 ,M8 ,NYMEX
+"Southern Star, Tx.-Okla.-Kan. Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,M4 ,M4 ,NYMEX
+Southern Star Tx.-Okla.-Kan. Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8Z ,8Z ,NYMEX
+Southern Star Tx.-Okla.-Kan. Natural Gas Index Swap (Platts Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C9 ,C9 ,NYMEX
+Stanfield Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q3 ,Q3 ,NYMEX
+NYMEX No. 11 Sugar Futures ,"CME Globex, CME ClearPort ",  ,YO ,YO ,NYMEX
+Sumas Natural Gas Index Contract (Platts Gas Daily / Platts IFERC) ,"CME ClearPort, Open Outcry (New York) ",  ,IU ,IU ,NYMEX
+Sumas Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SU ,SU ,NYMEX
+Supramax Timecharter Average (Baltic) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,P0 ,P0 ,NYMEX
+Supramax Timecharter Average (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SFT ,SFT ,NYMEX
+Freight Route TC2 (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TM ,TM ,NYMEX
+Freight Route TC4 (Platts) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,V9 ,V9 ,NYMEX
+Freight Route TC4 (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TJ ,TJ ,NYMEX
+Freight Route TC5 (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TH ,TH ,NYMEX
+Freight Route TD3 (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TL ,TL ,NYMEX
+Freight Route TD5 (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TI ,TI ,NYMEX
+Freight Route TD7 (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TK ,TK ,NYMEX
+Freight Route TD9 (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TN ,TN ,NYMEX
+Freight Route TD10D (Baltic) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TO ,TO ,NYMEX
+TCO Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q1 ,Q1 ,NYMEX
+TCO Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,A1 ,A1 ,NYMEX
+Tennessee 800 Leg Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,L4 ,L4 ,NYMEX
+Tennessee 500 Leg Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NM ,NM ,NYMEX
+Tennessee 500 Leg Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y7 ,Y7 ,NYMEX
+Tennessee 500 Leg Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T7 ,T7 ,NYMEX
+Tennessee 800 Leg Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,6Z ,6Z ,NYMEX
+"Tennessee, 800 Leg Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,W5 ,W5 ,NYMEX
+Tennessee Zone 0 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NQ ,NQ ,NYMEX
+Tennessee Zone 0 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q4 ,Q4 ,NYMEX
+Tennessee Zone 0 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T4 ,T4 ,NYMEX
+TETCO STX Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Q2 ,Q2 ,NYMEX
+TETCO STX Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T2 ,T2 ,NYMEX
+"Texas Gas, Zone SL Basis Swap (Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,TB ,TB ,NYMEX
+TETCO M-3 Natural Gas Index Swap (Platt Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IX ,IX ,NYMEX
+TETCO M-3 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SX ,SX ,NYMEX
+TETCO STX Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TX ,TX ,NYMEX
+Texas Eastern Zone M-3 Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,NX ,NX ,NYMEX
+"Texas Eastern, ELA Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,K9 ,K9 ,NYMEX
+"Texas Eastern, ELA Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,M9 ,M9 ,NYMEX
+TETCO ELA Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TE ,TE ,NYMEX
+"Texas Eastern, WLA Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,X8 ,X8 ,NYMEX
+"Texas Eastern, WLA Basis Swap (Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,8B ,8B ,NYMEX
+"Texas Eastern, WLA Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,C2 ,C2 ,NYMEX
+Texas Eastern Zone M-3 Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5N ,5N ,NYMEX
+Texas Gas Zone 1 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,N4 ,N4 ,NYMEX
+Texas Gas Zone 1 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,9F ,9F ,NYMEX
+"Texas Gas, Zone 1 Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,Y9 ,Y9 ,NYMEX
+"Texas Gas, Zone SL Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,S7 ,S7 ,NYMEX
+"Texas Gas, Zone SL Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,J7 ,J7 ,NYMEX
+Transco Zone 3 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Y6 ,Y6 ,NYMEX
+Transco Zone 3 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,T6 ,T6 ,NYMEX
+Transco Zone 4 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,TR ,TR ,NYMEX
+Transco Zone 3 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CZ ,CZ ,NYMEX
+Transco Zone 6 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NZ ,NZ ,NYMEX
+"Transco, Zone 6 Natural Gas Index Swap (Platt Gas Daily/Platts Iferc) Futures ","CME ClearPort, Open Outcry (New York) ",  ,IT ,IT ,NYMEX
+"Transco, Zone 6 Natural Gas Swing Swap (Platts Gas Daily) Futures ","CME ClearPort, Open Outcry (New York) ",  ,ST ,ST ,NYMEX
+Transco Zone 1 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8E ,8E ,NYMEX
+Transco Zone 1 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,C4 ,C4 ,NYMEX
+Transco Zone 1 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X4 ,X4 ,NYMEX
+Transco Zone 2 Basis Swap (Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,8F ,8F ,NYMEX
+Transco Zone 2 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,L7 ,L7 ,NYMEX
+Transco Zone 2 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X3 ,X3 ,NYMEX
+Transco Zone 4 Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B2 ,B2 ,NYMEX
+Transco Zone 4 Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,J3 ,J3 ,NYMEX
+"Transco Zone 6 ""Pipe"" (Platts IFERC) Option ","CME ClearPort, Open Outcry (New York) ",  ,TZ ,TZ ,NYMEX
+Trunkline ELA Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,K7 ,K7 ,NYMEX
+Trunkline ELA Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M7 ,M7 ,NYMEX
+"Trunkline, Louisiana Basis Swap (Platts IFERC) Futures ","CME ClearPort, Open Outcry (New York) ",  ,NU ,NU ,NYMEX
+ULSD 10ppm (Platts) CIF MED BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,X7 ,X7 ,NYMEX
+ULSD 10ppm (Platts) CIF MED vs. ICE Gasoil BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7V ,7V ,NYMEX
+ULSD 10ppm (Platts) Cargoes CIF NWE BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B1 ,B1 ,NYMEX
+ULSD 10ppm (Platts) Cargoes CIF MED Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Z6 ,Z6 ,NYMEX
+ULSD 10ppm (Platts) CIF MED vs. ICE Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,Z7 ,Z7 ,NYMEX
+Gulf Coast ULSD (Argus) Up-Down Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,US ,US ,NYMEX
+Gulf Coast ULSD (Platts) Up-Down Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LT ,LT ,NYMEX
+U.S. Midwest Domestic Hot-Rolled Coil Steel Index Futures ,"CME Globex, CME ClearPort ",  ,HR ,HR ,NYMEX
+UxC Uranium U3O8 Swap Futures ,"CME Globex, CME ClearPort ",  ,UX ,UX ,NYMEX
+Ventura Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VI ,VI ,NYMEX
+Ventura Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,VS ,VS ,NYMEX
+Waha Basis Swap (Platts IFERC) Futures ,"CME Globex, CME ClearPort ",  ,NW ,NW ,NYMEX
+Waha Basis (Platts IFERC) Option ,"CME ClearPort, Open Outcry (New York) ",  ,5O ,5O ,NYMEX
+Waha Natural Gas Index Swap (Platts Gas Daily/Platts IFERC) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,IY ,IY ,NYMEX
+Waha Natural Gas Swing Swap (Platts Gas Daily) Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SY ,SY ,NYMEX
+Argus WTI Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,V7 ,V7 ,NYMEX
+WTI Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CS ,CS ,NYMEX
+WTS (Argus) Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,AY ,AY ,NYMEX
+WTI BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,42,42,NYMEX
+WTI-Brent (ICE) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BK ,BK ,NYMEX
+WTI-Brent Crude Oil Spread Option ,"CME ClearPort, Open Outcry (New York) ",  ,BV ,BV ,NYMEX
+WTI Brent (ICE) Bullet Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,BY ,BY ,NYMEX
+WTS (Argus) vs. WTI Calendar Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FF ,FF ,NYMEX
+WTS (Argus) vs. WTI Spread Trade Month Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FH ,FH ,NYMEX
+WTS (Argus) Calendar Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,XB ,XB ,NYMEX
+Western Rail PRB Coal Swap ,"CME ClearPort, Open Outcry (New York) ",  ,QP ,QP ,NYMEX
+Dow Jones Mead/Marketplace Electricity Price Index 5 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DMO ,DMO ,NYMEX
+Dow Jones Mead/Marketplace Electricity Price Index 5 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DMP ,DMP ,NYMEX
+Dow Jones Palo Verde Electricity Price Index 5 MW Off-Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DSO ,DSO ,NYMEX
+Dow Jones Palo Verde Electricity Price Index 5 MW Peak Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,DSP ,DSP ,NYMEX
+ISO New England Internal Hub Calendar-Day Peak LMP Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,CE ,CE ,NYMEX
+Mont Belvieu LDH Propane (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B0 ,B0 ,NYMEX
+Mont Belvieu LDH Propane (OPIS) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,B0 ,B0 ,NYMEX
+Dubai Crude Oil (Platts) Average Price Options ,"CME ClearPort, Open Outcry (New York) ",  ,AH ,AH ,NYMEX
+Gulf Coast Heating Oil (OPIS) vs. Heating Oil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7W ,7W ,NYMEX
+EuroBob Gasoline 10 ppm (Platts) Barges FOB Rdam BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,7S ,7S ,NYMEX
+European 3.5% Fuel Oil (Platts) Cargoes FOB MED BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EFF ,EFF ,NYMEX
+European 1% Fuel Oil Cargoes FOB MED (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EFM ,EFM ,NYMEX
+European 1% Fuel Oil Cargoes FOB MED vs. European 1% Fuel Oil Cargoes FOB NWE Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,ENS ,ENS ,NYMEX
+East-West Naphtha: Japan C&F vs. Cargoes CIF NWE Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,EWN ,EWN ,NYMEX
+Daily European 1% Fuel Oil (Platts) Cargoes FOB NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FCN ,FCN ,NYMEX
+Dated to Frontline Brent BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FE ,FE ,NYMEX
+Daily European 3.5% Fuel Oil (Platts) Barges FOB Rdam Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,FOR ,FOR ,NYMEX
+Daily Gasoline Euro-bob Oxy (Argus) NWE Barges Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,GBR ,GBR ,NYMEX
+EIA Flat Tax U.S. Retail Gasoline Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,JE ,JE ,NYMEX
+RME Biodiesel (Argus) FOB Rdam vs. ICE Gasoil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,KE ,KE ,NYMEX
+FAME 0 Biodiesel (Argus) FOB Rdam vs. ICE Gasoil Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,LE ,LE ,NYMEX
+Mont Belvieu Ethylene (PCW) BALMO Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MBB ,MBB ,NYMEX
+Mont Belvieu Ethylene (PCW) Financial Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MBN ,MBN ,NYMEX
+Coal (API 4) fob Richards Bay (Argus/McCloskey) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MFF ,MFF ,NYMEX
+Coal (API4) fob Richards Bay (Argus-McCloskey) Option ,"CME ClearPort, Open Outcry (New York) ",  ,MFO ,MFO ,NYMEX
+Coal (API4) fob Richards Bay (Argus-McCloskey) Option ,"CME ClearPort, Open Outcry (New York) ",  ,MGF ,MGF ,NYMEX
+Mini ULSD 10ppm (Platts) Cargoes CIF NWE vs. Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MGN ,MGN ,NYMEX
+Mini Gasoil 10ppm (Platts) Cargoes CIF NWE vs. Gasoil Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MJB ,MJB ,NYMEX
+Mini European Naphtha (Platts) CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MNC ,MNC ,NYMEX
+Coal (API 2) cif ARA (Argus/McCloskey) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,MTF ,MTF ,NYMEX
+Coal (API 2) cif ARA (Argus/McCloskey) Options ,"CME ClearPort, Open Outcry (New York) ",  ,MTO ,MTO ,NYMEX
+Daily European Naphtha (Platts) CIF NWE Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,NCN ,NCN ,NYMEX
+Singapore Fuel Oil 180 cst (Platts) Crack Spread Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SFC ,SFC ,NYMEX
+Singapore Mogas 95 Unleaded vs. Singapore Mogas 92 Unleaded Spread (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,SMU ,SMU ,NYMEX
+Canadian Heavy Crude Oil (Net Energy) Index Futures ,"CME ClearPort, Open Outcry (New York) ",  ,WCC ,WCC ,NYMEX
+Ethanol (Argus) T1 ROB Rdam Excluding Duty Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,WE ,WE ,NYMEX
+Ethanol (Argus) T2 FOB Rdam Including Duty Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YE ,YE ,NYMEX
+NY ULSD (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YS ,YS ,NYMEX
+,,,,,
+,,,,,
+Equity Indexes,,,,,
+Big Dow DJIA ($25) Futures ,CME Globex ,DD ,  ,DO ,CBOT
+Dow ($10) Futures,"CME Globex, Chicago Trading Floor ",ZD,DJ,11,CBOT
+Dow ($10) Options ,"CME Globex, Chicago Trading Floor",OZDC/OZDP,DJC/DJP ,11,CBOT
+Dow Jones US Real Estate Index Futures ,CME Globex ,RX ,  ,JR ,CBOT
+E-micro S&P CNX Nifty ,CME Globex ,MNF ,  ,II ,CME
+E-mini Dow ($5) Futures,CME Globex ,YM,,,CBOT
+E-mini Dow ($5) Options ,CME Globex,OYMC/OYMP ,,YM ,CBOT
+E-mini NASDAQ-100 Futures ,CME Globex ,NQ,NQ ,NQ,CME
+,,NQ ,NQ,NQ ,CME
+E-mini NASDAQ Biotech,CME Globex ,BIO,BIO ,BQ,CME
+E-mini NASDAQ Biotech ,CME Globex,BIO ,BIO,BQ ,CME
+E-mini NASDAQ Composite,CME Globex ,QCN,QN,QCN,CME
+E-mini NASDAQ Composite ,CME Globex,QCN ,QN ,QCN ,CME
+E-mini S&P 500 Futures,CME Globex ,ES ,ES,ES,CME
+E-mini S&P 500 Options ,CME Globex,ES ,ES,ES,CME
+Euro Dominated E-mini S&P 500 Futures ,CME Globex ,EME ,  ,  ,CME
+E-mini S&P 500 EOM Options ,CME Globex ,  ,  ,  ,CME
+E-mini S&P CNX Nifty ,CME Globex ,EMF ,  ,EMF ,CME
+E-mini S&P MidCap 400 Futures,CME Globex,EDM ,EDM,ME,CME
+E-mini S&P MidCap 400 Options,CME Globex ,EMD ,EDM,ME ,CME
+E-mini S&P SmallCap 600 Futures ,CME Globex ,SMC ,SMC ,SMC ,CME
+NASDAQ-100 Futures,"CME Globex, Chicago Trading Floor ",ND,ND,ND ,CME
+NASDAQ-100 Options ,"CME Globex, Chicago Trading Floor",ND,ND ,ND ,CME
+Nikkei 225 (Dollar) Futures,"CME Globex, Chicago Trading Floor ",NKD,NK ,NK,CME
+Nikkei 225 (Dollar) Options ,"CME Globex, Chicago Trading Floor",NKD ,KN ,NK,CME
+Nikkei 225 (Yen) Futures ,CME Globex ,NIY,NIY,N1,CME
+,,NIY ,RL ,RL ,CME
+S&P 500 Futures,"CME Globex, Chicago Trading Floor ",SP ,SP,SP,CME
+S&P 500 Options ,"CME Globex, Chicago Trading Floor",SP ,CS/PS ,SP,CME
+S&P 500/Growth Futures,CME Globex ,SG ,SG,SG ,CME
+S&P 500/Growth Options ,CME Globex,SG ,SG,SG,CME
+S&P 500/Value Futures,CME Globex ,SU ,SU,SU,CME
+S&P 500/Value Options ,CME Globex,SU ,SU,SU ,CME
+S&P 500 EOM Options ,"CME Globex, Chicago Trading Floor ",EV ,  ,EV ,CME
+S&P MidCap 400 Futures,"CME Globex, Chicago Trading Floor ",MD ,MD,MD ,CME
+S&P MidCap 400 Options ,"CME Globex, Chicago Trading Floor",MD ,MD,MD,CME
+S&P SmallCap 600 Futures ,"CME Globex, Chicago Trading Floor ",SMP ,SMP ,SMP ,CME
+SGI WISE US Top Index Futures ,CME Globex ,K06 ,  ,K06 ,CME
+SGI WISE US Bottom Index Futures ,CME Globex ,K07 ,  ,K07 ,CME
+SGI WISE US Long/Short Index Futures ,CME Globex ,K08 ,  ,K08 ,CME
+,,,,,
+,,,,,
+FX,,,,,
+Australian Dollar Futures,"CME Globex, Chicago Trading Floor ",6A ,AD ,AD,CME
+Austrailian Dollar Options ,"CME Globex, Chicago Trading Floor",6A,KA/JA ,AD,CME
+Australian Dollar/Canadian Dollar Futures ,"CME Globex, Chicago Trading Floor ",ACD ,ACD ,AC ,CME
+Australian Dollar/Japanese Yen Futures,"CME Globex, Chicago Trading Floor ",AJY,AJY ,AJ ,CME
+Australian Dollar/New Zealand Dollar Futures,"CME Globex, Chicago Trading Floor ",ANE ,ANE,AN ,CME
+Brazilian Real Futures,"CME Globex, Chicago Trading Floor ",6L,BR ,BR,CME
+Brazilian Real Options ,"CME Globex, Chicago Trading Floor",BR,BR ,BR ,CME
+British Pound Futures,"CME Globex, Chicago Trading Floor ",6B,BP ,BP,CME
+British Pound Options ,"CME Globex, Chicago Trading Floor",6B ,CP/PP ,BP,CME
+British Pound/Japanese Yen Futures,"CME Globex, Chicago Trading Floor ",PJY ,PJY ,BY ,CME
+British Pound/Swiss Franc Futures,"CME Globex, Chicago Trading Floor ",PSF ,PSF ,BF ,CME
+CAD/USD Options ,"CME ClearPort, Open Outcry (New York) ",  ,YD ,YD ,NYMEX
+Canadian Dollar Futures,"CME Globex, Chicago Trading Floor ",6C,CD,C1,CME
+Canadian Dollar Options ,"CME Globex, Chicago Trading Floor",6C ,CV/PV ,C1 ,CME
+Canadian Dollar/Japanese Yen Futures,"CME Globex, Chicago Trading Floor ",CJY ,CJY ,CY ,CME
+Chinese Renminbi Futures,CME Globex ,RMB,RMB ,RMB,CME
+Chinese Renminbi Options ,CME Globex,RMB,RMB ,RMB ,CME
+Chinese Renminbi/Euro Futures,CME Globex ,RME,RME ,RME,CME
+Chinese Renminbi/Euro Options ,CME Globex,RME,RME ,RME ,CME
+Chinese Renminbi/Japanese Yen Futures,CME Globex ,RMY,RMY ,RMY ,CME
+Chinese Renminbi/Japanese Yen Options ,CME Globex,RMY,RMY ,RMY,CME
+Czech Koruna Futures,"CME Globex, Chicago Trading Floor ",CZK,CKO,CZ ,CME
+Czech Koruna Options ,"CME Globex, Chicago Trading Floor",CZO ,CZ,CZ ,CME
+E-micro AUD/USD Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M6A ,M6A ,NYMEX
+E-micro GBP/USD Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M6B ,M6B ,NYMEX
+E-micro USD/CAD Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M6C ,M6C ,NYMEX
+E-micro EUR/USD Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M6E ,M6E ,NYMEX
+E-micro USD/JPY Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M6J ,M6J ,NYMEX
+E-micro USD/CHF Futures ,"CME ClearPort, Open Outcry (New York) ",  ,M6S ,M6S ,NYMEX
+E-mini Euro FX Futures,CME Globex ,EC ,E8 ,E7 ,CME
+E-mini Japanese Yen Futures,CME Globex ,J7 ,J8 ,J7 ,CME
+EUR/USD European Style Options ,"CME ClearPort, Open Outcry (New York) ",  ,YT ,YT ,NYMEX
+Euro FX Futures,"CME Globex, Chicago Trading Floor ",6E,EC,EC ,CME
+Euro FX Options ,"CME Globex, Chicago Trading Floor",6E ,EC,EC ,CME
+Euro FX/Australian Dollar Futures,"CME Globex, Chicago Trading Floor ",EAD ,EAD ,CA ,CME
+Euro FX/British Pound Futures,"CME Globex, Chicago Trading Floor ",RP,RP ,RP ,CME
+Euro FX/British Pound Options ,"CME Globex, Chicago Trading Floor",RP,RP,RP ,CME
+Euro FX/Canadian Dollar Futures,"CME Globex, Chicago Trading Floor ",ECD ,ECD ,CC ,CME
+Euro FX/Czech Koruna Futures,"CME Globex, Chicago Trading Floor ",ECK,ECZ ,K,CME
+Euro FX/Czech Koruna Options ,"CME Globex, Chicago Trading Floor",ECZ,ECZ ,K ,CME
+Euro FX/Hungarian Forint Futures,"CME Globex, Chicago Trading Floor ",EHF,EHU ,R,CME
+Euro FX/Hungarian Forint Options ,"CME Globex, Chicago Trading Floor",EHU,EHU ,R ,CME
+Euro FX/Japanese Yen Futures,"CME Globex, Chicago Trading Floor ",RY ,RY ,RY,CME
+Euro FX/Japanese Yen Options ,"CME Globex, Chicago Trading Floor",RY,RY ,RY,CME
+Euro FX/Norwegian Krone Futures,"CME Globex, Chicago Trading Floor ",ENK ,ENK ,CN ,CME
+Euro FX/Polish Zloty Futures,"CME Globex, Chicago Trading Floor ",EPZ,EPL ,Z,CME
+Euro FX/Polish Zloty Options ,"CME Globex, Chicago Trading Floor",EPL,EPL ,Z ,CME
+Euro FX/Swedish Krona Futures,"CME Globex, Chicago Trading Floor ",ESK ,ESK ,KE ,CME
+Euro FX/Swiss Franc Futures,"CME Globex, Chicago Trading Floor ",RF ,RF ,RF,CME
+Euro FX/Swiss Franc Options ,"CME Globex, Chicago Trading Floor",RF,RF ,RF,CME
+EUR/USD 1-Month Realized Volatility Futures ,"CME Globex, CME ClearPort ",16E ,16E ,16E ,CME
+EUR/USD 3-Month Realized Volatility Futures ,"CME Globex, CME ClearPort ",36E ,36E ,36E ,CME
+Hungarian Forint Futures,"CME Globex, Chicago Trading Floor ",HUF,HFO ,FR,CME
+Hungarian Forint Options,"CME Globex, Chicago Trading Floor",HFO,HFO ,FR ,CME
+Israeli Shekel Futures,CME Globex ,ILS,ILS ,IS,CME
+Israeli Shekel Options ,CME Globex,ILS,ILS ,IS ,CME
+Japanese Yen Futures,"CME Globex, Chicago Trading Floor ",6J,JY,J1,CME
+Japanese Yen Options ,"CME Globex, Chicago Trading Floor",6J ,CJ/PJ ,J1 ,CME
+JPY/USD European Style Options ,"CME ClearPort, Open Outcry (New York) ",  ,YJ ,YJ ,NYMEX
+Korean Won Futures,CME Globex ,KRW,KRW ,KRW,CME
+Korean Won Options ,CME Globex,KRW,KRW ,KRW,CME
+Marco Polo Network Colombian Peso Futures,CME Clearport ,  ,  ,V2 ,NYMEX
+Mexican Peso Futures,"CME Globex, Chicago Trading Floor ",6M,MP,MP ,CME
+Mexican Peso Options ,"CME Globex, Chicago Trading Floor",6M ,MP,MP ,CME
+New Zealand Dollar Futures,"CME Globex, Chicago Trading Floor ",6N,NE,NE ,CME
+New Zealand Dollar Options ,"CME Globex, Chicago Trading Floor",6N ,NE,NE ,CME
+Norweigan Krone Futures ,"CME Globex, Chicago Trading Floor ",NOK ,NOK ,UN ,CME
+NY ULSD (Platts) Swap Futures ,"CME ClearPort, Open Outcry (New York) ",  ,YS ,YS ,NYMEX
+Polish Zloty Futures,"CME Globex, Chicago Trading Floor ",PLN,PLZ,PZ ,CME
+Polish Zloty Options ,"CME Globex, Chicago Trading Floor",PLZ,PZ,PZ ,CME
+Russian Ruble Futures,"CME Globex, Chicago Trading Floor ",6R,RU,RU ,CME
+Russian Ruble Options ,"CME Globex, Chicago Trading Floor",6R ,RU,RU ,CME
+South African Rand Futures,"CME Globex, Chicago Trading Floor ",6Z ,RA,RA ,CME
+South African Rand Options ,"CME Globex, Chicago Trading Floor",6Z ,RA,RA ,CME
+Swedish Krona Futures,"CME Globex, Chicago Trading Floor ",SEK ,SEK ,SE ,CME
+Swiss Franc Futures,"CME Globex, Chicago Trading Floor ",6S,SF,E1,CME
+Swiss Franc Options ,"CME Globex, Chicago Trading Floor",6S ,CF/PF ,E1 ,CME
+Swiss Franc/Japanese Yen Futures,"CME Globex, Chicago Trading Floor ",SJY ,SJY ,SJ ,CME
+Turkish Lira USD Futures ,CME Globex ,TRY ,TRY ,TRY ,CME
+Turkish Lira Euro Futures ,CME Globex ,TRE ,TRE ,TRE ,CME
+,,,,,
+,,,,,
+Interest Rates,,,,,
+1-Month Eurodollar Futures,"CME Globex, Chicago Trading Floor ",GLB ,EM,EM ,CME
+1-Month Eurodollar Options ,"CME Globex, Chicago Trading Floor",GLB ,EM,EM ,CME
+10-Year U.S. Treasury Note Futures,"CME Globex, Chicago Trading Floor ",ZN,TY,21,CBOT
+10-Year U.S. Treasury Note Options ,"CME Globex, Chicago Trading Floor",OZN/OZNP ,TC/TP ,21,CBOT
+13-week T-Bill Futures,"CME Globex, Chicago Trading Floor ",GTB ,TB,T1,CME
+13-week T-Bill Options ,"CME Globex, Chicago Trading Floor",GTB ,PC/CQ ,T1 ,CME
+2-Year U.S. Treasury Note,"CME Globex, Chicago Trading Floor ",ZT,TU,26,CBOT
+2-Year U.S. Treasury Note ,"CME Globex, Chicago Trading Floor",OZT ,TUC/TUP ,26,CBOT
+30-Day Federal Funds Futures,"CME Globex, Chicago Trading Floor ",ZQ,FF,41,CBOT
+30-Day Federal Funds Options ,"CME Globex, Chicago Trading Floor",OZQ ,FFC/FFP ,41,CBOT
+30-Year U.S. Treasury Bond,"CME Globex, Chicago Trading Floor ",ZB,US,17,CBOT
+30-Year U.S. Treasury Bond ,"CME Globex, Chicago Trading Floor",OZB ,CG/PG ,17,CBOT
+5-Year U.S. Treasury Note Futures,"CME Globex, Chicago Trading Floor ",ZF,FV,25,CBOT
+5-Year U.S. Treasury Note Options ,"CME Globex, Chicago Trading Floor",OZF ,FL/FP ,25,CBOT
+CBOT 5-Year Interest Rate Swap Futures,"CME Globex, Chicago Trading Floor ",SA,NG,NG,CBOT
+CBOT 5-Year Interest Rate Swap Options ,"CME Globex, Chicago Trading Floor",OSA ,NGC/NGP ,NG ,CBOT
+CBOT 7-Year Interest Rate Swap Futures,"CME Globex, Chicago Trading Floor ",7I,,7I,CBOT
+CBOT 7-Year Interest Rate Swap Options ,"CME Globex, Chicago Trading Floor",7IO ,O7I ,7I ,CBOT
+CBOT 10-Year Interest Rate Swap Futures,"CME Globex, Chicago Trading Floor ",SR,NI,66,CBOT
+CBOT 10-Year Interest Rate Swap Options ,"CME Globex, Chicago Trading Floor",OSR ,NIC/NIP ,66,CBOT
+CBOT 30-Year Interest Rate Swap Futures,"CME Globex, Chicago Trading Floor ",I3,NZ,I3,CBOT
+CBOT 30-Year Interest Rate Swap Options ,"CME Globex, Chicago Trading Floor",OI3 ,ONZ ,I3 ,CBOT
+CME Lehman Brothers U.S. Aggregate Index Futures ,"CME Globex, Chicago Trading Floor ",  ,LBA ,LBA ,CME
+Eurodollar Futures,"CME Globex, Chicago Trading Floor ",GE ,ED,ED,CME
+Eurodollar Options ,"CME Globex, Chicago Trading Floor ",GE,CE/PE ,ED ,CME
+Eurodollar 5 Year E-mini Bundle ,"CME Globex, Chicago Trading Floor ",E5B ,E5B ,E5B ,CME
+Euroyen Futures,"CME Globex, Chicago Trading Floor ",EJ,EY,EY ,CME
+Euroyen Options ,"CME Globex, Chicago Trading Floor",EJ ,EY,EY ,CME
+Euroyen LIBOR ,"CME Globex, Chicago Trading Floor ",HC ,EL ,EL ,CME
+Eurozone HICP Futures ,"CME Globex, Chicago Trading Floor ",HC ,HC ,HC ,CME
+Mini-sized Eurodollar ,CME Globex ,YE ,  ,  ,CBOT
+Ultra T-Bond Futures,"CME Globex, Chicago Trading Floor ",UB,UL,UBE,CBOT
+Ultra T-Bond Options ,"CME Globex, Chicago Trading Floor",OUB ,OUL ,,CBOT
+US-UK 10-Year Sovys Futures ,CME Globex ,SKV ,  ,  ,CBOT
+US-Nd 10-Year Sovys Futures ,CME Globex ,SDV ,  ,  ,CBOT
+US-IT 10-Year Sovys Futures ,CME Globex ,STV ,  ,  ,CBOT
+US-FR 10-Year Sovys Futures ,CME Globex ,SFV ,  ,  ,CBOT
+US-DE 10-Year Sovys Futures ,CME Globex ,SEV ,  ,  ,CBOT
+UK-ND 10-Year Sovys Futures ,CME Globex ,KDV ,  ,  ,CBOT
+UK-IT 10-Year Sovys Futures ,CME Globex ,KTV ,  ,  ,CBOT
+UK-FR 10-Year Sovys Futures ,CME Globex ,KFV ,  ,  ,CBOT
+UK-DE 10-Year Sovys Futures ,CME Globex ,KEV ,  ,  ,CBOT
+DE-ND 10-Year Sovys Futures ,CME Globex ,DNV ,  ,  ,CBOT
+DE-IT 10-Year Sovys Futures ,CME Globex ,DTV ,  ,  ,CBOT
+DE-FR 10-Year Sovys Futures ,CME Globex ,DFV ,  ,  ,CBOT
+,,,,,
+,,,,,
+NYMEX and COMEX Metals,,,,,
+COMEX miNY Gold Futures ,CME Globex ,QO ,QO ,QO ,COMEX
+COMEX miNY Silver Futures ,CME Globex ,QI ,QI ,QI ,COMEX
+Copper Futures,"CME Globex, CME ClearPort Clearing, New York Trading Floor ",HG,HG,HG,COMEX
+Copper Options ,"CME Globex, CME ClearPort Clearing, New York Trading Floor",HX ,HX ,HX ,COMEX
+E-mini Silver Futures ,CME Globex ,6Q ,6Q ,6Q ,COMEX
+E-mini Copper Futures ,CME Globex ,QC ,QC ,QC ,COMEX
+Gold Futures ,"CME ClearPort, CME Globex, Open Outcry (New York) ",  ,GC ,GC ,NYMEX
+Gold Option ,"CME ClearPort, CME Globex, Open Outcry (New York) ",  ,OG ,OG ,NYMEX
+HRC Steel Futures ,"CME Globex, CME ClearPort Clearing ",HR ,HR ,HR ,NYMEX
+London Gold Forward ,CME ClearPort Clearing ,  ,  ,GB ,NYMEX
+Palladium Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,PA ,PA ,NYMEX
+Palladium Options ,"CME ClearPort, Open Outcry (New York) ",  ,PAO ,PAO ,NYMEX
+Platinum Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,PL ,PL ,NYMEX
+Platinum Options ,"CME ClearPort, Open Outcry (New York) ",  ,PO ,PO ,NYMEX
+Silver Futures,"CME Globex, CME ClearPort Clearing, New York Trading Floor ",SI,SI,SI,COMEX
+Silver Options ,"CME ClearPort Clearing, New York Trading Floor",SO ,SO ,SO ,COMEX
+Silver Futures ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,SI ,SI ,NYMEX
+Silver Option ,"CME Globex, CME ClearPort, Open Outcry (New York) ",  ,SO ,SO ,NYMEX
+Uranium Futures ,"CME Globex, New York Trading Floor ",UX ,UX ,UX ,NYMEX
+,,,,,
+,,,,,
+Real Estate,,,,,
+S&P/Case-Shiller HPI FuturesS&P/Case-Shiller HPI Options ,CME Globex ,  ,CUS ,  ,CME
+Boston ,CME Globex ,  ,BOS ,  ,CME
+Chicago ,CME Globex ,  ,CHI ,  ,CME
+Denver ,CME Globex ,  ,DEN ,  ,CME
+Las Vegas ,CME Globex ,  ,LAV ,  ,CME
+Los Angeles ,CME Globex ,  ,LAX ,  ,CME
+Miami ,CME Globex ,  ,MIA ,  ,CME
+New York ,CME Globex ,  ,NYM ,  ,CME
+San Diego ,CME Globex ,  ,SDG ,  ,CME
+San Francisco ,CME Globex ,  ,SFR ,  ,CME
+Washington DC,CME Globex ,  ,WDC ,  ,CME
+Desert Mountain West ,CME Globex ,  ,CED ,CED ,CME
+Mid Atlantic South ,CME Globex ,  ,CES ,CES ,CME
+Midwest ,CME Globex ,  ,CEM ,CEM ,CME
+Northwest ,CME Globex ,  ,CEN ,CEN ,CME
+Pacific West ,CME Globex ,  ,CEW ,CEW ,CME
+Apartments ,CME Globex ,  ,CEA ,CEA ,CME
+Office ,CME Globex ,  ,CEO ,CEO ,CME
+Retail ,CME Globex ,  ,CEL ,CEL ,CME
+Warehouse ,CME Globex ,  ,CEE ,CEE ,CME
+,,,,,
+,,,,,
+Weather,,,,,
+Asia-Pacific Monthly Weather Futures,CME Globex ,,,,
+Asia-Pacific Monthly Weather Options ,CME Globex,,,,
+Tokyo ,  ,  ,G6 ,  ,CME
+Osaka ,  ,  ,G7 ,  ,CME
+Hiroshima ,  ,  ,HJ ,  ,CME
+Asia-Pacific Seasonal Weather Futures,CME Globex ,,,,
+Asia-Pacific Seasonal Weather Options ,CME Globex,,,,
+Tokyo ,  ,  ,G6V/G6U ,  ,CME
+Osaka ,  ,  ,G7V/G7U ,  ,CME
+Hiroshima ,  ,  ,HJV/HJU ,  ,CME
+Canadian Monthly Weather Cooling Futures,CME Globex ,,,,
+Canadian Monthly Weather Cooling Options ,CME Globex,,,,
+Calgary ,  ,  ,V2 ,  ,CME
+Edmonton ,  ,  ,V4 ,  ,CME
+Montreal ,  ,  ,V5 ,  ,CME
+Toronto ,  ,  ,V1 ,  ,CME
+Vancouver ,  ,  ,V8 ,  ,CME
+Winnipeg ,  ,  ,V9 ,  ,CME
+Canadian Monthly Weather HDD Futures,CME Globex ,,,,
+Canadian Monthly Weather HDD Options ,CME Globex,,,,
+Calgary ,  ,  ,A2 ,  ,CME
+Edmonton ,  ,  ,A4 ,  ,CME
+Montreal ,  ,  ,A5 ,  ,CME
+Toronto ,  ,  ,A7 ,  ,CME
+Vancouver ,  ,  ,A8 ,  ,CME
+Winnipeg ,  ,  ,A9 ,  ,CME
+Canadian Monthly Weather CDD Futures,CME Globex ,,,,
+Canadian Monthly Weather CDD Options ,CME Globex,,,,
+Calgary ,  ,  ,P2 ,  ,CME
+Edmonton ,  ,  ,P4 ,  ,CME
+Montreal ,  ,  ,P5 ,  ,CME
+Toronto ,  ,  ,P7 ,  ,CME
+Vancouver ,  ,  ,P8 ,  ,CME
+Winnipeg ,  ,  ,P9 ,  ,CME
+Canadian Seasonal Strip Weather HDD Futures,CME Globex ,,,,
+Canadian Seasonal Strip Weather HDD Options ,CME Globex,,,,
+Calgary ,  ,  ,A2VX/A2VJ ,  ,CME
+Edmonton ,  ,  ,A4VX/A4VJ ,  ,CME
+Montreal ,  ,  ,A5VX/A5VJ ,  ,CME
+Toronto ,  ,  ,A7VX/A7VJ ,  ,CME
+Vancouver ,  ,  ,A8VX/A8VJ ,  ,CME
+Winnipeg ,  ,  ,A9VX/A9VJ ,  ,CME
+European Monthly Weather CAT Futures,CME Globex ,,,,
+European Monthly Weather CAT Options ,CME Globex,,,,
+London ,  ,  ,G0 ,  ,CME
+Paris ,  ,  ,G1 ,  ,CME
+Amsterdam ,  ,  ,G2 ,  ,CME
+Berlin ,  ,  ,G3 ,  ,CME
+Stockholm ,  ,  ,G5 ,  ,CME
+Essen ,  ,  ,G4 ,  ,CME
+Barcelona ,  ,  ,G8 ,  ,CME
+Rome ,  ,  ,G9 ,  ,CME
+Madrid ,  ,  ,GQ ,  ,CME
+Oslo-Blindern ,  ,  ,HL ,  ,CME
+Prague ,  ,  ,B7 ,  ,CME
+European Monthly Weather HDD Futures,CME Globex ,,,,
+European Monthly Weather HDD Options ,CME Globex,,,,
+London ,  ,  ,D0,,CME
+Paris ,  ,  ,D1 ,  ,CME
+Amsterdam ,  ,  ,D2 ,  ,CME
+Berlin ,  ,  ,D3 ,  ,CME
+Stockholm ,  ,  ,D5 ,  ,CME
+Barcelona ,  ,  ,D8 ,  ,CME
+Rome ,  ,  ,D9 ,  ,CME
+Madrid ,  ,  ,DQ ,  ,CME
+Oslo-Blindern ,  ,  ,D6 ,  ,CME
+Prague ,  ,  ,D7 ,  ,CME
+European Seasonal Strip Weather CAT Futures,CME Globex ,,,,
+European Seasonal Strip Weather CAT Options ,CME Globex,,,,
+London ,  ,  ,G0JK/G0JV ,  ,CME
+Paris ,  ,  ,G1JK/G1JV ,  ,CME
+Amsterdam ,  ,  ,G2JK/G2JV ,  ,CME
+Berlin ,  ,  ,G3JK/G3JV ,  ,CME
+Essen ,  ,  ,G4JK/G4JV ,  ,CME
+Stockholm ,  ,  ,G5JK/G5JV ,  ,CME
+Barcelona ,  ,  ,G8JK/G8JV ,  ,CME
+Rome ,  ,  ,G9JK/G9JV ,  ,CME
+Madrid ,  ,  ,GQJK/GQJV ,  ,CME
+Oslo-Blindern ,  ,  ,HLJK/HLJV ,  ,CME
+Prague ,  ,  ,B7JK/B7JV ,  ,CME
+European Seasonal Strip Weather HDD Futures,CME Globex ,,,,
+European Seasonal Strip Weather HDD Options ,CME Globex,,,,
+London ,  ,  ,D0VX/D0VJ ,  ,CME
+Paris ,  ,  ,D1VX/D1VJ ,  ,CME
+Amsterdam ,  ,  ,D2VX/D2VJ ,  ,CME
+Berlin ,  ,  ,D3VX/D3VJ ,  ,CME
+Essen ,  ,  ,D4VX/D4VJ ,  ,CME
+Stockholm ,  ,  ,D5VX/D5VJ ,  ,CME
+Barcelona ,  ,  ,D8VX/D8VJ ,  ,CME
+Rome ,  ,  ,D9VX/D9VJ ,  ,CME
+Madrid ,  ,  ,DQVX/DQVJ ,  ,CME
+Oslo-Blindern ,  ,  ,HLVX/HLVJ ,  ,CME
+Prague ,  ,  ,D7VX/D7VJ ,  ,CME
+Hurricane Seasonal Futures,CME Globex ,,Futures/Options/Binary ,,
+Hurricane Seasonal Options ,CME Globex,,Futures/Options/Binary ,,
+Gulf Coast ,  ,  ,HGA/OGA/BHG ,  ,CME
+Florida ,  ,  ,HFA/OFA/BHF ,  ,CME
+Southern Atlantic Coast ,  ,  ,HHA/OSA/BHS ,  ,CME
+Northern Atlantic Coast ,  ,  ,HNA/ONA/BHR ,  ,CME
+Eastern U.S. ,  ,  ,HXA/OXA/BHX ,  ,CME
+Cat-In-A-Box � Galveston-Mobile ,  ,  ,HPA/OPA/BHB ,  ,CME
+Florida Gold Coast ,  ,  ,-/-/BMF ,  ,CME
+Hurricane Seasonal Maximum Futures,CME Globex ,,Futures/Options/Binary ,,
+Hurricane Seasonal Maximum Options ,CME Globex,,Futures/Options/Binary ,,
+Gulf Coast ,  ,  ,HGM/OGM/MHG ,  ,CME
+Florida ,  ,  ,HFM/OFM/MHF ,  ,CME
+Southern Atlantic Coast ,  ,  ,HSM/OSM/MHS ,  ,CME
+Northern Atlantic Coast ,  ,  ,HNM/ONM/MHR ,  ,CME
+Eastern U.S. ,  ,  ,HXM/OXM/MHX ,  ,CME
+Cat-In-A-Box � Galveston-Mobile ,  ,  ,HPM/OPM/MHB ,  ,CME
+Florida Gold Coast ,  ,  ,-/-/MFM ,  ,CME
+Hurricane Second Event Seasonal Maximum Binary Options ,CME Globex,,,,
+Gulf Coast ,  ,  ,MG2 ,  ,CME
+Florida ,  ,  ,MF2 ,  ,CME
+Southern Atlantic Coast ,  ,  ,HM2 ,  ,CME
+Northern Atlantic Coast ,  ,  ,MR2 ,  ,CME
+Eastern U.S. ,  ,  ,MX2 ,  ,CME
+Cat-In-A-Box ,  ,  ,MB2 ,  ,CME
+Florida Gold Coast ,  ,  ,FM2 ,  ,CME
+Gulf Coast and Florida ,  ,  ,GF2 ,  ,CME
+"Hurricane Futures, Options and Binary Options ",CME Globex ,  ,  ,  , 
+Named Storms Beginning with the following letter: ,Cat-In-A-Box Galveston-Mobile ,  ,Eastern U.S. ,  , 
+Futures & Options ,Binary Option ,Futures & Options ,  ,Binary Option ,CME
+AHP1 ,P12 ,HX1 ,  ,X12 ,CME
+BHP2 ,P22 ,HX2 ,  ,X22 ,CME
+CHP3 ,P32 ,HX3 ,  ,X32 ,CME
+DHP4 ,P42 ,HX4 ,  ,X42 ,CME
+EHP5 ,P52 ,HX5 ,  ,X52 ,CME
+FHP6 ,P62 ,HX6 ,  ,X62 ,CME
+GHP7 ,P72 ,HX7 ,  ,X72 ,CME
+HHP8 ,P82 ,HX8 ,  ,X82 ,CME
+IHP9 ,P92 ,HX9 ,  ,X92 ,CME
+JHP0 ,P02 ,HX0 ,  ,X02 ,CME
+KHS1 ,S12 ,HG1 ,  ,G1B ,CME
+LHS2 ,S22 ,HG2 ,  ,G2B ,CME
+MHS3 ,S32 ,HG3 ,  ,G3B ,CME
+NHS4 ,S42 ,HG4 ,  ,G4B ,CME
+OHS5 ,S52 ,HG5 ,  ,G5B ,CME
+PHS6 ,S62 ,HG6 ,  ,G6B ,CME
+RHS7 ,S72 ,HG7 ,  ,G7B ,CME
+SHS8 ,S82 ,HG8 ,  ,G8B ,CME
+THS9 ,S92 ,HG9 ,  ,G9B ,CME
+VHS0 ,S02 ,HG0 ,  ,G0B ,CME
+WHN1 ,NH1 ,HF1 ,  ,F12 ,CME
+ALPHAHN2 ,NH2 ,HF2 ,  ,F22 ,CME
+BETAHN3 ,NH3 ,HF3 ,  ,F32 ,CME
+GAMMAHN4 ,NH4 ,HF4 ,  ,F42 ,CME
+DELTAHN5 ,NH5 ,HF5 ,  ,F52 ,CME
+EPSILONHN6 ,NH6 ,HF6 ,  ,F62 ,CME
+ZETAHN7 ,NH7 ,HF7 ,  ,F72 ,CME
+ETAHN8 ,NH8 ,HF8 ,  ,F82 ,CME
+THETAHN9 ,NH9 ,HF9 ,  ,F92 ,CME
+IOTAHN0 ,NH0 ,HF0 ,  ,F02 ,CME
+Monthly Frost Days ,CME Globex ,FZ ,  ,  ,CME
+Seasonal Frost Days ,CME Globex ,FZXH ,  ,  ,CME
+Monthly Snowfall Futures,,,,,
+Monthly Snowfall Options ,CME Globex,,,,
+Chicago Trading Floor ,  ,,Futures & Options ,Binary ,
+Boston ,  ,  ,SB ,BN ,CME
+New York Central Park ,  ,  ,SX ,YN ,CME
+Chicago ,  ,  ,SW ,CI ,CME
+Minneapolis ,  ,  ,BV ,FE ,CME
+Detroit ,  ,  ,EK ,DX ,CME
+New York LaGuardia ,  ,  ,FG ,NN ,CME
+Seasonal Strip Snowfall Futures,Chicago Trading Floor ,,,,
+Seasonal Strip Snowfall Options ,Chicago Trading Floor,,,,
+,  ,,Futures & Options ,Binary ,
+Boston ,  ,  ,SBX/SBH ,BNX/BNH ,CME
+New York Central Park ,  ,  ,SXX/SXH ,YNX/YNH ,CME
+Chicago ,  ,  ,SWX/SWH ,CIX/CIH ,CME
+Minneapolis ,  ,  ,BVX/BVH ,FEX/FEH ,CME
+Detroit ,  ,  ,EKX/EKH ,DXX/DXH ,CME
+New York LaGuardia ,  ,  ,FGX/FGH ,NNX/NNH ,CME
+US Monthly Weather CDD Futures,CME Globex,,,,
+US Monthly Weather CDD Options,CME Globex,,,,
+Atlanta ,  ,  ,K1 ,  ,CME
+Chicago ,  ,  ,K2 ,  ,CME
+Cincinnati ,  ,  ,K3 ,  ,CME
+New York ,  ,  ,K4 ,  ,CME
+Dallas ,  ,  ,K5 ,  ,CME
+Philadelphia ,  ,  ,K6 ,  ,CME
+Portland ,  ,  ,K7 ,  ,CME
+Tucson ,  ,  ,K8 ,  ,CME
+Des Moines ,  ,  ,K9 ,  ,CME
+Las Vegas ,  ,  ,K0 ,  ,CME
+Boston ,  ,  ,KW ,  ,CME
+Houston ,  ,  ,KR ,  ,CME
+Kansas City ,  ,  ,KX ,  ,CME
+Minneapolis ,  ,  ,KQ ,  ,CME
+Sacramento ,  ,  ,KS ,  ,CME
+Detroit ,  ,  ,KK ,  ,CME
+Baltimore ,  ,  ,KV ,  ,CME
+Salt Lake City ,  ,  ,KU ,  ,CME
+Colorado Springs ,  ,  ,A3 ,  ,CME
+Jacksonville ,  ,  ,A0 ,  ,CME
+Little Rock ,  ,  ,AT ,  ,CME
+Los Angeles ,  ,  ,AH ,  ,CME
+Raleigh Durham ,  ,  ,AK ,  ,CME
+Washington D.C. ,  ,  ,AU ,  ,CME
+US Monthly Weather HDD Futures,CME Globex ,,,,
+US Monthly Weather HDD Options ,CME Globex,,,,
+Atlanta ,  ,  ,H1 ,  ,CME
+Chicago ,  ,  ,H2 ,  ,CME
+Cincinnati ,  ,  ,H3 ,  ,CME
+New York ,  ,  ,H4 ,  ,CME
+Dallas ,  ,  ,H5 ,  ,CME
+Philadelphia ,  ,  ,H6 ,  ,CME
+Portland ,  ,  ,H7 ,  ,CME
+Tucscon ,  ,  ,H8 ,  ,CME
+Des Moines ,  ,  ,H9 ,  ,CME
+Las Vegas ,  ,  ,H0 ,  ,CME
+Boston ,  ,  ,HW ,  ,CME
+Houston ,  ,  ,HR ,  ,CME
+Kansas City ,  ,  ,HX ,  ,CME
+Minneapolis ,  ,  ,HQ ,  ,CME
+Sacramento ,  ,  ,HS ,  ,CME
+Detroit ,  ,  ,HK ,  ,CME
+Salt Lake City ,  ,  ,HA ,  ,CME
+Baltimore ,  ,  ,HV ,  ,CME
+Colorado Springs ,  ,  ,V3 ,  ,CME
+Jacksonville ,  ,  ,VF ,  ,CME
+Little Rock ,  ,  ,VG ,  ,CME
+Los Angeles ,  ,  ,VH ,  ,CME
+Raleigh Durham ,  ,  ,VK ,  ,CME
+Washington D.C. ,  ,  ,VU ,  ,CME
+US Seasonal Strip Weather CDD Futures,CME Globex ,,,,
+US Seasonal Strip Weather CDD Options ,CME Globex,,,,
+Atlanta ,  ,  ,K1JK/K1JV ,  ,CME
+Chicago ,  ,  ,K2JK/K2JV ,  ,CME
+Cincinnati ,  ,  ,K3JK/K3JV ,  ,CME
+New York ,  ,  ,K4JK/K4JV ,  ,CME
+Dallas ,  ,  ,K5JK/K5JV ,  ,CME
+Philadelphia ,  ,  ,K56JK/K6JV ,  ,CME
+Portland ,  ,  ,K7JK/K7JV ,  ,CME
+Tucson ,  ,  ,K8JK/K8JV ,  ,CME
+Des Moines ,  ,  ,K9JK/K9JV ,  ,CME
+Las Vegas ,  ,  ,K0JK/K0JV ,  ,CME
+Boston ,  ,  ,KWJK/KWJV ,  ,CME
+Houston ,  ,  ,KRJK/KRJV ,  ,CME
+Minneapolis ,  ,  ,KQJK/KQJV ,  ,CME
+Sacramento ,  ,  ,KSJK/KSJV ,  ,CME
+Salt Lake City ,  ,  ,KUJK/KUJV ,  ,CME
+Detroit ,  ,  ,KKJK/KKJV ,  ,CME
+Baltimore ,  ,  ,KVJK/KVJV ,  ,CME
+Kansas City ,  ,  ,KXJK/KXJV ,  ,CME
+Colorado Springs ,  ,  ,A3JK/A3JV ,  ,CME
+Jacksonville ,  ,  ,A0JK/A0JV ,  ,CME
+Little Rock ,  ,  ,ATJK/ATJV ,  ,CME
+Los Angeles ,  ,  ,AHJK/AHJV ,  ,CME
+Raleigh Durham ,  ,  ,AKJK/AKJV ,  ,CME
+Washington D.C. ,  ,  ,AUJK/AUJV ,  ,CME
+US Seasonal Strip Weather HDD Futures,CME Globex ,,,,
+US Seasonal Strip Weather HDD Options ,CME Globex,,,,
+Atlanta ,  ,  ,H1VX/H1VJ ,  ,CME
+Chicago ,  ,  ,H2VX/H2VJ ,  ,CME
+Cincinnati ,  ,  ,H3VX/H3VJ ,  ,CME
+New York ,  ,  ,H4VX/H4VJ ,  ,CME
+Dallas ,  ,  ,H5VX/H5VJ ,  ,CME
+Philadelphia ,  ,  ,H6VX/H6VJ ,  ,CME
+Portland ,  ,  ,H7VX/H7VJ ,  ,CME
+Tucson ,  ,  ,H8VX/H8VJ ,  ,CME
+Des Moines ,  ,  ,H9VX/H9VJ ,  ,CME
+Las Vegas ,  ,  ,H0VX/H0VJ ,  ,CME
+Detroit ,  ,  ,HKVX/HKVJ ,  ,CME
+Minneapolis ,  ,  ,HQVX/HQVJ ,  ,CME
+Houston ,  ,  ,HRVX/HRVJ ,  ,CME
+Sacramento ,  ,  ,HSVX/HSVJ ,  ,CME
+Salt Lake City ,  ,  ,HAVX/HAVJ ,  ,CME
+Baltimore ,  ,  ,HVVX/HVVJ ,  ,CME
+Boston ,  ,  ,HWVX/HHVJ ,  ,CME
+Kansas City ,  ,  ,HXVX/HXVJ ,  ,CME
+Colorado Springs ,  ,  ,V3VX/V3VJ ,  ,CME
+Jacksonville ,  ,  ,VFVX/VFVJ ,  ,CME
+Little Rock ,  ,  ,VGVX/VGVJ ,  ,CME
+Los Angeles ,  ,  ,VHVX/VHVJ ,  ,CME
+Raleigh Durham ,  ,  ,VKVX/VKVJ ,  ,CME
+Washington D.C. ,  ,  ,VUVX/VUVJ ,  ,CME
+Canadian Seasonal Strip Weather Cooling Futures,CME Globex ,,,,
+Canadian Seasonal Strip Weather Cooling Options ,CME Globex,,,,
+Calgary ,  ,  ,V2JK/V2JV ,  ,CME
+Edmonton ,  ,  ,V4JK/V4JV ,  ,CME
+Montreal ,  ,  ,V5JK/V5JV ,  ,CME
+Toronto ,  ,  ,V1JK/V1JV ,  ,CME
+Vancouver ,  ,  ,V8JK/P8JV ,  ,CME
+Winnipeg ,  ,  ,V9JK/P9JV ,  ,CME
+Canadian Seasonal Strip Weather CDD Futures,CME Globex ,,,,
+Canadian Seasonal Strip Weather CDD Options ,CME Globex,,,,
+Calgary ,  ,  ,P2JK/P2JV ,  ,CME
+Edmonton ,  ,  ,P4JK/P4JV ,  ,CME
+Montreal ,  ,  ,P5JK/P5JV ,  ,CME
+Toronto ,  ,  ,P7JK/P7JV ,  ,CME
+Vancouver ,  ,  ,P8JK/P8JV ,  ,CME
+Winnipeg ,  ,  ,P9JK/9JV ,  ,CME
+US Weekly Average Temperature Futures,CME Globex ,,,,
+US Weekly Average Temperature Options ,CME Globex,,,,
+Atlanta ,  ,  ,H11-H15 ,  ,CME
+Chicago ,  ,  ,H21-H25 ,  ,CME
+Cincinnati ,  ,  ,H31-H35 ,  ,CME
+New York ,  ,  ,H41-H45 ,  ,CME
+Dallas ,  ,  ,H51-H55 ,  ,CME
+Philadelphia ,  ,  ,H61-H65 ,  ,CME
+Portland ,  ,  ,H71-H75 ,  ,CME
+Tucson ,  ,  ,H81-H85 ,  ,CME
+Des Moines ,  ,  ,H91-H95 ,  ,CME
+Las Vegas ,  ,  ,H01-H05 ,  ,CME
+Detroit ,  ,  ,HK1-HK5 ,  ,CME
+Minneapolis ,  ,  ,HQ1-HQ5 ,  ,CME
+Houston ,  ,  ,HR1-HR5 ,  ,CME
+Sacramento ,  ,  ,KS1-KS5 ,  ,CME
+Salt Lake City ,  ,  ,HA1-HA5 ,  ,CME
+Baltimore ,  ,  ,HV1-HV5 ,  ,CME
+Boston ,  ,  ,HW1-HW5 ,  ,CME
+Kansas City ,  ,  ,KX1-KX5 ,  ,CME
+Colorado Springs ,  ,  ,V31-V35 ,  ,CME
+Jacksonville ,  ,  ,VF1-VF5 ,  ,CME
+Little Rock ,  ,  ,VG1-VG5 ,  ,CME
+Los Angeles ,  ,  ,VH1-VH5 ,  ,CME
+Raleigh Durham ,  ,  ,VK1-VK5 ,  ,CME
+Washington D.C. ,  ,  ,VU1-VU5 ,  ,CME
+Australian Monthly Weather HDD Futures,CME Globex ,,,,
+Australian Monthly Weather HDD Options ,CME Globex,,,,
+"Bankstown, Sydney ",  ,  ,2F ,  ,CME
+Brisbane Aero ,  ,  ,3F ,  ,CME
+Melbourne Regional Office ,  ,  ,4F ,  ,CME
+Australian Monthly Weather CDD Futures,CME Globex ,,,,
+Australian Monthly Weather CDD Options ,CME Globex,,,,
+"Bankstown, Sydney ",  ,  ,6T ,  ,CME
+Brisbane Aero ,  ,  ,7T ,  ,CME
+Melbourne Regional Office ,  ,  ,8T ,  ,CME
