@@ -18,10 +18,9 @@ __email__ = "todd@bicycletrading.com"
 def isholiday(date):
     """Returns True if date in holidays file, False otherwise."""
     # Set holidays_list_path.
-    holidays_list_path = os.path.join(os.getenv('BICYCLE_HOME'),
-                                      'share/dates')
+    path = os.path.join(os.getenv('BICYCLE_HOME'), 'share/dates')
     # Read holidays list from file.
-    holidays = read_file(holidays_list_path, 'holidays.list')
+    holidays = read_file(path, 'holidays.list')
     # Compare date to holidays, return True or False.
     if date.strftime('%Y-%m-%d') in holidays:
         return True
@@ -30,7 +29,7 @@ def isholiday(date):
 
 
 def read_file(path, name):
-    """Return list of strings without newlines."""
+    """Read from file and return a list of strings without newlines."""
     if not os.path.isdir(path):
         print("Directory {0} does not exist.".format(path))
         sys.exit()
@@ -50,7 +49,7 @@ def write_tks(year,
               symbol,
               infile,
               path):
-    """Write ticks to files."""
+    """Write ticks to files with .tks suffix."""
     # Number of days in month of designated year.
     days = calendar.monthrange(year, month)[1]
     for day in range(1, days + 1):
@@ -74,12 +73,12 @@ def write_tks(year,
                 sys.exit()
             # Iterate through infile.
             for i in range(len(infile)):
-                # Set timestamp from infile in UTC.
+                # Set timestamp in UTC from field 0 of infile.
                 timestamp = datetime.datetime.utcfromtimestamp(
                     float(infile[i].split()[0]))
                 # Write data to outfile if timestamp and date match.
                 if timestamp.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d'):
-                    # Append newline to each line.
+                    # Append newline to each line before writing to file.
                     outfile.write(infile[i] + '\n')
             outfile.close()
     return
@@ -91,34 +90,36 @@ def main():
     appropriate directories therein.
 
     """
-    months = [i for i in range(1, 13)]
-    year = 2010
+    # Set month numbers and year.
+    months = [i for i in range(9, 13)]
+    year = 2009
 
-    # Set local_symbols_list_path.
-    local_symbols_list_path = os.path.join(os.getenv('BICYCLE_HOME'),
-                                           'etc/conf.d/asset-classes',
-                                           'fx/data-sources/ib',
-                                           'local-exchanges/idealpro')
-    # Read local_symbols_list from file.
-    local_symbols_list = read_file(local_symbols_list_path, 'symbols.txt')
+    # Set path for symbols list.
+    path = os.path.join(os.getenv('BICYCLE_HOME'),
+                        'etc/conf.d/asset-classes',
+                        'fx/data-sources/ib',
+                        'local-exchanges/idealpro')
 
-    # Loop over symbols in local_symbols_list.
-    for local_symbol in local_symbols_list:
+    # Read symbols list from file.
+    symbols = read_file(path, 'symbols.txt')
+
+    # Loop over symbols.
+    for symbol in symbols:
         # Set path for writing tick files.
-        tks_outfile_path = os.path.join(os.getenv('TICKS_HOME'),
-                                        'fx',
-                                        'ib',
-                                        'idealpro',
-                                        local_symbol)
+        path = os.path.join(os.getenv('TICKS_HOME'),
+                            'fx',
+                            'ib',
+                            'idealpro',
+                            symbol)
         # Read ticks from file.
-        tks_infile = read_file('/tmp/fx', local_symbol + '.tks')
+        infile = read_file('/tmp/fx', symbol + '.tks')
         for month in months:
             # Write tick data to files.
             write_tks(year,
                       month,
-                      local_symbol,
-                      tks_infile,
-                      tks_outfile_path)
+                      symbol,
+                      infile,
+                      path)
 
 if __name__ == '__main__':
     main()
