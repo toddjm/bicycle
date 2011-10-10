@@ -76,7 +76,7 @@ def write_tks(year,
                 # Set timestamp in UTC from field 0 of infile.
                 timestamp = datetime.datetime.utcfromtimestamp(
                     float(infile[i].split()[0]))
-                # Write data to outfile if timestamp and date match.
+                # Write to outfile if year, month, and day match.
                 if timestamp.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d'):
                     # Append newline to each line before writing to file.
                     outfile.write(infile[i] + '\n')
@@ -91,8 +91,8 @@ def main():
 
     """
     # Set month numbers and year.
-    months = [i for i in range(9, 13)]
-    year = 2009
+    months = [i for i in range(1, 8)]
+    year = 2011
 
     # Set path for symbols list.
     path = os.path.join(os.getenv('BICYCLE_HOME'),

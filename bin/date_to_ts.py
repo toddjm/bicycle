@@ -13,20 +13,19 @@ import time
 
 __author__ = "Todd Minehardt"
 __copyright__ = "Copyright 2011, bicycle trading, llc"
-__maintainer__ = "Todd Minehardt"
 __email__ = "todd@bicycletrading.com"
 
 
-def date_to_ts(date_str):
+def date_to_ts(date):
     """Return UNIX timestamp from UTC timestamp."""
     return float(calendar.timegm(
-        time.strptime(date_str, '%Y-%m-%d %H:%M:%S')))
+        time.strptime(date, '%Y-%m-%d %H:%M:%S')))
 
 
 def main():
     """Read old-type files and write new-type to stdout."""
-    with open(sys.argv[1], 'r') as data:
-        for line in data:
+    with open(sys.argv[1], 'r') as infile:
+        for line in infile:
             timestamp = date_to_ts(line.split()[0] + ' ' + line.split()[1])
             open_price = line.split()[2]
             high_price = line.split()[3]
