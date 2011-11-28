@@ -23,6 +23,7 @@ mysqldump \
 --force \
 --ignore-table="$asset_class"_15sec.collect \
 --ignore-table="$asset_class"_15sec.collect_IB_errors \
+--where="date(ts) > '2011-09-26'" \
 "$asset_class"_15sec
 
 cd $outdir
