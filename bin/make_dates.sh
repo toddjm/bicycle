@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright bicycle trading, llc.
+# Copyright 2011 bicycle trading, llc.
 
 if [[ $# != 3 ]]
 then

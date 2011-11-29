@@ -56,16 +56,16 @@ do
 done
 
 # copy files to destination directories
-for i in $years
-do
-    for j in $months
-    do
-        destination="./$symbol/$i/$j"
-        file="$srcdir$symbol$i$j.tks"
-        if [[ -f $file && -d $destination ]]
-        then
-            echo "Copying $file to $destination"
-            cp $file $destination
-        fi
-    done
-done
+#for i in $years
+#do
+#    for j in $months
+#    do
+#        destination="./$symbol/$i/$j"
+#        file="$srcdir$symbol$i$j.tks"
+#        if [[ -f $file && -d $destination ]]
+#        then
+#            echo "Copying $file to $destination"
+#            cp $file $destination
+#        fi
+#    done
+#done
