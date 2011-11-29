@@ -3,8 +3,8 @@
 
 if [[ $# != 2 ]]
 then
-    echo "Usage: $0 start_date end_date"
-    exit
+  echo "Usage: $0 start_date end_date"
+  exit
 fi
 
 IFS=$'\n'
@@ -13,17 +13,17 @@ current_date=`date +"%Y%m%d" -d "$1"`
 end_date=`date +"%Y%m%d" -d "$2"`
 
 # make sure we are in the futures directory
-if [[ `basename $PWD` != futures ]]
+if [[ `echo $PWD` != /home/bicycle/bicycleticks/futures/ib ]]
 then
-    echo "Not in correct directory. Exiting..."
-    exit
+  echo "Not in correct directory. Exiting..."
+  exit
 fi
 
 # make sure the source directory exists
 if [[ ! -d $srcdir ]]
 then
-    echo "$srcdir not found. Exiting..."
-    exit
+  echo "$srcdir not found. Exiting..."
+  exit
 fi
 
 symbols_exchanges_list="$BICYCLE_HOME/etc/conf.d/asset-classes/futures/data-sources/ib/symbols_exchanges.txt"
@@ -38,25 +38,25 @@ holidays_list_path="$BICYCLE_HOME/share/dates"
 
 if [[ ! -d $holidays_list_path ]]
 then
-    echo "$holidays_list_path not found"
-    exit
+  echo "$holidays_list_path not found"
+  exit
 fi
 
 holidays_list="$holidays_list_path/holidays.txt"
 
 if [[ ! -e $holidays_list ]]
 then
-    echo "$holidays_list not found"
-    exit
+  echo "$holidays_list not found"
+  exit
 fi
 
-# list futures symbols and expiries.
-for line in `cat $symbols_exchanges_list`
+# make directories.
+while [[ $current_date != $end_date ]]
 do
-  symbol=`echo $line | cut -d ' ' -f1`
-  exchange=`echo $line | cut -d ' ' -f2`
-  while [[ $current_date != $end_date ]]
+  for line in `cat $symbols_exchanges_list`
   do
+    symbol=`echo $line | cut -d ' ' -f1`
+    exchange=`echo $line | cut -d ' ' -f2`
     day_of_week=`date -d "$current_date" +%A`
     if [[ $day_of_week != Saturday ]] && \
       [[ $day_of_week != Sunday ]] && \
@@ -73,6 +73,7 @@ do
         echo "$dir_string exists, skipping..."
       fi
     fi
-  current_date=`date +"%Y%m%d" -d "$current_date + 1 day"`
   done
-done 
+  current_date=`date +"%Y%m%d" -d "$current_date + 1 day"`
+done
+
