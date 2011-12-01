@@ -91,8 +91,8 @@ def main():
 
     """
     # Set month numbers and year.
-    months = [i for i in range(9, 12)]
-    year = 2011
+    months = [i for i in range(9, 13)]
+    year = 2009
 
     # Set path for symbols list.
     path = os.path.join(os.getenv('BICYCLE_HOME'),
