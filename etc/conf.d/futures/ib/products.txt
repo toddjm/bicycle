@@ -1,0 +1,211 @@
+16E	16E	USD	globex
+36E	36E	USD	globex
+6Q	XSN	USD	nymex
+7I	7I	USD	ecbot
+AC	EH	USD	ecbot	FGHJKMNQUVXZ
+ACD	ACD	CAD	globex	HMUZ
+AIGCI	AW	USD	ecbot
+AJY	AJY	JPY	globex	HMUZ
+AUD	6A	USD	globex	HMUZ
+BB	BB	USD	nymex
+BOS	BOS	USD	globex
+BQX	BIO	USD	globex
+BRE	6L	USD	globex	HMUZ
+BTP	FBTP	EUR	dtb	HMUZ
+BTS	FBTS	EUR	dtb	HMUZ
+BZ	BZ	USD	nymex	FGHJKMNQUVXZ
+CAD	6C	USD	globex	HMUZ
+CB	CB	USD	globex
+CC	CC	USD	nybot
+CC	CJ	USD	nymex
+CHF	6S	USD	globex	HMUZ
+CHI	CHI	USD	globex
+CI	CI	USD	nybot
+CJY	CJY	JPY	globex	HMUZ
+CL	CL	USD	nymex	FGHJKMNQUVXZ
+COIL	COIL	USD	ipe	FGHJKMNQUVXZ
+CRY	CR	USD	nybot
+CT	CT	USD	nybot
+CT	TT	USD	nymex
+CUS	CUS	USD	globex
+CZK	CZK	USD	globex
+DA	DC	USD	globex	FGHJKMNQUVXZ
+DAX	FDAX	EUR	dtb	HMUZ
+DD	DD	USD	ecbot
+DEN	DEN	USD	globex
+DX	DX	USD	nybot	HMUZ
+DY	DY	USD	globex
+E7	E7	USD	globex	HMUZ
+EAD	EAD	AUD	globex	HMUZ
+ECD	ECD	CAD	globex	HMUZ
+ECK	ECK	EUR	globex	HMUZ
+ED	ED	USD	liffe
+EED	EED	USD	globex
+EHF	EHF	EUR	globex
+EM	GLB	USD	globex
+EMD	EMD	USD	globex	HMUZ
+EPZ	EPZ	EUR	globex
+ES	ES	USD	globex	HMUZ
+ESTX50	FESX	EUR	dtb	HMUZ
+EUR	6E	USD	globex	HMUZ
+F1DV	XZ	GBP	liffe
+G	G	GBP	liffe
+GBL	FGBL	EUR	dtb	HMUZ
+GBM	FGBM	EUR	dtb	HMUZ
+GBP	6B	USD	globex	HMUZ
+GBS	FGBS	EUR	dtb	HMUZ
+GBX	FGBX	EUR	dtb	HMUZ
+GC	GC	USD	nymex
+GDK	GDK	USD	globex
+GE	GE	USD	globex	FGHJKMNQUVXZ
+GF	GF	USD	globex
+GOIL	GOIL	USD	ipe	FGHJKMNQUVXZ
+GSCI	GD	USD	globex
+GTB	GTB	USD	globex
+GVXX	GVF	USD	nymex
+GVZ	GV	USD	cfe
+H	H	GBP	liffe
+HE	HE	USD	globex
+HG	HG	USD	nymex
+HO	HO	USD	nymex
+HOIL	HOIL	USD	ipe
+HRC	HRC	USD	nymex
+HUF	HUF	USD	globex
+I	I	EUR	liffe
+I3	I3	USD	ecbot
+ILS	ILS	USD	globex	HMUZ
+INDU	ZD	USD	ecbot
+IXB	XAB	USD	globex
+IXE	XAE	USD	globex
+IXI	XAI	USD	globex
+IXM	XAF	USD	globex
+IXR	XAP	USD	globex
+IXT	XAK	USD	globex
+IXU	XAU	USD	globex
+IXV	XAV	USD	globex
+IXY	XAY	USD	globex
+J7	J7	USD	globex	HMUZ
+JPY	6J	USD	globex	HMUZ
+KC	KC	USD	nybot
+KC	KT	USD	nymex
+KRW	KRW	USD	globex	HMUZ
+L	L	GBP	liffe
+LAV	LAV	USD	globex
+LAX	LAX	USD	globex
+LB	LBS	USD	globex
+LE	LE	USD	globex
+M6A	M6A	USD	globex	HMUZ
+M6B	M6B	USD	globex	HMUZ
+M6C	M6C	CAD	globex	HMUZ
+M6E	M6E	USD	globex	HMUZ
+M6J	M6J	JPY	globex	HMUZ
+M6S	M6S	CHF	globex	HMUZ
+MCD	MCD	USD	globex	HMUZ
+MDAX	F2MX	EUR	dtb	HMUZ
+MGC	MGC	USD	nymex
+MIA	MIA	USD	globex
+MID	MD	USD	globex
+MJY	MJY	USD	globex	HMUZ
+MNCA	MNF	USD	globex
+MNEA	EMF	USD	globex
+MSF	MSF	USD	globex	HMUZ
+MXEA	MFS	USD	nyseliffe
+MXEF	MME	USD	nyseliffe
+MXP	6M	USD	globex	HMUZ
+MXUS	MUN	USD	nyseliffe
+NDX	ND	USD	globex
+NG	NG	USD	nymex	FGHJKMNQUVXZ
+NGF	NGF	GBP	ipe
+NIY	NIY	JPY	globex	HMUZ
+NKD	NKD	USD	globex	HMUZ
+NOK	NOK	USD	globex	HMUZ
+NQ	NQ	USD	globex	HMUZ
+NYM	NYM	USD	globex
+NZD	6N	USD	globex	HMUZ
+O	O	EUR	liffe
+OJ	OJ	USD	nybot
+P	P	EUR	liffe
+PA	PA	USD	nymex
+PJY	PJY	JPY	globex	HMUZ
+PL	PL	USD	nymex
+PLN	PLN	USD	globex	HMUZ
+PSF	PSF	CHF	globex
+Q	Q	EUR	liffe
+QC	QC	USD	nymex
+QG	QG	USD	nymex	FGHJKMNQUVXZ
+QH	QH	USD	nymex
+QI	QI	USD	nymex
+QM	QM	USD	nymex	FGHJKMNQUVXZ
+QO	QO	USD	nymex
+QU	QU	USD	nymex
+R	R	GBP	liffe	HMUZ
+RB	RB	USD	nymex
+RBOB	RBOB	USD	ipe
+RF	RF	CHF	globex	HMUZ
+RLG	RG	USD	nybot
+RLV	RV	USD	nybot
+RMB	RMB	USD	globex	HMUZ
+RME	RME	EUR	globex	HMUZ
+RMY	RMY	JPY	globex	HMUZ
+RP	RP	GBP	globex	HMUZ
+RUR	6R	USD	globex	HMUZ
+RY	RY	JPY	globex	HMUZ
+RYO	RF	USD	nybot
+S	S	CHF	liffe
+SA	SA	USD	ecbot
+SB	SB	USD	nybot
+SB	YO	USD	nymex
+SDG	SDG	USD	globex
+SEK	SEK	USD	globex	HMUZ
+SEY	EJ	JPY	globex	HMUZ
+SF	SF	USD	nybot
+SFR	SFR	USD	globex
+SGX	SG	USD	globex
+SI	SI	USD	nymex
+SJY	SJY	JPY	globex
+SMC	SMC	USD	globex
+SML	SMP	USD	globex
+SPX	SP	USD	globex
+SR	SR	USD	ecbot
+STX	FSTX	EUR	dtb	HMUZ
+SVX	SU	USD	globex
+T2	T2	USD	ecbot
+T5	T5	USD	ecbot
+TDX	FTDX	EUR	dtb	HMUZ
+TF	TF	USD	nybot	HMUZ
+TN	TN	USD	ecbot
+TWS	TWS	EUR	liffe
+UB	UB	USD	ecbot	HMUZ
+USO	USO	USD	liffe
+USP	USP	USD	liffe
+USW	USW	USD	liffe
+UX	UX	USD	nymex
+VIX	VX	USD	cfe	FGHJKMNQUVXZ
+VM	VM	USD	cfe
+VT	VT	USD	cfe
+WDC	WDC	USD	globex
+WTI	WTI	USD	ipe	FGHJKMNQUVXZ
+Y	Y	GBP	liffe
+YC	XC	USD	ecbot	HKNUZ
+YG	YG	USD	nyseliffe
+YI	YI	USD	nyseliffe
+YK	XK	USD	ecbot	FHKNQUX
+YM	YM	USD	ecbot	HMUZ
+YW	XW	USD	ecbot	HKNUZ
+Z	Z	GBP	liffe
+Z3N	Z3N	USD	ecbot
+ZAR	6Z	USD	globex	HMUZ
+ZB	ZB	USD	ecbot	HMUZ
+ZC	ZC	USD	ecbot	HKNUZ
+ZF	ZF	USD	ecbot	HMUZ
+ZG	ZG	USD	nyseliffe
+ZI	ZI	USD	nyseliffe
+ZL	ZL	USD	ecbot	FHKNQUVZ
+ZM	ZM	USD	ecbot	FHKNQUVZ
+ZN	ZN	USD	ecbot	HMUZ
+ZO	ZO	USD	ecbot	HKNUZ
+ZQ	ZQ	USD	ecbot	FGHJKMNQUVXZ
+ZR	ZR	USD	ecbot	FHKNUX
+ZS	ZS	USD	ecbot	FHKNQUX
+ZT	ZT	USD	ecbot	HMUZ
+ZW	ZW	USD	ecbot	HKNUZ
