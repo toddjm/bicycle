@@ -3,7 +3,7 @@
 
 # merge files with .tks and .tks_1 extensions
 
-srcdir=/tmp/futures
+srcdir=/home/bicycle/tmp/futures
 
 if [[ ! -d $srcdir ]]
 then

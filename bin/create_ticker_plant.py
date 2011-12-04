@@ -161,19 +161,19 @@ def main():
             expiry = []
             # Read expiry file for each symbol for futures.
             if group == 'futures':
-                expiry = read_file(os.path.join('/tmp', group),
+                expiry = read_file(os.path.join('/home/bicycle/tmp', group),
                                                 symbol +
                                                 '.expiry')
                 # Loop over expiry entries for each symbol.
                 for contract in expiry:
                     # Read ticks from file if non-zero size.
                     if os.stat(os.path.join(
-                                            '/tmp',
+                                            '/home/bicycle/tmp',
                                             group,
                                             symbol +
                                             contract +
                                             '.tks')).st_size != 0:
-                        data = read_file(os.path.join('/tmp', group),
+                        data = read_file(os.path.join('/home/bicycle/tmp', group),
                                                       symbol +
                                                       contract +
                                                       '.tks')
@@ -185,6 +185,8 @@ def main():
                                             symbol,
                                             contract)
                         # Write tick data to files.
+                        print 'Writing ticks for symbol {0}' \
+                              '  contract {1}'.format(symbol, contract)
                         write_ticks(start,
                                     end,
                                     symbol,
@@ -193,11 +195,11 @@ def main():
             else:
                 # Read ticks from file if non-zero size.
                 if os.stat(os.path.join(
-                                        '/tmp',
+                                        '/home/bicycle/tmp',
                                         group,
                                         symbol +
                                         '.tks')).st_size != 0:
-                    data = read_file(os.path.join('/tmp', group),
+                    data = read_file(os.path.join('/home/bicycle/tmp', group),
                                                   symbol +
                                                   '.tks')
                     # Set path for writing tick files.
