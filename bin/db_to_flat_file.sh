@@ -2,7 +2,7 @@
 # Copyright 2011 bicycle trading, llc.
 
 asset_class=$1
-outdir="/tmp/$asset_class"
+outdir="$HOME/tmp/$asset_class"
 
 if [[ $# != 1 ]]
 then

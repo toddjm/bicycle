@@ -58,6 +58,7 @@ def write_ticks(start,
                 data,
                 path):
     """Write ticks to files with .tks suffix."""
+    # Adjust start and end based on data start/end.
     first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
     last = datetime.datetime.utcfromtimestamp(float(data[-1].split()[0]))
     if first > start:
@@ -77,9 +78,11 @@ def write_ticks(start,
             # If directory does not exist, create it and parents.
             if not os.path.isdir(outdir):
                 os.makedirs(outdir, 0755)
-            # Open outfile in append mode.
+            # Set name of output .tks file.
+            tksfile = os.path.join(outdir, symbol + '.tks')
+            # Create outfile in append mode.
             try:
-                outfile = open(os.path.join(outdir, symbol + '.tks'), 'a')
+                outfile = open(tksfile, 'a')
             except IOError:
                 print("File {0} cannot be created.".format(outfile))
                 sys.exit()
@@ -163,41 +166,52 @@ def main():
                                                 '.expiry')
                 # Loop over expiry entries for each symbol.
                 for contract in expiry:
-                    # Read ticks from file.
+                    # Read ticks from file if non-zero size.
+                    if os.stat(os.path.join(
+                                            '/tmp',
+                                            group,
+                                            symbol +
+                                            contract +
+                                            '.tks')).st_size != 0:
+                        data = read_file(os.path.join('/tmp', group),
+                                                      symbol +
+                                                      contract +
+                                                      '.tks')
+                        # Set path for writing tick files.
+                        path = os.path.join(os.getenv('TICKS_HOME'),
+                                            group,
+                                            source,
+                                            exchange,
+                                            symbol,
+                                            contract)
+                        # Write tick data to files.
+                        write_ticks(start,
+                                    end,
+                                    symbol,
+                                    data,
+                                    path)
+            else:
+                # Read ticks from file if non-zero size.
+                if os.stat(os.path.join(
+                                        '/tmp',
+                                        group,
+                                        symbol +
+                                        '.tks')).st_size != 0:
                     data = read_file(os.path.join('/tmp', group),
                                                   symbol +
-                                                  contract +
                                                   '.tks')
                     # Set path for writing tick files.
                     path = os.path.join(os.getenv('TICKS_HOME'),
                                         group,
                                         source,
                                         exchange,
-                                        symbol,
-                                        contract)
+                                        symbol)
                     # Write tick data to files.
                     write_ticks(start,
                                 end,
                                 symbol,
                                 data,
                                 path)
-            else:
-                # Read ticks from file.
-                data = read_file(os.path.join('/tmp', group),
-                                              symbol +
-                                              '.tks')
-                # Set path for writing tick files.
-                path = os.path.join(os.getenv('TICKS_HOME'),
-                                    group,
-                                    source,
-                                    exchange,
-                                    symbol)
-                # Write tick data to files.
-                write_ticks(start,
-                            end,
-                            symbol,
-                            data,
-                            path)
 
 
 if __name__ == '__main__':
