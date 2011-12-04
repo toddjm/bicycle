@@ -5,7 +5,8 @@ the appropriate directory.
 
 """
 
-import calendar
+import argparse
+import configobj
 import datetime
 import os
 import sys
@@ -13,19 +14,6 @@ import sys
 __author__ = "Todd Minehardt"
 __copyright__ = "Copyright 2011, bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
-
-
-def isholiday(date):
-    """Returns True if date in holidays file, False otherwise."""
-    # Set holidays_list_path.
-    path = os.path.join(os.getenv('BICYCLE_HOME'), 'share/dates')
-    # Read holidays list from file.
-    holidays = read_file(path, 'holidays.list')
-    # Compare date to holidays, return True or False.
-    if date.strftime('%Y-%m-%d') in holidays:
-        return True
-    else:
-        return False
 
 
 def read_file(path, name):
@@ -44,43 +32,71 @@ def read_file(path, name):
     return values
 
 
-def write_tks(year,
-              month,
-              symbol,
-              infile,
-              path):
+# Read holidays list from file.
+HOLIDAYS = []
+HOLIDAYS = read_file(os.path.join(
+                                  os.getenv('BICYCLE_HOME'),
+                                  'share/dates'),
+                                  'holidays.list')
+
+
+def check_date(date):
+    """
+    Returns True if date is not a Saturday or Sunday or
+    holiday, False otherwise.
+    """
+    # Ensure that date is not a Saturday, Sunday, or holiday.
+    if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
+        return True
+    else:
+        return False
+
+
+def write_ticks(start,
+                end,
+                symbol,
+                data,
+                path):
     """Write ticks to files with .tks suffix."""
-    # Number of days in month of designated year.
-    days = calendar.monthrange(year, month)[1]
-    for day in range(1, days + 1):
-        # Set date in UTC.
-        date = datetime.date(year, month, day)
-        # Ensure that date is not a Saturday, Sunday, or holiday.
-        if (date.weekday() < 5) and not isholiday(date):
+    # Adjust start and end based on data start/end.
+    first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
+    last = datetime.datetime.utcfromtimestamp(float(data[-1].split()[0]))
+    if first > start:
+        date = first
+    else:
+        date = start
+    if last < end:
+        end = last
+    while date <= end:
+        # Make sure date is not on a weekend or holiday.
+        if check_date(date):
             # Set directory for writing ticks.
             outdir = os.path.join(path,
-                                  '{0:04d}'.format(year),
-                                  '{0:02d}'.format(month),
-                                  '{0:02d}'.format(day))
-            # If outfile directory does not exist, create it and parents.
+                                  '{0:04d}'.format(date.year),
+                                  '{0:02d}'.format(date.month),
+                                  '{0:02d}'.format(date.day))
+            # If directory does not exist, create it and parents.
             if not os.path.isdir(outdir):
                 os.makedirs(outdir, 0755)
-            # Open outfile in append mode.
+            # Set name of output .tks file.
+            tksfile = os.path.join(outdir, symbol + '.tks')
+            # Create outfile in append mode.
             try:
-                outfile = open(os.path.join(outdir, symbol + '.tks'), 'a')
+                outfile = open(tksfile, 'a')
             except IOError:
                 print("File {0} cannot be created.".format(outfile))
                 sys.exit()
-            # Iterate through infile.
-            for i in range(len(infile)):
+            # Iterate through data.
+            for i in range(len(data)):
                 # Set timestamp in UTC from field 0 of infile.
                 timestamp = datetime.datetime.utcfromtimestamp(
-                    float(infile[i].split()[0]))
+                    float(data[i].split()[0]))
                 # Write to outfile if year, month, and day match.
                 if timestamp.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d'):
                     # Append newline to each line before writing to file.
-                    outfile.write(infile[i] + '\n')
+                    outfile.write(data[i] + '\n')
             outfile.close()
+        date += datetime.timedelta(days=1)
     return
 
 
@@ -90,36 +106,113 @@ def main():
     appropriate directories therein.
 
     """
-    # Set month numbers and year.
-    months = [i for i in range(9, 13)]
-    year = 2009
+    # Define parser and collect command line arguments.
+    parser = argparse.ArgumentParser(description='Load tick files.')
+    parser.add_argument('--group',
+                        choices=['equities', 'futures', 'fx'],
+                        default='equities',
+                        dest='group',
+                        help='One of: equities, futures, or fx'
+                            ' (default: %(default)s)')
+    parser.add_argument('--source',
+                        choices=['ib'],
+                        default='ib',
+                        dest='source',
+                        help='One of: ib'
+                            ' (default: %(default)s)')
+    parser.add_argument('--start',
+                        default='2011-11-01',
+                        dest='start',
+                        help='Date string format %%Y-%%m-%%d'
+                            ' (default: %(default)s)')
+    parser.add_argument('--end',
+                        default='2011-11-02',
+                        dest='end',
+                        help='Date string format %%Y-%%m-%%d'
+                             ' (default: %(default)s)')
 
-    # Set path for symbols list.
-    path = os.path.join(os.getenv('BICYCLE_HOME'),
-                        'etc/conf.d/asset-classes',
-                        'fx/data-sources/ib',
-                        'local-exchanges/idealpro')
+    # Read configuration file.
+    config = configobj.ConfigObj(os.path.join(
+                                              os.getenv('BICYCLE_HOME'),
+                                              'config.ini'))
 
-    # Read symbols list from file.
-    symbols = read_file(path, 'symbols.txt')
+    # Set group.
+    group = parser.parse_args().group
 
-    # Loop over symbols.
-    for symbol in symbols:
-        # Set path for writing tick files.
-        path = os.path.join(os.getenv('TICKS_HOME'),
-                            'fx',
-                            'ib',
-                            'idealpro',
-                            symbol)
-        # Read ticks from file.
-        infile = read_file('/tmp/fx', symbol + '.tks')
-        for month in months:
-            # Write tick data to files.
-            write_tks(year,
-                      month,
-                      symbol,
-                      infile,
-                      path)
+    # Set data source for asset class.
+    source = parser.parse_args().source
+
+    # Set list of exchanges for asset class and data source.
+    exchanges = [key for key in config[group][source].iterkeys()]
+
+    # Set symbols dict keyed on exchange.
+    symbols = dict()
+    for key in config[group][source].iterkeys():
+        symbols[key] = config[group][source][key]
+
+    # Set start and end dates.
+    start = datetime.datetime.strptime(parser.parse_args().start, '%Y-%m-%d')
+    end = datetime.datetime.strptime(parser.parse_args().end, '%Y-%m-%d')
+
+    # Loop over exchanges.
+    for exchange in exchanges:
+        # Loop over symbols.
+        for symbol in symbols[exchange]:
+            expiry = []
+            # Read expiry file for each symbol for futures.
+            if group == 'futures':
+                expiry = read_file(os.path.join('/tmp', group),
+                                                symbol +
+                                                '.expiry')
+                # Loop over expiry entries for each symbol.
+                for contract in expiry:
+                    # Read ticks from file if non-zero size.
+                    if os.stat(os.path.join(
+                                            '/tmp',
+                                            group,
+                                            symbol +
+                                            contract +
+                                            '.tks')).st_size != 0:
+                        data = read_file(os.path.join('/tmp', group),
+                                                      symbol +
+                                                      contract +
+                                                      '.tks')
+                        # Set path for writing tick files.
+                        path = os.path.join(os.getenv('TICKS_HOME'),
+                                            group,
+                                            source,
+                                            exchange,
+                                            symbol,
+                                            contract)
+                        # Write tick data to files.
+                        write_ticks(start,
+                                    end,
+                                    symbol,
+                                    data,
+                                    path)
+            else:
+                # Read ticks from file if non-zero size.
+                if os.stat(os.path.join(
+                                        '/tmp',
+                                        group,
+                                        symbol +
+                                        '.tks')).st_size != 0:
+                    data = read_file(os.path.join('/tmp', group),
+                                                  symbol +
+                                                  '.tks')
+                    # Set path for writing tick files.
+                    path = os.path.join(os.getenv('TICKS_HOME'),
+                                        group,
+                                        source,
+                                        exchange,
+                                        symbol)
+                    # Write tick data to files.
+                    write_ticks(start,
+                                end,
+                                symbol,
+                                data,
+                                path)
+
 
 if __name__ == '__main__':
     main()
