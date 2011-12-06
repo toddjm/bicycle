@@ -1,19 +1,27 @@
 #!/bin/bash
+################################################################################
+# Name: db_to_flat_file.sh
+#
+# Creates sorted flat .tks files from mysqldump.
+#
+# Usage: db_to_flat_file.sh <asset class>
+#
 # Copyright 2011 bicycle trading, llc.
+################################################################################
 
 asset_class=$1
 outdir="$HOME/tmp/$asset_class"
 
 if [[ $# != 1 ]]
 then
-    echo "Usage: $0 asset_class"
-    exit
+  echo "Usage: $0 asset_class"
+  exit 1
 fi
 
 if [[ ! -d $outdir ]]
 then
-    echo "$outdir not found."
-    exit
+  echo "$outdir not found. Exiting..."
+  exit 1
 fi
 
 mysqldump \
