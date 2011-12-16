@@ -1,7 +1,11 @@
 #!/usr/bin/env python
-"""
-Read tick files and insert them on a by-day basis into
-the appropriate directory.
+"""Read tick files and create ticker plant.
+
+Command line arguments:
+group -- asset class (futures, equities, or fx)
+source -- data source (ib)
+start -- start date (2009-09-01)
+end -- end date (2011-11-01)
 
 """
 
@@ -19,23 +23,21 @@ __email__ = "todd@bicycletrading.com"
 def read_file(path, name):
     """Read from file and return a list of strings without newlines."""
     if not os.path.isdir(path):
-        print("Directory {0} does not exist.".format(path))
+        print("{0} is not a directory.").format(path)
         sys.exit()
-    try:
-        infile = open(os.path.join(path, name), 'r')
-    except IOError:
-        print("File {0} does not exist.".format(infile))
+    if not os.path.isfile(os.path.join(path, name)):
+        print("{0} is not a file.").format(name)
         sys.exit()
-    values = infile.readlines()
-    values = [line.strip() for line in values]
-    infile.close()
+    filename = os.path.join(path, name)
+    with open(filename, 'r') as infile:
+        values = infile.readlines()
+    values = [x.strip() for x in values]
     return values
 
 
 # Read holidays list from file.
 HOLIDAYS = []
-HOLIDAYS = read_file(os.path.join(
-                                  os.getenv('BICYCLE_HOME'),
+HOLIDAYS = read_file(os.path.join(os.getenv('BICYCLE_HOME'),
                                   'share/dates'),
                                   'holidays.list')
 
@@ -58,7 +60,7 @@ def write_ticks(start,
                 data,
                 path):
     """Write ticks to files with .tks suffix."""
-    # Adjust start and end based on data start/end.
+    # Adjust start and end based on start and end of data.
     first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
     last = datetime.datetime.utcfromtimestamp(float(data[-1].split()[0]))
     if first > start:
@@ -70,32 +72,30 @@ def write_ticks(start,
     while date <= end:
         # Make sure date is not on a weekend or holiday.
         if check_date(date):
-            # Set directory for writing ticks.
+            # Set directory for writing ticks; create if required.
             outdir = os.path.join(path,
                                   '{0:04d}'.format(date.year),
                                   '{0:02d}'.format(date.month),
                                   '{0:02d}'.format(date.day))
-            # If directory does not exist, create it and parents.
             if not os.path.isdir(outdir):
                 os.makedirs(outdir, 0755)
-            # Set name of output .tks file.
+            # Set .tks file for output.
             tksfile = os.path.join(outdir, symbol + '.tks')
             # Create outfile in append mode.
-            try:
-                outfile = open(tksfile, 'a')
-            except IOError:
-                print("File {0} cannot be created.".format(outfile))
-                sys.exit()
-            # Iterate through data.
-            for i in range(len(data)):
-                # Set timestamp in UTC from field 0 of infile.
-                timestamp = datetime.datetime.utcfromtimestamp(
-                    float(data[i].split()[0]))
-                # Write to outfile if year, month, and day match.
-                if timestamp.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d'):
-                    # Append newline to each line before writing to file.
-                    outfile.write(data[i] + '\n')
-            outfile.close()
+            with open(tksfile, 'a') as outfile:
+                # Insert for setting start index in data to be for this day.
+                # Readjust length of data or index into it where data[i] <=>
+                #   being within the day in question.
+                # Iterate through data.
+                for i in range(len(data)):
+                    # Set timestamp in UTC from field 0 of infile.
+                    timestamp = datetime.datetime.utcfromtimestamp(
+                        float(data[i].split()[0]))
+                    # Write to outfile if year, month, and day match.
+                    if (timestamp.strftime('%Y-%m-%d') ==
+                        date.strftime('%Y-%m-%d')):
+                        # Append newline to each line before writing to file.
+                        outfile.write(data[i] + '\n')
         date += datetime.timedelta(days=1)
     return
 
@@ -106,8 +106,12 @@ def main():
     appropriate directories therein.
 
     """
+    # Read configuration file.
+    config = configobj.ConfigObj(os.path.join(os.getenv('BICYCLE_HOME'),
+                                                            'config.ini'))
+
     # Define parser and collect command line arguments.
-    parser = argparse.ArgumentParser(description='Load tick files.')
+    parser = argparse.ArgumentParser(description='Load ticker plant.')
     parser.add_argument('--group',
                         choices=['equities', 'futures', 'fx'],
                         default='equities',
@@ -131,16 +135,14 @@ def main():
                         help='Date string format %%Y-%%m-%%d'
                              ' (default: %(default)s)')
 
-    # Read configuration file.
-    config = configobj.ConfigObj(os.path.join(
-                                              os.getenv('BICYCLE_HOME'),
-                                              'config.ini'))
-
     # Set group.
     group = parser.parse_args().group
 
     # Set data source for asset class.
     source = parser.parse_args().source
+
+    # Set source directory for files to read and convert.
+    srcdir = config[group]['srcdir']
 
     # Set list of exchanges for asset class and data source.
     exchanges = [key for key in config[group][source].iterkeys()]
@@ -154,29 +156,20 @@ def main():
     start = datetime.datetime.strptime(parser.parse_args().start, '%Y-%m-%d')
     end = datetime.datetime.strptime(parser.parse_args().end, '%Y-%m-%d')
 
-    # Loop over exchanges.
+    # Loop over exchanges and symbols.
     for exchange in exchanges:
-        # Loop over symbols.
         for symbol in symbols[exchange]:
-            expiry = []
-            # Read expiry file for each symbol for futures.
+            # Set path for per-symbol expiry file for futures.
             if group == 'futures':
-                expiry = read_file(os.path.join('/home/bicycle/tmp', group),
-                                                symbol +
-                                                '.expiry')
+                expiry = read_file(srcdir, symbol + '.expiry')
                 # Loop over expiry entries for each symbol.
                 for contract in expiry:
                     # Read ticks from file if non-zero size.
-                    if os.stat(os.path.join(
-                                            '/home/bicycle/tmp',
-                                            group,
+                    if os.stat(os.path.join(srcdir,
                                             symbol +
                                             contract +
                                             '.tks')).st_size != 0:
-                        data = read_file(os.path.join('/home/bicycle/tmp', group),
-                                                      symbol +
-                                                      contract +
-                                                      '.tks')
+                        data = read_file(srcdir, symbol + contract + '.tks')
                         # Set path for writing tick files.
                         path = os.path.join(os.getenv('TICKS_HOME'),
                                             group,
@@ -185,8 +178,8 @@ def main():
                                             symbol,
                                             contract)
                         # Write tick data to files.
-                        print 'Writing ticks for symbol {0}' \
-                              '  contract {1}'.format(symbol, contract)
+                        print("Writing ticks for {0}{1}...").format(symbol,
+                                                                    contract)
                         write_ticks(start,
                                     end,
                                     symbol,
@@ -194,14 +187,8 @@ def main():
                                     path)
             else:
                 # Read ticks from file if non-zero size.
-                if os.stat(os.path.join(
-                                        '/home/bicycle/tmp',
-                                        group,
-                                        symbol +
-                                        '.tks')).st_size != 0:
-                    data = read_file(os.path.join('/home/bicycle/tmp', group),
-                                                  symbol +
-                                                  '.tks')
+                if os.stat(os.path.join(srcdir, symbol + '.tks')).st_size != 0:
+                    data = read_file(srcdir, symbol + '.tks')
                     # Set path for writing tick files.
                     path = os.path.join(os.getenv('TICKS_HOME'),
                                         group,
@@ -209,6 +196,7 @@ def main():
                                         exchange,
                                         symbol)
                     # Write tick data to files.
+                    print("Writing ticks for {0}...").format(symbol)
                     write_ticks(start,
                                 end,
                                 symbol,
