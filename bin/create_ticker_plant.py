@@ -20,6 +20,12 @@ __copyright__ = "Copyright 2011, bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
+HOLIDAYS = []
+with open('/home/bicycle/bicycletrading/share/dates/holidays.txt', 'r') as fn:
+    HOLIDAYS = fn.readlines()
+HOLIDAYS = [line.strip() for line in HOLIDAYS]
+
+
 def read_file(path, name):
     """Read from file and return a list of strings without newlines."""
     if not os.path.isdir(path):
@@ -33,13 +39,6 @@ def read_file(path, name):
         values = infile.readlines()
     values = [x.strip() for x in values]
     return values
-
-
-# Read holidays list from file.
-HOLIDAYS = []
-HOLIDAYS = read_file(os.path.join(os.getenv('BICYCLE_HOME'),
-                                  'share/dates'),
-                                  'holidays.list')
 
 
 def check_date(date):
@@ -108,7 +107,7 @@ def main():
     """
     # Read configuration file.
     config = configobj.ConfigObj(os.path.join(os.getenv('BICYCLE_HOME'),
-                                                            'config.ini'))
+                                                        'config.ini'))
 
     # Define parser and collect command line arguments.
     parser = argparse.ArgumentParser(description='Load ticker plant.')
@@ -147,10 +146,19 @@ def main():
     # Set list of exchanges for asset class and data source.
     exchanges = [key for key in config[group][source].iterkeys()]
 
-    # Set symbols dict keyed on exchange.
-    symbols = dict()
-    for key in config[group][source].iterkeys():
-        symbols[key] = config[group][source][key]
+    # Set symbols determined by group.
+    symbols = {}
+    if group == 'equities':
+        symbol_file = {}
+        for key in config[group][source].iterkeys():
+            symbol_file[key] = config[group][source][key]
+            with open(symbol_file[key], 'r') as infile:
+                symbol_list = infile.readlines()
+            symbol_list = [x.strip() for x in symbol_list]
+            symbols[key] = symbol_list
+    else:
+        for key in config[group][source].iterkeys():
+            symbols[key] = config[group][source][key]
 
     # Set start and end dates.
     start = datetime.datetime.strptime(parser.parse_args().start, '%Y-%m-%d')
