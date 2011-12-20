@@ -119,7 +119,7 @@ def set_exchanges_symbols(config, group, source):
 def set_start_end(start, end, data):
     """
     Return tuple of start and end times modifed if data start
-    and/or times are before/after start/end. 
+    and/or times are before/after start/end.
     """
     first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
     last = datetime.datetime.utcfromtimestamp(float(data[-1].split()[0]))
