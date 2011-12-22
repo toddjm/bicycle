@@ -35,27 +35,25 @@ def check_date(date):
     # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
-    else:
-        return False
+    return False
 
 
-def find_ge(data, value):
+def find_start_idx(timestamps, date):
+    """Return index from timestamps where timestamps[index] >= date.
+    Equivalent to finding rightmost element in timestamps <= date.
     """
-    Return the index of data for which the first instance that
-    the leftmost element of data >= value is true.
-    """
-    i = bisect.bisect_left(data, value)
-    if i != len(data):
+    i = bisect.bisect_left(timestamps, date)
+    if i != len(timestamps):
         return i
     raise ValueError
 
 
-def find_le(data, value):
-    """"
-    Return the index of data for which the first instance that
-    the rightmost element of data >= value is true.
+def find_end_idx(timestamps, date):
     """
-    i = bisect.bisect_right(data, value)
+    Return index from timestamps where timestamps[index] < date.
+    Equivalent to finding leftmost element in timestamps >= date.
+    """
+    i = bisect.bisect_right(timestamps, date)
     if i:
         return i - 1
     raise ValueError
@@ -65,14 +63,21 @@ def get_subset(timestamps, data, date):
     """
     Return subset of data by indexing into it using timestamps
     for the 1-day period of interest ('date').
+    'start_idx' is the index number in timestamps for which the
+    first instance of timestamps[index] >= date is true.
+    'end_idx' is the index number in timestamps for which the
+    first instance of timestamps[index] >= (date + 1 day) is true.
     """
-    # Index of timestamps where value >= date.
-    start_idx = find_ge(timestamps, date)
-    # Index of timestamps where value <= (date + 1 day).
-    end_idx = find_le(timestamps, date + datetime.timedelta(days=1))
+    # Start where timestamps[index] >= date.
+    start_idx = find_start_idx(timestamps, date)
+    # End where timestamps[index] >
+    end_idx = find_end_idx(timestamps, date + datetime.timedelta(days=1))
+    #print('date = {0} start_idx = {1} end_idx = {2}').format(date, start_idx,
+    #                                                         end_idx)
     # Extract subset of data for this date.
-    subset = data[start_idx:end_idx]
-    return subset
+    #subset = data[start_idx:end_idx]
+    #return subset
+    return  data[start_idx:end_idx]
 
 
 def get_timestamps(data):
@@ -136,10 +141,12 @@ def write_ticks(start, end, symbol, data, path):
     timestamps = get_timestamps(data)
     # Adjust beginning ('now') and end ('end') if needed.
     now, end = set_start_end(start, end, data)
+    #print('start = {0} end = {1}').format(now, end)
     while now <= end:
         # Make sure date is not on a weekend or holiday.
         if check_date(now):
             # Extract subset of data for 'now.'
+            #print('now = {0} end = {1}').format(now, end)
             subset = get_subset(timestamps, data, now)
             # Set directory for writing ticks; create if required.
             outdir = os.path.join(path,
@@ -184,14 +191,14 @@ def main():
                         help='One of: ib'
                             ' (default: %(default)s)')
     parser.add_argument('--start',
-                        default='2011-11-01',
+                        default='2011-11-01 00:00:00',
                         dest='start',
-                        help='Date string format %%Y-%%m-%%d'
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S'
                             ' (default: %(default)s)')
     parser.add_argument('--end',
-                        default='2011-11-02',
+                        default='2011-11-02 00:00:00',
                         dest='end',
-                        help='Date string format %%Y-%%m-%%d'
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S'
                              ' (default: %(default)s)')
 
     # Set group.
@@ -206,11 +213,13 @@ def main():
     # Set exchanges and symbols.
     exchanges, symbols = set_exchanges_symbols(config, group, source)
 
-    # Set the start time as UTC (e.g. 2009-09-01 == 2009-09-01 00:00:00).
-    start = datetime.datetime.strptime(parser.parse_args().start, '%Y-%m-%d')
+    # Set start time as UTC (e.g. 2009-09-01 == 2009-09-01 00:00:00).
+    start = datetime.datetime.strptime(parser.parse_args().start,
+                                       '%Y-%m-%d %H:%M:%S')
 
-    # Set the end time as UTC (e.g. 2010-09-01 == 2010-09-01 00:00:00).
-    end = datetime.datetime.strptime(parser.parse_args().end, '%Y-%m-%d')
+    # Set end time as UTC (e.g. 2010-09-02 == 2010-09-02 00:00:00).
+    end = datetime.datetime.strptime(parser.parse_args().end,
+                                     '%Y-%m-%d %H:%M:%S')
 
     # Loop over exchanges and symbols.
     for exchange in exchanges:
