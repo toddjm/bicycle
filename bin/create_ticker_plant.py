@@ -2,10 +2,10 @@
 """Read tick files and create ticker plant.
 
 Command line arguments:
-group -- asset class (futures, equities, or fx)
-source -- data source (ib)
-start -- start date (2009-09-01)
-end -- end date (2011-11-01)
+--group asset class (futures, equities, or fx)
+--source data source (ib)
+--start start date and time (2011-11-01 00:00:00)
+--end end date and time (2011-11-02 00:00:00)
 
 """
 
@@ -32,61 +32,52 @@ def check_date(date):
     Returns True if date is not a Saturday or Sunday or
     holiday, False otherwise.
     """
-    # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
     return False
 
 
-def find_start_idx(timestamps, date):
-    """Return index from timestamps where timestamps[index] >= date.
-    Equivalent to finding rightmost element in timestamps <= date.
-    """
-    i = bisect.bisect_left(timestamps, date)
-    if i != len(timestamps):
+def find_ge(values, threshold):
+    """Return index for leftmost value => threshold."""
+    i = bisect.bisect_left(values, threshold)
+    if i != len(values):
         return i
     raise ValueError
 
 
-def find_end_idx(timestamps, date):
-    """
-    Return index from timestamps where timestamps[index] < date.
-    Equivalent to finding leftmost element in timestamps >= date.
-    """
-    i = bisect.bisect_right(timestamps, date)
+def find_le(values, threshold):
+    """Return index for rightmost value > threshold."""
+    i = bisect.bisect_right(values, threshold)
     if i:
-        return i - 1
+        return i
     raise ValueError
 
 
-def get_subset(timestamps, data, date):
+def get_subset(index, values, threshold):
     """
-    Return subset of data by indexing into it using timestamps
-    for the 1-day period of interest ('date').
-    'start_idx' is the index number in timestamps for which the
-    first instance of timestamps[index] >= date is true.
-    'end_idx' is the index number in timestamps for which the
-    first instance of timestamps[index] >= (date + 1 day) is true.
+    Return subset of 'values' for 'threshold' by indexing on 'index.'
+
+    Start time is set as 'threshold': year, month, day, 0, 0, 0.
+    End time is set as 'threshold': year, month, day + 1 day, 0, 0, 0.
     """
-    # Start where timestamps[index] >= date.
-    start_idx = find_start_idx(timestamps, date)
-    # End where timestamps[index] >
-    end_idx = find_end_idx(timestamps, date + datetime.timedelta(days=1))
-    #print('date = {0} start_idx = {1} end_idx = {2}').format(date, start_idx,
-    #                                                         end_idx)
-    # Extract subset of data for this date.
-    #subset = data[start_idx:end_idx]
-    #return subset
-    return  data[start_idx:end_idx]
+    start_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
+    start_idx = find_ge(index, start_time)
+    end_time = datetime.datetime.combine(threshold +
+                                         datetime.timedelta(days=1),
+                                         datetime.time(0, 0, 0))
+    end_idx = find_le(index, end_time)
+    values = values[start_idx:end_idx]
+    return values
 
 
 def get_timestamps(data):
-    """Return list of timestamps from first column of data."""
-    timestamps = []
+    """Return list of sorted timestamps from first column of data."""
+    values = []
     for i in range(len(data)):
-        timestamps.append(datetime.datetime.utcfromtimestamp(
+        values.append(datetime.datetime.utcfromtimestamp(
             float(data[i].split()[0])))
-    return timestamps
+    values.sort()
+    return values
 
 
 def read_file(path, name):
@@ -123,12 +114,16 @@ def set_exchanges_symbols(config, group, source):
 
 def set_start_end(start, end, data):
     """
-    Return tuple of start and end times modifed if data start
+    Return tuple of start and end dates modifed if data start
     and/or times are before/after start/end.
     """
-    first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
-    last = datetime.datetime.utcfromtimestamp(float(data[-1].split()[0]))
-    if first > start:
+    first = datetime.datetime.utcfromtimestamp(float(
+                                               data[0].split()[0])).date()
+    last = datetime.datetime.utcfromtimestamp(float(
+                                              data[-1].split()[0])).date()
+    start = start.date()
+    end = end.date()
+    if first:
         start = first
     if last < end:
         end = last
@@ -140,13 +135,11 @@ def write_ticks(start, end, symbol, data, path):
     # Extract list of timestamps from data.
     timestamps = get_timestamps(data)
     # Adjust beginning ('now') and end ('end') if needed.
-    now, end = set_start_end(start, end, data)
-    #print('start = {0} end = {1}').format(now, end)
-    while now <= end:
+    now, then = set_start_end(start, end, data)
+    while now <= then:
         # Make sure date is not on a weekend or holiday.
         if check_date(now):
-            # Extract subset of data for 'now.'
-            #print('now = {0} end = {1}').format(now, end)
+            # Extract subset of data for this day only.
             subset = get_subset(timestamps, data, now)
             # Set directory for writing ticks; create if required.
             outdir = os.path.join(path,
@@ -160,7 +153,7 @@ def write_ticks(start, end, symbol, data, path):
             # Create outfile in append mode.
             with open(tksfile, 'a') as outfile:
                 for i in range(len(subset)):
-                    # Append newline to each line before writing to file.
+                    # Append newline before writing to file.
                     outfile.write(subset[i] + '\n')
         now += datetime.timedelta(days=1)
     return
@@ -213,11 +206,9 @@ def main():
     # Set exchanges and symbols.
     exchanges, symbols = set_exchanges_symbols(config, group, source)
 
-    # Set start time as UTC (e.g. 2009-09-01 == 2009-09-01 00:00:00).
+    # Set start and end times.
     start = datetime.datetime.strptime(parser.parse_args().start,
                                        '%Y-%m-%d %H:%M:%S')
-
-    # Set end time as UTC (e.g. 2010-09-02 == 2010-09-02 00:00:00).
     end = datetime.datetime.strptime(parser.parse_args().end,
                                      '%Y-%m-%d %H:%M:%S')
 
@@ -234,7 +225,8 @@ def main():
                                             symbol +
                                             contract +
                                             '.tks')).st_size != 0:
-                        data = read_file(srcdir, symbol + contract + '.tks')
+                        data = read_file(srcdir, symbol +
+                                         contract + '.tks')
                         # Set path for writing tick files.
                         path = os.path.join(os.getenv('TICKS_HOME'),
                                             group,
@@ -245,10 +237,12 @@ def main():
                         # Write tick data to files.
                         print("Writing ticks for {0}{1}...").format(symbol,
                                                                     contract)
-                        write_ticks(start, end, symbol, data, path)
+                        write_ticks(start, end,
+                                    symbol, data, path)
             else:
                 # Read ticks from file if non-zero size.
-                if os.stat(os.path.join(srcdir, symbol + '.tks')).st_size != 0:
+                if os.stat(os.path.join(srcdir,
+                                        symbol + '.tks')).st_size != 0:
                     data = read_file(srcdir, symbol + '.tks')
                     # Set path for writing tick files.
                     path = os.path.join(os.getenv('TICKS_HOME'),
