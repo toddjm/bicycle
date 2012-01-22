@@ -21,11 +21,11 @@ fi
 case $asset_class in
   equities | futures | fx)
   for i in 1day 15min 1min 15sec
-  do mysql -e "drop table if exists "$asset_class"_"$i"."$symbol"_tks;"
-  done
+    do mysql -e "drop table if exists "$asset_class"_"$i"."$symbol"_tks;"
+    done
   ;;
   *)
-  echo "$asset_class does not exist."
-  exit 1
+    echo "$asset_class does not exist."
+    exit 1
   ;;
 esac
