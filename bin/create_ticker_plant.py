@@ -55,10 +55,10 @@ def find_le(values, threshold):
 
 def get_subset(index, values, threshold):
     """
-    Return subset of 'values' for 'threshold' by indexing on 'index.'
+    Return subset of values for a given threshold by indexing on index.
 
-    Start time is set as 'threshold': year, month, day, 0, 0, 0.
-    End time is set as 'threshold': year, month, day + 1 day, 0, 0, 0.
+    Start time is set as threshold: year, month, day, 0, 0, 0.
+    End time is set as threshold: year, month, day + 1 day, 0, 0, 0.
     """
     start_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
     start_idx = find_ge(index, start_time)
@@ -96,7 +96,7 @@ def read_file(path, name):
 
 
 def set_exchanges_symbols(config, group, source):
-    """Returns exchanges list and symbols dict as tuple."""
+    """Returns exchanges list and symbols dict as pair of tuples."""
     exchanges = [key for key in config[group][source].iterkeys()]
     symbols = {}
     if group == 'equities':
