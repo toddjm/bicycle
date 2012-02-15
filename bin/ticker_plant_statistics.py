@@ -30,16 +30,6 @@ def get_dates_from_dir(path):
     return values
 
 
-def get_futures_stats(exchanges, symbols, expiry, root):
-    """Writes to stdout statistics for futures ticks."""
-    for i in exchanges:
-        for j in symbols[i]:
-            for k in expiry[j]:
-                values = get_tks_data(root, i, j, k)
-                for l in range(len(values)):
-                    print(values[l])
-    return
-
 def get_tks_data(root, i, j, k):
     """Return list of namedtuples for tks files in root dir."""
     data = collections.namedtuple('data', ['exchange', 'symbol', 'expiry',
@@ -109,6 +99,22 @@ def check_date(date):
         return True
     else:
         return False
+
+
+def set_config(root, group, exchanges):
+    """Return tuple symbols and expiry (for futures), symbols otherwise."""
+    symbols = {}
+    if group == 'futures':
+        expiry = {}
+        for i in exchanges:
+            symbols[i] = [x for x in os.listdir(os.path.join(root, i))]
+            for j in symbols[i]:
+                expiry[j] = os.listdir(os.path.join(root, i, j))
+        return symbols, expiry
+    else:
+        for i in exchanges:
+            symbols[i] = [x for x in os.listdir(os.path.join(root, i))]
+        return symbols
 
 
 def write_ticks(start, end, symbol, data, path):
@@ -187,33 +193,21 @@ def main():
                         dest='end',
                         help='Date format %%Y-%%m-%%d (default: %(default)s)')
 
-    # Set group and source.
+    # Set group, source, and exchanges.
     group = parser.parse_args().group
     source = parser.parse_args().source
+    exchanges = parser.parse_args().exchanges
 
     # Set root directory.
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
 
-    # Set exchanges based on group and source if not specified.
-    exchanges = []
-    exchanges = parser.parse_args().exchanges
-    if not exchanges:
-        exchanges = os.listdir(root)
+    symbols, expiry = set_config(root, group, exchanges)
 
-    # Set symbols and, for futures, expiry.
-    if group == 'futures':
-        expiry = {}
-
-    symbols = {}
     for i in exchanges:
-        symbols[i] = [x for x in os.listdir(os.path.join(root, i))]
-        if group == 'futures':
-            for j in symbols[i]:
-                expiry[j] = os.listdir(os.path.join(root, i, j))
-
-    values = get_futures_stats(exchanges, symbols, expiry, root)
-    for i in range(len(values)):
-        print(values[i])
+        for j in symbols[i]:
+            for k in expiry[j]:
+                values = get_tks_data(root, i, j, k)
+                print(values)
 
 
 if __name__ == '__main__':
