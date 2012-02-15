@@ -22,14 +22,52 @@ def get_dates_from_dir(path):
     days = {}
     months = {}
     years = [x for x in os.listdir(path)]
-    for year in years:
-        months[year] = [x for x in os.listdir(os.path.join(path,
-                                                           year))]
+    for i in years:
+        months[i] = [x for x in os.listdir(os.path.join(path, i))]
+        for j in months[i]:
+            days[j] = [x for x in os.listdir(os.path.join(path, i, j))]
+            values.append(date(i, j, days[j]))
+    return values
+
+
+def get_futures_stats(exchanges, symbols, expiry, root):
+    """Writes to stdout statistics for futures ticks."""
+    for i in exchanges:
+        for j in symbols[i]:
+            for k in expiry[j]:
+                values = get_tks_data(root, i, j, k)
+    return values
+
+def get_tks_data(root, i, j, k):
+    """Return list of namedtuples for tks files in root dir."""
+    data = collections.namedtuple('data', ['exchange', 'symbol', 'expiry',
+                                           'year', 'month', 'day', 'first',
+                                           'last', 'number'])
+    values = []
+    days = {}
+    months = {}
+    years = {}
+    cwd = os.path.join(root, i, j, k)
+    years[k] = [x for x in os.listdir(cwd)]
+    for year in years[k]:
+        months[year] = [x for x in os.listdir(os.path.join(
+                                              cwd, year))]
         for month in months[year]:
-            days[month] = [x for x in os.listdir(os.path.join(path,
-                                                              year,
-                                                              month))]
-            values.append(date(year, month, days[month]))
+            days[month] = [x for x in os.listdir(os.path.join(
+                                                 cwd, year, month))]
+            for day in days[month]:
+                infile = os.path.join(cwd, year, month, day,
+                                      j + '.tks')
+                if not os.stat(infile).st_size == 0:
+                    with open(infile, 'r') as tmp:
+                        tks = tmp.readlines()
+                    tks = [x.strip() for x in tks]
+                    first = datetime.datetime.utcfromtimestamp(
+                        float(tks[0].split()[0]))
+                    last = datetime.datetime.utcfromtimestamp(
+                        float(tks[-1].split()[0]))
+                    values.append(data(i, j, k, year, month, day, first, last,
+                                       len(tks)))
     return values
 
 
@@ -46,7 +84,7 @@ def read_file(path, name):
         print("File {0} does not exist.").format(infile)
         sys.exit()
     values = infile.readlines()
-    values = [line.strip() for line in values]
+    values = [x.strip() for x in values]
     infile.close()
     return values
 
@@ -71,11 +109,7 @@ def check_date(date):
         return False
 
 
-def write_ticks(start,
-                end,
-                symbol,
-                data,
-                path):
+def write_ticks(start, end, symbol, data, path):
     """Write ticks to files with .tks suffix."""
     # Adjust start and end based on data start/end.
     first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
@@ -109,7 +143,7 @@ def write_ticks(start,
             for i in range(len(data)):
                 # Set timestamp in UTC from field 0 of infile.
                 timestamp = datetime.datetime.utcfromtimestamp(
-                    float(data[i].split()[0]))
+                            float(data[i].split()[0]))
                 # Write to outfile if year, month, and day match.
                 if timestamp.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d'):
                     # Append newline to each line before writing to file.
@@ -128,20 +162,17 @@ def main():
     # Define parser and collect command line arguments.
     parser = argparse.ArgumentParser(description='Analyze ticker plant.')
     parser.add_argument('--group',
-                        choices=['equities', 'futures', 'fx'],
-                        default='equities',
+                        default='futures',
                         dest='group',
-                        help='One of: %(choices)s ' \
-                             ' (default: %(default)s)',
+                        help='One of: equities, fx, or futures '
+                             '(default: %(default)s)',
                         nargs='?')
     parser.add_argument('--source',
-                        choices=['ib'],
                         default='ib',
                         dest='source',
-                        help='One of: %(choices)s ' \
-                             '(default: %(default)s)')
+                        help='Default: %(default)s)')
     parser.add_argument('--exchanges',
-                        default='smart',
+                        default='nymex',
                         dest='exchanges',
                         help='Space-separated names (default: %(default)s)',
                         nargs='+')
@@ -178,59 +209,8 @@ def main():
             for j in symbols[i]:
                 expiry[j] = os.listdir(os.path.join(root, i, j))
 
-    # Set config file.
-#    if group == 'futures':
-#        config = collections.namedtuple('config',
-#                                        ['root',
-#                                         'exchanges',
-#                                         'symbols',
-#                                         'expiry'])
-#        return config(root, exchanges, symbols, expiry)
-#    else:
-#        config = collections.namedtuple('config',
-#                                        ['root',
-#                                         'exchanges',
-#                                         'symbols'])
-#        return config(root, exchanges, symbols)
-
-
-#    data = []
-    years = {}
-    months = {}
-    days = {}
-    for i in exchanges:
-        for j in symbols[i]:
-            for k in expiry[j]:
-                cwd = os.path.join(root, i, j, k)
-                years[k] = [x for x in os.listdir(cwd)]
-                for y_k in years[k]:
-                    months[y_k] = [x for x in os.listdir(
-                        os.path.join(cwd, y_k))]
-                    for m_y_k in months[y_k]:
-                        days[m_y_k] = [x for x in os.listdir(
-                            os.path.join(cwd, y_k, m_y_k))]
-                        for d_m_y_k in days[m_y_k]:
-                            infile = os.path.join(cwd,
-                                                  y_k,
-                                                  m_y_k,
-                                                  d_m_y_k,
-                                                  j + '.tks')
-                            if not os.stat(infile).st_size == 0:
-                                with open(infile, 'r') as tmp:
-                                    ticks = tmp.readlines()
-                                ticks = [x.strip() for x in ticks]
-                                first = datetime.datetime.utcfromtimestamp(
-                                    float(ticks[0].split()[0]))
-                                last = datetime.datetime.utcfromtimestamp(
-                                    float(ticks[-1].split()[0]))
-                                print i, j, k, y_k, m_y_k, d_m_y_k, \
-                                      first, last, len(ticks)
-#                                data.append(contract(i, j, k,
-#                                                     y_k, m_y_k, d_m_y_k,
-#                                                     first, last, len(ticks)))
-#                                data.append(contract(i, j, k,
-#                                                     y_k, m_y_k, d_m_y_k,
-#                                                     first, last, len(ticks)))
+    values = get_futures_stats(exchanges, symbols, expiry, root)
+    print(values)
 
 
 if __name__ == '__main__':
