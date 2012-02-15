@@ -36,7 +36,9 @@ def get_futures_stats(exchanges, symbols, expiry, root):
         for j in symbols[i]:
             for k in expiry[j]:
                 values = get_tks_data(root, i, j, k)
-    return values
+                for l in range(len(values)):
+                    print(values[l])
+    return
 
 def get_tks_data(root, i, j, k):
     """Return list of namedtuples for tks files in root dir."""
@@ -210,7 +212,8 @@ def main():
                 expiry[j] = os.listdir(os.path.join(root, i, j))
 
     values = get_futures_stats(exchanges, symbols, expiry, root)
-    print(values)
+    for i in range(len(values)):
+        print(values[i])
 
 
 if __name__ == '__main__':
