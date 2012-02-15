@@ -8,7 +8,7 @@ import os
 import sys
 
 __author__ = "Todd Minehardt"
-__copyright__ = "Copyright 2011, bicycle trading, llc"
+__copyright__ = "Copyright 2011,2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
@@ -56,7 +56,7 @@ HOLIDAYS = []
 HOLIDAYS = read_file(os.path.join(
                                   os.getenv('BICYCLE_HOME'),
                                   'share/dates'),
-                                  'holidays.list')
+                                  'holidays.txt')
 
 
 def check_date(date):
@@ -131,15 +131,15 @@ def main():
                         choices=['equities', 'futures', 'fx'],
                         default='equities',
                         dest='group',
-                        help='One of: {0} ' \
-                             '(default: %(default)s)'.format(choices),
+                        help='One of: %(choices)s ' \
+                             ' (default: %(default)s)',
                         nargs='?')
     parser.add_argument('--source',
-                        choices='ib',
+                        choices=['ib'],
                         default='ib',
                         dest='source',
-                        help='One of: {0} ' \
-                             '(default: %(default)s)'.format(choices))
+                        help='One of: %(choices)s ' \
+                             '(default: %(default)s)')
     parser.add_argument('--exchanges',
                         default='smart',
                         dest='exchanges',
@@ -154,12 +154,6 @@ def main():
                         dest='end',
                         help='Date format %%Y-%%m-%%d (default: %(default)s)')
 
-def setup_vars(parser):
-    """Return namedtuple of config variables based on user input."""
-    if not parser:
-        print("Parser not found, exiting...")
-        sys(exit)
-
     # Set group and source.
     group = parser.parse_args().group
     source = parser.parse_args().source
@@ -168,7 +162,8 @@ def setup_vars(parser):
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
 
     # Set exchanges based on group and source if not specified.
-    exchanges = parser.parse_args().exchanges.split()
+    exchanges = []
+    exchanges = parser.parse_args().exchanges
     if not exchanges:
         exchanges = os.listdir(root)
 
@@ -184,22 +179,22 @@ def setup_vars(parser):
                 expiry[j] = os.listdir(os.path.join(root, i, j))
 
     # Set config file.
-    if group == 'futures': 
-        config = collections.namedtuple('config',
-                                        ['root',
-                                         'exchanges',
-                                         'symbols',
-                                         'expiry'])
-        return config(root, exchanges, symbols, expiry)
-    else:
-        config = collections.namedtuple('config',
-                                        ['root',
-                                         'exchanges',
-                                         'symbols'])
-        return config(root, exchanges, symbols)
+#    if group == 'futures':
+#        config = collections.namedtuple('config',
+#                                        ['root',
+#                                         'exchanges',
+#                                         'symbols',
+#                                         'expiry'])
+#        return config(root, exchanges, symbols, expiry)
+#    else:
+#        config = collections.namedtuple('config',
+#                                        ['root',
+#                                         'exchanges',
+#                                         'symbols'])
+#        return config(root, exchanges, symbols)
 
 
-    data = []
+#    data = []
     years = {}
     months = {}
     days = {}
@@ -230,10 +225,12 @@ def setup_vars(parser):
                                     float(ticks[-1].split()[0]))
                                 print i, j, k, y_k, m_y_k, d_m_y_k, \
                                       first, last, len(ticks)
-                                data.append(contract(i, j, k,
-                                                     y_k, m_y_k, d_m_y_k,
-                                                     first, last, len(ticks)))
-
+#                                data.append(contract(i, j, k,
+#                                                     y_k, m_y_k, d_m_y_k,
+#                                                     first, last, len(ticks)))
+#                                data.append(contract(i, j, k,
+#                                                     y_k, m_y_k, d_m_y_k,
+#                                                     first, last, len(ticks)))
 
 
 if __name__ == '__main__':
