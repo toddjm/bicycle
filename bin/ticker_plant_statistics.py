@@ -2,7 +2,6 @@
 """Gather statistics for entries in the ticker plant."""
 
 import argparse
-import collections
 import datetime
 import os
 import sys
@@ -12,54 +11,33 @@ __copyright__ = "Copyright 2011,2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
-def get_dates_from_dir(path):
-    """Return list of namedtuples for year, month, and days given dir path."""
-    if not os.path.isdir(path):
-        print("Directory {0} does not exist.").format(path)
-        sys.exit()
-    date = collections.namedtuple('date', ['year', 'month', 'days'])
+def get_tks_data(root, **kwargs):
+    """Return list of stats for tks files in root dir."""
+    exchange = kwargs.get('exchange', "")
+    expiry = kwargs.get('expiry', "")
+    symbol = kwargs.get('symbol', "")
+    cwd = os.path.join(root, exchange, symbol, expiry)
     values = []
-    days = {}
-    months = {}
-    years = [x for x in os.listdir(path)]
-    for i in years:
-        months[i] = [x for x in os.listdir(os.path.join(path, i))]
-        for j in months[i]:
-            days[j] = [x for x in os.listdir(os.path.join(path, i, j))]
-            values.append(date(i, j, days[j]))
-    return values
-
-
-def get_tks_data(root, i, j, k):
-    """Return list of namedtuples for tks files in root dir."""
-    data = collections.namedtuple('data', ['exchange', 'symbol', 'expiry',
-                                           'year', 'month', 'day', 'first',
-                                           'last', 'number'])
-    values = []
-    days = {}
-    months = {}
-    years = {}
-    cwd = os.path.join(root, i, j, k)
-    years[k] = [x for x in os.listdir(cwd)]
-    for year in years[k]:
-        months[year] = [x for x in os.listdir(os.path.join(
-                                              cwd, year))]
-        for month in months[year]:
-            days[month] = [x for x in os.listdir(os.path.join(
-                                                 cwd, year, month))]
-            for day in days[month]:
-                infile = os.path.join(cwd, year, month, day,
-                                      j + '.tks')
+    for year in os.listdir(cwd):
+        for month in os.listdir(os.path.join(cwd, year)):
+            for day in os.listdir(os.path.join(cwd, year, month)):
+                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
                 if not os.stat(infile).st_size == 0:
                     with open(infile, 'r') as tmp:
                         tks = tmp.readlines()
                     tks = [x.strip() for x in tks]
-                    first = datetime.datetime.utcfromtimestamp(
-                        float(tks[0].split()[0]))
-                    last = datetime.datetime.utcfromtimestamp(
-                        float(tks[-1].split()[0]))
-                    values.append(data(i, j, k, year, month, day, first, last,
-                                       len(tks)))
+                    values.append([exchange,
+                                   symbol + expiry,
+                                   year,
+                                   month,
+                                   day,
+                                   datetime.datetime.utcfromtimestamp(
+                                   float(tks[0].split()[0])).strftime(
+                                   '%Y/%m/%d %H:%M:%S'),
+                                   datetime.datetime.utcfromtimestamp(
+                                   float(tks[-1].split()[0])).strftime(
+                                   '%Y/%m/%d %H:%M:%S'),
+                                   len(tks)])
     return values
 
 
@@ -83,8 +61,7 @@ def read_file(path, name):
 
 # Read holidays list from file.
 HOLIDAYS = []
-HOLIDAYS = read_file(os.path.join(
-                                  os.getenv('BICYCLE_HOME'),
+HOLIDAYS = read_file(os.path.join(os.getenv('BICYCLE_HOME'),
                                   'share/dates'),
                                   'holidays.txt')
 
@@ -101,20 +78,15 @@ def check_date(date):
         return False
 
 
-def set_config(root, group, exchanges):
-    """Return tuple symbols and expiry (for futures), symbols otherwise."""
+def set_futures_config(root, exchanges):
+    """Return tuple symbols and expiry."""
     symbols = {}
-    if group == 'futures':
-        expiry = {}
-        for i in exchanges:
-            symbols[i] = [x for x in os.listdir(os.path.join(root, i))]
-            for j in symbols[i]:
-                expiry[j] = os.listdir(os.path.join(root, i, j))
-        return symbols, expiry
-    else:
-        for i in exchanges:
-            symbols[i] = [x for x in os.listdir(os.path.join(root, i))]
-        return symbols
+    expiry = {}
+    for i in exchanges:
+        symbols[i] = os.listdir(os.path.join(root, i))
+        for j in symbols[i]:
+            expiry[j] = os.listdir(os.path.join(root, i, j))
+    return symbols, expiry
 
 
 def write_ticks(start, end, symbol, data, path):
@@ -174,11 +146,12 @@ def main():
                         dest='group',
                         help='One of: equities, fx, or futures '
                              '(default: %(default)s)',
-                        nargs='?')
+                        nargs=1)
     parser.add_argument('--source',
                         default='ib',
                         dest='source',
-                        help='Default: %(default)s)')
+                        help='Default: %(default)s)',
+                        nargs=1)
     parser.add_argument('--exchanges',
                         default='nymex',
                         dest='exchanges',
@@ -187,11 +160,13 @@ def main():
     parser.add_argument('--start',
                         default='2011-11-01',
                         dest='start',
-                        help='Date format %%Y-%%m-%%d (default: %(default)s)')
+                        help='Date format %%Y-%%m-%%d (default: %(default)s)',
+                        nargs=1)
     parser.add_argument('--end',
                         default='2011-11-02',
                         dest='end',
-                        help='Date format %%Y-%%m-%%d (default: %(default)s)')
+                        help='Date format %%Y-%%m-%%d (default: %(default)s)',
+                        nargs=1)
 
     # Set group, source, and exchanges.
     group = parser.parse_args().group
@@ -201,13 +176,15 @@ def main():
     # Set root directory.
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
 
-    symbols, expiry = set_config(root, group, exchanges)
+    symbols, expiry = set_futures_config(root, exchanges)
 
-    for i in exchanges:
-        for j in symbols[i]:
-            for k in expiry[j]:
-                values = get_tks_data(root, i, j, k)
-                print(values)
+    for exchange in exchanges:
+        for symbol in symbols[exchange]:
+            for expiration in expiry[symbol]:
+                values = get_tks_data(root,
+                                      exchange=exchange,
+                                      symbol=symbol,
+                                      expiry=expiration)
 
 
 if __name__ == '__main__':
