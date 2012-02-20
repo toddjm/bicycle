@@ -11,6 +11,29 @@ __copyright__ = "Copyright 2011,2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
+def check_date(date):
+    """
+    Returns True if date is not a Saturday or Sunday or
+    holiday, False otherwise.
+    """
+    holidays = get_holidays()
+    # Ensure that date is not a Saturday, Sunday, or holiday.
+    if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in holidays):
+        return True
+    else:
+        return False
+
+
+def get_holidays():
+    """Read holidays list from file."""
+    infile = os.path.join(os.getenv('BICYCLE_HOME'),
+                                    'share/dates/holidays.txt')
+    with open(infile, 'r') as tmp:
+        holidays = tmp.readlines()
+    holidays = [x.strip() for x in holidays]
+    return holidays
+
+
 def get_tks_data(root, **kwargs):
     """Return list of stats for tks files in root dir."""
     exchange = kwargs.get('exchange', "")
@@ -59,34 +82,43 @@ def read_file(path, name):
     return values
 
 
-# Read holidays list from file.
-HOLIDAYS = []
-HOLIDAYS = read_file(os.path.join(os.getenv('BICYCLE_HOME'),
-                                  'share/dates'),
-                                  'holidays.txt')
-
-
-def check_date(date):
-    """
-    Returns True if date is not a Saturday or Sunday or
-    holiday, False otherwise.
-    """
-    # Ensure that date is not a Saturday, Sunday, or holiday.
-    if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
-        return True
-    else:
-        return False
-
-
-def set_futures_config(root, exchanges):
-    """Return tuple symbols and expiry."""
-    symbols = {}
+def set_expiry(root, exchanges, symbols):
+    """Return dict for expiry, keyed on symbols."""
     expiry = {}
     for i in exchanges:
-        symbols[i] = os.listdir(os.path.join(root, i))
         for j in symbols[i]:
             expiry[j] = os.listdir(os.path.join(root, i, j))
-    return symbols, expiry
+    return expiry
+
+
+def set_parser():
+    """Return parser for command line arguments."""
+    parser = argparse.ArgumentParser(description='Analyze ticker plant.')
+    parser.add_argument('--group',
+                        default='futures',
+                        dest='group',
+                        help='One of: equities, fx, or futures '
+                             '(default: %(default)s)',
+                        nargs=1)
+    parser.add_argument('--source',
+                        default='ib',
+                        dest='source',
+                        help='Default: %(default)s)',
+                        nargs=1)
+    parser.add_argument('--exchanges',
+                        default='nymex',
+                        dest='exchanges',
+                        help='Space-separated names (default: %(default)s)',
+                        nargs='+')
+    return parser
+
+
+def set_symbols(root, exchanges):
+    """Return dict of symbols, keyed on exchanges."""
+    symbols = {}
+    for i in exchanges:
+        symbols[i] = os.listdir(os.path.join(root, i))
+    return symbols
 
 
 def write_ticks(start, end, symbol, data, path):
@@ -139,44 +171,26 @@ def main():
     statistics for what is collected and missing.
 
     """
-    # Define parser and collect command line arguments.
-    parser = argparse.ArgumentParser(description='Analyze ticker plant.')
-    parser.add_argument('--group',
-                        default='futures',
-                        dest='group',
-                        help='One of: equities, fx, or futures '
-                             '(default: %(default)s)',
-                        nargs=1)
-    parser.add_argument('--source',
-                        default='ib',
-                        dest='source',
-                        help='Default: %(default)s)',
-                        nargs=1)
-    parser.add_argument('--exchanges',
-                        default='nymex',
-                        dest='exchanges',
-                        help='Space-separated names (default: %(default)s)',
-                        nargs='+')
-    parser.add_argument('--start',
-                        default='2011-11-01',
-                        dest='start',
-                        help='Date format %%Y-%%m-%%d (default: %(default)s)',
-                        nargs=1)
-    parser.add_argument('--end',
-                        default='2011-11-02',
-                        dest='end',
-                        help='Date format %%Y-%%m-%%d (default: %(default)s)',
-                        nargs=1)
+    # Parse command line arguments.
+    parser = set_parser()
 
     # Set group, source, and exchanges.
-    group = parser.parse_args().group
-    source = parser.parse_args().source
+    group = parser.parse_args().group[0]
+    source = parser.parse_args().source[0]
     exchanges = parser.parse_args().exchanges
+
+    print(group)
+    print(source)
+    print(exchanges)
 
     # Set root directory.
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
 
-    symbols, expiry = set_futures_config(root, exchanges)
+    print(root)
+
+    # Set symbols and expiry dicts.
+    symbols = set_symbols(root, exchanges)
+    expiry = set_expiry(root, exchanges, symbols)
 
     for exchange in exchanges:
         for symbol in symbols[exchange]:
@@ -185,6 +199,7 @@ def main():
                                       exchange=exchange,
                                       symbol=symbol,
                                       expiry=expiration)
+                print(values)
 
 
 if __name__ == '__main__':
