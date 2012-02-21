@@ -6,7 +6,7 @@
 #
 # Usage: db_to_flat_file.sh <asset class>
 #
-# Copyright 2011 bicycle trading, llc.
+# Copyright 2011, 2012 bicycle trading, llc.
 ################################################################################
 
 asset_class=$1
@@ -24,15 +24,6 @@ then
   exit 1
 fi
 
-mysqldump \
---no-create-info \
---tab=$outdir \
---tz-utc \
---force \
---ignore-table="$asset_class"_15sec.collect \
---ignore-table="$asset_class"_15sec.collect_IB_errors \
-"$asset_class"_15sec
-
 #mysqldump \
 #--no-create-info \
 #--tab=$outdir \
@@ -40,8 +31,17 @@ mysqldump \
 #--force \
 #--ignore-table="$asset_class"_15sec.collect \
 #--ignore-table="$asset_class"_15sec.collect_IB_errors \
-#--where="date(ts) >= '2010-12-18' and date(ts) <= '2011-12-13'" \
 #"$asset_class"_15sec
+
+mysqldump \
+--no-create-info \
+--tab=$outdir \
+--tz-utc \
+--force \
+--ignore-table="$asset_class"_15sec.collect \
+--ignore-table="$asset_class"_15sec.collect_IB_errors \
+--where="date(ts) >= '2011-12-16'" \
+"$asset_class"_15sec
 
 cd $outdir
 
