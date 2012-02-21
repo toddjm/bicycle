@@ -17,7 +17,7 @@ import os
 import sys
 
 __author__ = "Todd Minehardt"
-__copyright__ = "Copyright 2011,2012 bicycle trading, llc"
+__copyright__ = "Copyright 2011, 2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
