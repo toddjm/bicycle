@@ -17,7 +17,7 @@ import os
 import sys
 
 __author__ = "Todd Minehardt"
-__copyright__ = "Copyright 2011, bicycle trading, llc"
+__copyright__ = "Copyright 2011,2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
@@ -148,10 +148,10 @@ def write_ticks(start, end, symbol, data, path):
                                   '{0:02d}'.format(now.day))
             if not os.path.isdir(outdir):
                 os.makedirs(outdir, 0755)
-            # Set .tks file for output.
-            tksfile = os.path.join(outdir, symbol + '.tks')
+            # Set tks file for output.
+            tks = os.path.join(outdir, symbol + '.tks')
             # Create outfile in append mode.
-            with open(tksfile, 'a') as outfile:
+            with open(tks, 'a') as outfile:
                 for i in range(len(subset)):
                     # Append newline before writing to file.
                     outfile.write(subset[i] + '\n')
