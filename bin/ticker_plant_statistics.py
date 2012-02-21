@@ -7,15 +7,12 @@ import os
 import sys
 
 __author__ = "Todd Minehardt"
-__copyright__ = "Copyright 2011,2012 bicycle trading, llc"
+__copyright__ = "Copyright 2011, 2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
 def check_date(date):
-    """
-    Returns True if date is not a Saturday or Sunday or
-    holiday, False otherwise.
-    """
+    """Returns True if date is weekday/non-holiday, False otherwise."""
     holidays = get_holidays()
     # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in holidays):
@@ -30,7 +27,7 @@ def get_holidays():
                                     'share/dates/holidays.txt')
     with open(infile, 'r') as tmp:
         holidays = tmp.readlines()
-    holidays = [x.strip() for x in holidays]
+    holidays = [i.strip() for i in holidays]
     return holidays
 
 
@@ -48,7 +45,7 @@ def get_tks_data(root, **kwargs):
                 if not os.stat(infile).st_size == 0:
                     with open(infile, 'r') as tmp:
                         tks = tmp.readlines()
-                    tks = [x.strip() for x in tks]
+                    tks = [i.strip() for i in tks]
                     values.append([exchange,
                                    symbol + expiry,
                                    year,
@@ -77,7 +74,7 @@ def read_file(path, name):
         print("File {0} does not exist.").format(infile)
         sys.exit()
     values = infile.readlines()
-    values = [x.strip() for x in values]
+    values = [i.strip() for i in values]
     infile.close()
     return values
 
@@ -97,8 +94,8 @@ def set_parser():
     parser.add_argument('--group',
                         default='futures',
                         dest='group',
-                        help='One of: equities, fx, or futures '
-                             '(default: %(default)s)',
+                        help='One of: equities, futures, or fx '
+                             ' (default: %(default)s)',
                         nargs=1)
     parser.add_argument('--source',
                         default='ib',
@@ -144,10 +141,10 @@ def write_ticks(start, end, symbol, data, path):
             if not os.path.isdir(outdir):
                 os.makedirs(outdir, 0755)
             # Set name of output .tks file.
-            tksfile = os.path.join(outdir, symbol + '.tks')
+            tks = os.path.join(outdir, symbol + '.tks')
             # Create outfile in append mode.
             try:
-                outfile = open(tksfile, 'a')
+                outfile = open(tks, 'a')
             except IOError:
                 print("File {0} cannot be created.").format(outfile)
                 sys.exit()
@@ -179,14 +176,11 @@ def main():
     source = parser.parse_args().source[0]
     exchanges = parser.parse_args().exchanges
 
+    # Set root directory.
     print(group)
     print(source)
-    print(exchanges)
 
-    # Set root directory.
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
-
-    print(root)
 
     # Set symbols and expiry dicts.
     symbols = set_symbols(root, exchanges)
