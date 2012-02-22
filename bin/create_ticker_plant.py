@@ -81,7 +81,7 @@ def get_timestamps(data):
 
 
 def read_file(path, name):
-    """Read from file and return a list of strings without newlines."""
+    """Read file and return a list of strings without newlines."""
     if not os.path.isdir(path):
         print("{0} is not a directory.").format(path)
         sys.exit()
@@ -162,7 +162,7 @@ def write_ticks(start, end, symbol, data, path):
 def main():
     """
     Creates ticker plant directories and populates
-    appropriate directories therein.
+    appropriate directories therein. Appends files.
 
     """
     # Read configuration file.
@@ -175,24 +175,24 @@ def main():
                         choices=['equities', 'futures', 'fx'],
                         default='equities',
                         dest='group',
-                        help='One of: equities, futures, or fx'
-                            ' (default: %(default)s)')
+                        help='One of: %(choices)s '
+                             '(default: %(default)s)')
     parser.add_argument('--source',
                         choices=['ib'],
                         default='ib',
                         dest='source',
-                        help='One of: ib'
-                            ' (default: %(default)s)')
+                        help='One of: ib' 
+                             '(default: %(default)s)')
     parser.add_argument('--start',
                         default='2011-11-01 00:00:00',
                         dest='start',
-                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S'
-                            ' (default: %(default)s)')
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+                             '(default: %(default)s)')
     parser.add_argument('--end',
                         default='2011-11-02 00:00:00',
                         dest='end',
-                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S'
-                             ' (default: %(default)s)')
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+                             '(default: %(default)s)')
 
     # Set group.
     group = parser.parse_args().group
