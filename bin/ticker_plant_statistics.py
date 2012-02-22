@@ -64,7 +64,7 @@ def get_tks_data(root, **kwargs):
 
 
 def read_file(path, name):
-    """Read from file and return a list of strings without newlines."""
+    """Read file and return a list of strings without newlines."""
     if not os.path.isdir(path):
         print("Directory {0} does not exist.").format(path)
         sys.exit()
@@ -122,7 +122,7 @@ def set_symbols(root, exchanges):
 
 def write_ticks(start, end, symbol, data, path):
     """Write ticks to files with .tks suffix."""
-    # Adjust start and end based on data start/end.
+    # Adjust passed-in start and end based on data start/end.
     first = datetime.datetime.utcfromtimestamp(float(data[0].split()[0]))
     last = datetime.datetime.utcfromtimestamp(float(data[-1].split()[0]))
     if first > start:
@@ -142,7 +142,7 @@ def write_ticks(start, end, symbol, data, path):
             # If directory does not exist, create it and parents.
             if not os.path.isdir(outdir):
                 os.makedirs(outdir, 0755)
-            # Set name of output .tks file.
+            # Set name of output tks file.
             tks = os.path.join(outdir, symbol + '.tks')
             # Create outfile in append mode.
             try:
@@ -150,7 +150,6 @@ def write_ticks(start, end, symbol, data, path):
             except IOError:
                 print("File {0} cannot be created.").format(outfile)
                 sys.exit()
-            # Iterate through data.
             for i in range(len(data)):
                 # Set timestamp in UTC from field 0 of infile.
                 timestamp = datetime.datetime.utcfromtimestamp(
@@ -170,24 +169,16 @@ def main():
     statistics for what is collected and missing.
 
     """
-    # Parse command line arguments.
+    # Parse command line arguments, set local variables.
     parser = set_parser()
-
-    # Set group, source, and exchanges.
     group = parser.parse_args().group
     source = parser.parse_args().source
     exchanges = parser.parse_args().exchanges
-
-    # Set root directory.
-    print(group)
-    print(source)
-
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
-
-    # Set symbols and expiry dicts.
     symbols = set_symbols(root, exchanges)
     expiry = set_expiry(root, exchanges, symbols)
 
+    # For futures.
     for exchange in exchanges:
         for symbol in symbols[exchange]:
             for expiration in expiry[symbol]:
