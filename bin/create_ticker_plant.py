@@ -225,8 +225,7 @@ def main():
                                             symbol +
                                             contract +
                                             '.tks')).st_size != 0:
-                        data = read_file(srcdir, symbol +
-                                         contract + '.tks')
+                        data = read_file(srcdir, symbol + contract + '.tks')
                         # Set path for writing tick files.
                         path = os.path.join(os.getenv('TICKS_HOME'),
                                             group,
@@ -237,8 +236,7 @@ def main():
                         # Write tick data to files.
                         print("Writing ticks for {0}{1}...").format(symbol,
                                                                     contract)
-                        write_ticks(start, end,
-                                    symbol, data, path)
+                        write_ticks(start, end, symbol, data, path)
             else:
                 # Read ticks from file if non-zero size.
                 if os.stat(os.path.join(srcdir,
