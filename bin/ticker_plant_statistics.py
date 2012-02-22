@@ -11,24 +11,26 @@ __copyright__ = "Copyright 2011, 2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
-def check_date(date):
-    """Returns True if date is weekday/non-holiday, False otherwise."""
-    holidays = get_holidays()
-    # Ensure that date is not a Saturday, Sunday, or holiday.
-    if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in holidays):
-        return True
-    else:
-        return False
-
-
-def get_holidays():
-    """Read holidays list from file."""
+class Holiday(object):
+    """Holidays class."""
     infile = os.path.join(os.getenv('BICYCLE_HOME'),
                                     'share/dates/holidays.txt')
     with open(infile, 'r') as tmp:
-        holidays = tmp.readlines()
-    holidays = [i.strip() for i in holidays]
-    return holidays
+        values = tmp.readlines()
+    values = [i.strip() for i in values]
+    holidays = values
+
+
+HOLIDAYS = Holiday.holidays
+
+
+def check_date(date):
+    """Returns True if date is weekday/non-holiday, False otherwise."""
+    # Ensure that date is not a Saturday, Sunday, or holiday.
+    if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
+        return True
+    else:
+        return False
 
 
 def get_tks_data(root, **kwargs):
@@ -92,16 +94,16 @@ def set_parser():
     """Return parser for command line arguments."""
     parser = argparse.ArgumentParser(description='Analyze ticker plant.')
     parser.add_argument('--group',
+                        choices=['equities', 'futures', 'fx'],
                         default='futures',
                         dest='group',
-                        help='One of: equities, futures, or fx '
-                             ' (default: %(default)s)',
-                        nargs=1)
+                        help='One of: %(choices)s '
+                             '(default: %(default)s)')
     parser.add_argument('--source',
+                        choices=['ib'],
                         default='ib',
                         dest='source',
-                        help='Default: %(default)s)',
-                        nargs=1)
+                        help='Default: %(default)s)')
     parser.add_argument('--exchanges',
                         default='nymex',
                         dest='exchanges',
@@ -172,8 +174,8 @@ def main():
     parser = set_parser()
 
     # Set group, source, and exchanges.
-    group = parser.parse_args().group[0]
-    source = parser.parse_args().source[0]
+    group = parser.parse_args().group
+    source = parser.parse_args().source
     exchanges = parser.parse_args().exchanges
 
     # Set root directory.
