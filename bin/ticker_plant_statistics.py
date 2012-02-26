@@ -6,7 +6,6 @@ import bisect
 import collections
 import datetime
 import os
-import sys
 
 __author__ = "Todd Minehardt"
 __copyright__ = "Copyright 2011, 2012 bicycle trading, llc"
@@ -55,10 +54,20 @@ def get_duplicates(values):
     """Return True if at least one timestamp is duplicated, else False."""
     values = get_timestamps(values)
     counter = collections.Counter(values)
-    if [i for i in counter if counter[i] > 1]:
+    for i in counter:
+        if counter[i] > 1:
+            break
         return True
-    else:
-        return False
+    return False
+
+
+def get_start_end_datetime(tks):
+    """Return tuple of start and end times for a tks file."""
+    start = datetime.datetime.utcfromtimestamp(
+             float(tks[0].split()[0])).strftime('%Y/%m/%d %H:%M:%S')
+    end = datetime.datetime.utcfromtimestamp(
+           float(tks[-1].split()[0])).strftime('%H:%M:%S')
+    return start, end
 
 
 def get_subset(index, values, threshold):
@@ -88,6 +97,28 @@ def get_timestamps(data):
     return values
 
 
+def get_tks_datetime(root, **kwargs):
+    """Return list for which exist tks files of non-zero size.
+    Format is YYYY/MM/DD HH:MM:SS HH:MM:SS where first time and
+    last time for each date are second and third fields."""
+    exchange = kwargs.get('exchange', "")
+    expiry = kwargs.get('expiry', "")
+    symbol = kwargs.get('symbol', "")
+    cwd = os.path.join(root, exchange, symbol, expiry)
+    values = []
+    for year in os.listdir(cwd):
+        for month in os.listdir(os.path.join(cwd, year)):
+            for day in os.listdir(os.path.join(cwd, year, month)):
+                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
+                if not os.stat(infile).st_size == 0:
+                    with open(infile, 'r') as tmp:
+                        tks = tmp.readlines()
+                    tks = [i.strip() for i in tks]
+                    start, end = get_start_end_datetime(tks)
+                    values.append(start + ' ' + end)
+    return values
+
+
 def get_tks_data(root, **kwargs):
     """Return list of stats for tks files in root dir."""
     exchange = kwargs.get('exchange', "")
@@ -103,38 +134,19 @@ def get_tks_data(root, **kwargs):
                     with open(infile, 'r') as tmp:
                         tks = tmp.readlines()
                     tks = [i.strip() for i in tks]
-                    if not get_duplicates(tks):
-                        values.append([exchange,
-                                       symbol + expiry,
-                                       year,
-                                       month,
-                                       day,
-                                       datetime.datetime.utcfromtimestamp(
-                                       float(tks[0].split()[0])).strftime(
-                                       '%Y/%m/%d %H:%M:%S'),
-                                       datetime.datetime.utcfromtimestamp(
-                                       float(tks[-1].split()[0])).strftime(
-                                       '%Y/%m/%d %H:%M:%S'),
-                                       len(tks)])
-                    else:
-                        print('Duplicate timestamp found '
-                              'in {0}').format(infile)
-                        sys.exit()
-    return values
-
-
-def read_file(path, name):
-    """Read file and return a list of strings without newlines."""
-    if not os.path.isdir(path):
-        print("{0} is not a directory.").format(path)
-        sys.exit()
-    if not os.path.isfile(os.path.join(path, name)):
-        print("{0} is not a file.").format(name)
-        sys.exit()
-    filename = os.path.join(path, name)
-    with open(filename, 'r') as infile:
-        values = infile.readlines()
-    values = [i.strip() for i in values]
+                    tmp.close()
+                    values.append([exchange,
+                                   symbol + expiry,
+                                   year,
+                                   month,
+                                   day,
+                                   datetime.datetime.utcfromtimestamp(
+                                   float(tks[0].split()[0])).strftime(
+                                   '%Y/%m/%d %H:%M:%S'),
+                                   datetime.datetime.utcfromtimestamp(
+                                   float(tks[-1].split()[0])).strftime(
+                                   '%Y/%m/%d %H:%M:%S'),
+                                   len(tks)])
     return values
 
 
@@ -252,12 +264,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
