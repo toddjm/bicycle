@@ -1,4 +1,4 @@
-# Copyright 2011, bicycle trading, llc
+# Copyright 2011, 2012 bicycle trading, llc
 
 alias h='history'
 alias ls='ls --color=auto -F'
