@@ -26,7 +26,11 @@ HOLIDAYS = Holiday.holidays
 
 
 def check_date(date):
-    """Returns True if date is weekday/non-holiday, False otherwise."""
+    """
+    Returns True if date is weekday/non-holiday, False otherwise. Expects
+    date as type(datetime.datetime).
+
+    """
     # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
@@ -76,6 +80,7 @@ def get_subset(index, values, threshold):
 
     Start time is set as threshold: year, month, day, 0, 0, 0.
     End time is set as threshold: year, month, day + 1 day, 0, 0, 0.
+
     """
     start_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
     start_idx = find_ge(index, start_time)
@@ -98,9 +103,13 @@ def get_timestamps(data):
 
 
 def get_tks_datetime(root, **kwargs):
-    """Return list for which exist tks files of non-zero size.
+    """
+    Return list of date, start time, and end time for tks files
+    of non-zero size.
     Format is YYYY/MM/DD HH:MM:SS HH:MM:SS where first time and
-    last time for each date are second and third fields."""
+    last time for each date are second and third fields.
+
+    """
     exchange = kwargs.get('exchange', "")
     expiry = kwargs.get('expiry', "")
     symbol = kwargs.get('symbol', "")
@@ -119,7 +128,7 @@ def get_tks_datetime(root, **kwargs):
     return values
 
 
-def get_tks_data(root, **kwargs):
+def read_ticks_files(root, **kwargs):
     """Return list of stats for tks files in root dir."""
     exchange = kwargs.get('exchange', "")
     expiry = kwargs.get('expiry', "")
@@ -152,39 +161,40 @@ def get_tks_data(root, **kwargs):
 
 def set_expiry(root, exchanges, symbols):
     """Return dict for expiry, keyed on symbols."""
-    expiry = {}
+    values = {}
     for i in exchanges:
         for j in symbols[i]:
-            expiry[j] = os.listdir(os.path.join(root, i, j))
-    return expiry
+            values[j] = os.listdir(os.path.join(root, i, j))
+    return values
 
 
 def set_parser():
     """Return parser for command line arguments."""
-    parser = argparse.ArgumentParser(description='Analyze ticker plant.')
-    parser.add_argument('--group',
+    values = argparse.ArgumentParser(description='Analyze ticker plant.')
+    values.add_argument('--group',
                         choices=['equities', 'futures', 'fx'],
                         default='futures',
                         dest='group',
                         help='One of: %(choices)s '
                              '(default: %(default)s)')
-    parser.add_argument('--source',
+    values.add_argument('--source',
                         choices=['ib'],
                         default='ib',
                         dest='source',
                         help='Default: %(default)s)')
-    parser.add_argument('--exchanges',
+    values.add_argument('--exchanges',
                         default='nymex',
                         dest='exchanges',
                         help='Space-separated names (default: %(default)s)',
                         nargs='+')
-    return parser
+    return values
 
 
 def set_start_end(start, end, data):
     """
     Return tuple of start and end dates modifed if data start
     and/or times are before/after start/end.
+
     """
     first = datetime.datetime.utcfromtimestamp(float(
                                                data[0].split()[0])).date()
@@ -201,10 +211,10 @@ def set_start_end(start, end, data):
 
 def set_symbols(root, exchanges):
     """Return dict of symbols, keyed on exchanges."""
-    symbols = {}
+    values = {}
     for i in exchanges:
-        symbols[i] = os.listdir(os.path.join(root, i))
-    return symbols
+        values[i] = os.listdir(os.path.join(root, i))
+    return values
 
 
 def write_ticks(start, end, symbol, data, path):
@@ -255,10 +265,10 @@ def main():
     for exchange in exchanges:
         for symbol in symbols[exchange]:
             for expiration in expiry[symbol]:
-                values = get_tks_data(root,
-                                      exchange=exchange,
-                                      symbol=symbol,
-                                      expiry=expiration)
+                values = read_ticks_files(root,
+                                          exchange=exchange,
+                                          symbol=symbol,
+                                          expiry=expiration)
                 print(values)
 
 
