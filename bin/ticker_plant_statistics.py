@@ -71,7 +71,7 @@ def find_duplicates(root, **kwargs):
                 if not os.stat(infile).st_size == 0:
                     files = get_duplicates(infile)
                     for i in range(len(files)):
-                        if (str(files[i]) is not None):
+                        if (files[i] is not None):
                             duplicates.append(files[i])
     return duplicates
 
