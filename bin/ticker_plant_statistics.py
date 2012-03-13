@@ -34,8 +34,7 @@ def check_date(date):
     # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
-    else:
-        return False
+    return False
 
 
 def find_ge(values, threshold):
@@ -54,15 +53,54 @@ def find_le(values, threshold):
     raise ValueError
 
 
-def get_duplicates(values):
-    """Return True if at least one timestamp is duplicated, else False."""
-    values = get_timestamps(values)
+def find_duplicates(root, **kwargs):
+    """
+    Return list of full path names to tick files containing
+    duplicate entries.
+
+    """
+    exchange = kwargs.get('exchange', "")
+    expiry = kwargs.get('expiry', "")
+    symbol = kwargs.get('symbol', "")
+    cwd = os.path.join(root, exchange, symbol, expiry)
+    duplicates = []
+    for year in os.listdir(cwd):
+        for month in os.listdir(os.path.join(cwd, year)):
+            for day in os.listdir(os.path.join(cwd, year, month)):
+                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
+                if not os.stat(infile).st_size == 0:
+                    files = get_duplicates(infile)
+                    for i in range(len(files)):
+                        if (str(files[i]) is not None):
+                            duplicates.append(files[i])
+    return duplicates
+
+
+#def get_duplicates(values):
+#    values = get_timestamps(values)
+#    counter = collections.Counter(values)
+#    for i in counter:
+#        if counter[i] > 1:
+#            break
+#        return True
+#    return False
+def get_duplicates(infile):
+    """Return list of paths to files containing duplicates."""
+    with open(infile, 'r') as tmp:
+        tks = tmp.readlines()
+    tks = [i.strip() for i in tks]
+    tmp.close()
+    files = []
+    values = []
+    for i in range(len(tks)):
+        values.append(datetime.datetime.utcfromtimestamp(
+            float(tks[i].split()[0])))
+    values.sort()
     counter = collections.Counter(values)
     for i in counter:
         if counter[i] > 1:
-            break
-        return True
-    return False
+            files.append(infile)
+    return files
 
 
 def get_start_end_datetime(tks):
@@ -182,8 +220,12 @@ def set_parser():
                         default='ib',
                         dest='source',
                         help='Default: %(default)s)')
+    # 'exchanges' must be returned as a list, even for one member.
     values.add_argument('--exchanges',
-                        default='nymex',
+                        choices=['smart', 'idealpro', 'cfe', 'dtb', 'ecbot',
+                                 'globex', 'ipe', 'liffe', 'nybot', 'nymex',
+                                 'nyseliffe'],
+                        default=['nymex'],
                         dest='exchanges',
                         help='Space-separated names (default: %(default)s)',
                         nargs='+')
@@ -259,16 +301,71 @@ def main():
     exchanges = parser.parse_args().exchanges
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
     symbols = set_symbols(root, exchanges)
-    expiry = set_expiry(root, exchanges, symbols)
 
-    # For futures.
-    for exchange in exchanges:
-        for symbol in symbols[exchange]:
-            for expiration in expiry[symbol]:
+    # Print list containing lines such as:
+    # [exchange, symbol + expiry, year_collected, month_collected,
+    #  day_collected, start_time, end_time, number_of_entries]
+    if (group == 'futures'):
+        expiry = set_expiry(root, exchanges, symbols)
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
+                for expiration in expiry[symbol]:
+                    values = read_ticks_files(root,
+                                              exchange=exchange,
+                                              symbol=symbol,
+                                              expiry=expiration)
+                    print(values)
+    else:
+        # For equities and fx.
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
                 values = read_ticks_files(root,
                                           exchange=exchange,
-                                          symbol=symbol,
-                                          expiry=expiration)
+                                          symbol=symbol)
+                print(values)
+
+    # Print list indexed by [exchange symbol expiry] with
+    # [date_collected start_time end_time] for collected data.
+    if (group == 'futures'):
+        expiry = set_expiry(root, exchanges, symbols)
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
+                for expiration in expiry[symbol]:
+                    label = [exchange, symbol, expiration]
+                    values = get_tks_datetime(root,
+                                              exchange=exchange,
+                                              symbol=symbol,
+                                              expiry=expiration)
+                    print label, values
+    else:
+        # For equities and fx.
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
+                label = [exchange, symbol]
+                values = get_tks_datetime(root,
+                                          exchange=exchange,
+                                          symbol=symbol)
+                print label, values
+
+    # Print list containing lines of full path to ticks files
+    # containing duplicate entries.
+    if (group == 'futures'):
+        expiry = set_expiry(root, exchanges, symbols)
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
+                for expiration in expiry[symbol]:
+                    values = find_duplicates(root,
+                                             exchange=exchange,
+                                             symbol=symbol,
+                                             expiry=expiration)
+                    print(values)
+    else:
+        # For equities and fx.
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
+                values = find_duplicates(root,
+                                         exchange=exchange,
+                                         symbol=symbol)
                 print(values)
 
 
