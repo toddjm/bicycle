@@ -37,6 +37,26 @@ def check_date(date):
     return False
 
 
+def find_duplicates(root, **kwargs):
+    """
+    Return list of full path names to tick files containing
+    duplicate entries.
+
+    """
+    exchange = kwargs.get('exchange', "")
+    expiry = kwargs.get('expiry', "")
+    symbol = kwargs.get('symbol', "")
+    cwd = os.path.join(root, exchange, symbol, expiry)
+    for year in os.listdir(cwd):
+        for month in os.listdir(os.path.join(cwd, year)):
+            for day in os.listdir(os.path.join(cwd, year, month)):
+                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
+                if not os.stat(infile).st_size == 0:
+                    x = get_duplicates(infile)
+                    if x is True:
+                        return infile
+
+
 def find_ge(values, threshold):
     """Return index for leftmost value => threshold."""
     i = bisect.bisect_left(values, threshold)
@@ -53,54 +73,23 @@ def find_le(values, threshold):
     raise ValueError
 
 
-def find_duplicates(root, **kwargs):
-    """
-    Return list of full path names to tick files containing
-    duplicate entries.
-
-    """
-    exchange = kwargs.get('exchange', "")
-    expiry = kwargs.get('expiry', "")
-    symbol = kwargs.get('symbol', "")
-    cwd = os.path.join(root, exchange, symbol, expiry)
-    duplicates = []
-    for year in os.listdir(cwd):
-        for month in os.listdir(os.path.join(cwd, year)):
-            for day in os.listdir(os.path.join(cwd, year, month)):
-                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
-                if not os.stat(infile).st_size == 0:
-                    files = get_duplicates(infile)
-                    for i in range(len(files)):
-                        if (files[i] is not None):
-                            duplicates.append(files[i])
-    return duplicates
-
-
-#def get_duplicates(values):
-#    values = get_timestamps(values)
-#    counter = collections.Counter(values)
-#    for i in counter:
-#        if counter[i] > 1:
-#            break
-#        return True
-#    return False
 def get_duplicates(infile):
-    """Return list of paths to files containing duplicates."""
+    """Return string of path to file containing duplicates."""
     with open(infile, 'r') as tmp:
         tks = tmp.readlines()
     tks = [i.strip() for i in tks]
     tmp.close()
-    files = []
     values = []
     for i in range(len(tks)):
         values.append(datetime.datetime.utcfromtimestamp(
             float(tks[i].split()[0])))
     values.sort()
     counter = collections.Counter(values)
+    flag = False
     for i in counter:
         if counter[i] > 1:
-            files.append(infile)
-    return files
+            flag = True
+    return flag
 
 
 def get_start_end_datetime(tks):
@@ -302,11 +291,13 @@ def main():
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
     symbols = set_symbols(root, exchanges)
 
+    if (group == 'futures'):
+        expiry = set_expiry(root, exchanges, symbols)
+
     # Print list containing lines such as:
     # [exchange, symbol + expiry, year_collected, month_collected,
     #  day_collected, start_time, end_time, number_of_entries]
     if (group == 'futures'):
-        expiry = set_expiry(root, exchanges, symbols)
         for exchange in exchanges:
             for symbol in symbols[exchange]:
                 for expiration in expiry[symbol]:
@@ -327,7 +318,6 @@ def main():
     # Print list indexed by [exchange symbol expiry] with
     # [date_collected start_time end_time] for collected data.
     if (group == 'futures'):
-        expiry = set_expiry(root, exchanges, symbols)
         for exchange in exchanges:
             for symbol in symbols[exchange]:
                 for expiration in expiry[symbol]:
@@ -350,15 +340,16 @@ def main():
     # Print list containing lines of full path to ticks files
     # containing duplicate entries.
     if (group == 'futures'):
-        expiry = set_expiry(root, exchanges, symbols)
         for exchange in exchanges:
             for symbol in symbols[exchange]:
                 for expiration in expiry[symbol]:
+                    label = [exchange, symbol, expiration]
                     values = find_duplicates(root,
                                              exchange=exchange,
                                              symbol=symbol,
                                              expiry=expiration)
-                    print(values)
+                    if values != None:
+                        print label, values
     else:
         # For equities and fx.
         for exchange in exchanges:
