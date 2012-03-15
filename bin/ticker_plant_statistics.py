@@ -38,11 +38,7 @@ def check_date(date):
 
 
 def find_duplicates(root, **kwargs):
-    """
-    Return list of full path names to tick files containing
-    duplicate entries.
-
-    """
+    """Return full path names of tick files containing duplicate entries."""
     exchange = kwargs.get('exchange', "")
     expiry = kwargs.get('expiry', "")
     symbol = kwargs.get('symbol', "")
@@ -52,8 +48,7 @@ def find_duplicates(root, **kwargs):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
                 if not os.stat(infile).st_size == 0:
-                    x = get_duplicates(infile)
-                    if x is True:
+                    if get_duplicates(infile) is True:
                         return infile
 
 
@@ -74,7 +69,7 @@ def find_le(values, threshold):
 
 
 def get_duplicates(infile):
-    """Return string of path to file containing duplicates."""
+    """Return True if file contains duplicate timestamps, else False."""
     with open(infile, 'r') as tmp:
         tks = tmp.readlines()
     tks = [i.strip() for i in tks]
@@ -349,7 +344,7 @@ def main():
                                              symbol=symbol,
                                              expiry=expiration)
                     if values != None:
-                        print label, values
+                        print values
     else:
         # For equities and fx.
         for exchange in exchanges:
@@ -357,7 +352,8 @@ def main():
                 values = find_duplicates(root,
                                          exchange=exchange,
                                          symbol=symbol)
-                print(values)
+                if values != None:
+                    print values
 
 
 if __name__ == '__main__':
