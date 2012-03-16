@@ -112,6 +112,34 @@ def set_exchanges_symbols(config, group, source):
     return exchanges, symbols
 
 
+def set_parser():
+    """Return parser for command line arguments."""
+    values = argparse.ArgumentParser(description='Create ticker plant.')
+    values.add_argument('--group',
+                        choices=['equities', 'futures', 'fx'],
+                        default='equities',
+                        dest='group',
+                        help='One of: %(choices)s '
+                             '(default: %(default)s)')
+    values.add_argument('--source',
+                        choices=['ib'],
+                        default='ib',
+                        dest='source',
+                        help='One of: ib'
+                             '(default: %(default)s)')
+    values.add_argument('--start',
+                        default='2011-11-01 00:00:00',
+                        dest='start',
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+                             '(default: %(default)s)')
+    values.add_argument('--end',
+                        default='2011-11-02 00:00:00',
+                        dest='end',
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+                             '(default: %(default)s)')
+    return values
+
+
 def set_start_end(start, end, data):
     """
     Return tuple of start and end dates modifed if data start
@@ -170,43 +198,36 @@ def main():
                                                         'config.ini'))
 
     # Define parser and collect command line arguments.
-    parser = argparse.ArgumentParser(description='Load ticker plant.')
-    parser.add_argument('--group',
-                        choices=['equities', 'futures', 'fx'],
-                        default='equities',
-                        dest='group',
-                        help='One of: %(choices)s '
-                             '(default: %(default)s)')
-    parser.add_argument('--source',
-                        choices=['ib'],
-                        default='ib',
-                        dest='source',
-                        help='One of: ib' 
-                             '(default: %(default)s)')
-    parser.add_argument('--start',
-                        default='2011-11-01 00:00:00',
-                        dest='start',
-                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
-                             '(default: %(default)s)')
-    parser.add_argument('--end',
-                        default='2011-11-02 00:00:00',
-                        dest='end',
-                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
-                             '(default: %(default)s)')
+#    parser = argparse.ArgumentParser(description='Load ticker plant.')
+#    parser.add_argument('--group',
+#                        choices=['equities', 'futures', 'fx'],
+#                        default='equities',
+#                        dest='group',
+#                        help='One of: %(choices)s '
+#                             '(default: %(default)s)')
+#    parser.add_argument('--source',
+#                        choices=['ib'],
+#                        default='ib',
+#                        dest='source',
+#                        help='One of: ib'
+#                             '(default: %(default)s)')
+#    parser.add_argument('--start',
+#                        default='2011-11-01 00:00:00',
+#                        dest='start',
+#                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+#                             '(default: %(default)s)')
+#    parser.add_argument('--end',
+#                        default='2011-11-02 00:00:00',
+#                        dest='end',
+#                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+#                             '(default: %(default)s)')
 
-    # Set group.
+    # Parse command line arguments, set local variables.
+    parser = set_parser()
     group = parser.parse_args().group
-
-    # Set data source for asset class.
     source = parser.parse_args().source
-
-    # Set source directory for files to read and convert.
     srcdir = config[group]['srcdir']
-
-    # Set exchanges and symbols.
     exchanges, symbols = set_exchanges_symbols(config, group, source)
-
-    # Set start and end times.
     start = datetime.datetime.strptime(parser.parse_args().start,
                                        '%Y-%m-%d %H:%M:%S')
     end = datetime.datetime.strptime(parser.parse_args().end,
