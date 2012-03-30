@@ -183,11 +183,13 @@ def write_ticks(start, end, symbol, data, path):
                 os.makedirs(outdir, 0755)
             # Set tks file for output.
             tks = os.path.join(outdir, symbol + '.tks')
-            # Create outfile in append mode.
-            with open(tks, 'a') as outfile:
-                for i in range(len(subset)):
-                    # Append newline before writing to file.
-                    outfile.write(subset[i] + '\n')
+            # If tks file does not exist or is zero size,
+            # create/append tks file.
+            if not os.path.isfile(tks) or os.stat(tks).st_size == 0:
+                with open(tks, 'a') as outfile:
+                    for i in range(len(subset)):
+                        # Append newline before writing to file.
+                        outfile.write(subset[i] + '\n')
         now += datetime.timedelta(days=1)
     return
 
