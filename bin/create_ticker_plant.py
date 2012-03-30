@@ -31,10 +31,12 @@ def check_date(date):
     """
     Returns True if date is not a Saturday or Sunday or
     holiday, False otherwise.
+
     """
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
-    return False
+    else:
+        return False
 
 
 def find_ge(values, threshold):
@@ -42,7 +44,8 @@ def find_ge(values, threshold):
     i = bisect.bisect_left(values, threshold)
     if i != len(values):
         return i
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def find_le(values, threshold):
@@ -50,7 +53,8 @@ def find_le(values, threshold):
     i = bisect.bisect_right(values, threshold)
     if i:
         return i
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def get_subset(index, values, threshold):
@@ -59,6 +63,7 @@ def get_subset(index, values, threshold):
 
     Start time is set as threshold: year, month, day, 0, 0, 0.
     End time is set as threshold: year, month, day + 1 day, 0, 0, 0.
+
     """
     start_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
     start_idx = find_ge(index, start_time)
@@ -238,30 +243,40 @@ def main():
         for symbol in symbols[exchange]:
             # Set path for per-symbol expiry file for futures.
             if group == 'futures':
-                expiry = read_file(srcdir, symbol + '.expiry')
-                # Loop over expiry entries for each symbol.
-                for contract in expiry:
-                    # Read ticks from file if non-zero size.
-                    if os.stat(os.path.join(srcdir,
-                                            symbol +
-                                            contract +
-                                            '.tks')).st_size != 0:
-                        data = read_file(srcdir, symbol + contract + '.tks')
-                        # Set path for writing tick files.
-                        path = os.path.join(os.getenv('TICKS_HOME'),
-                                            group,
-                                            source,
-                                            exchange,
-                                            symbol,
-                                            contract)
-                        # Write tick data to files.
-                        print("Writing ticks for {0}{1}...").format(symbol,
-                                                                    contract)
-                        write_ticks(start, end, symbol, data, path)
+                # Read expiry files if they exist and are non-zero size.
+                fname = os.path.join(srcdir, symbol + '.expiry')
+                if (os.path.isfile(fname) and os.stat(fname).st_size != 0):
+                    expiry = read_file(srcdir, symbol + '.expiry')
+                    # Loop over expiry entries for each symbol.
+                    for contract in expiry:
+                        # Read ticks from file if it exists and is
+                        # non-zero size.
+                        fname = os.path.join(srcdir,
+                                             symbol +
+                                             contract +
+                                             '.tks')
+                        if (os.path.isfile(fname) and
+                            os.stat(fname).st_size != 0):
+                            data = read_file(srcdir,
+                                             symbol +
+                                             contract +
+                                             '.tks')
+                            # Set path for writing tick files.
+                            path = os.path.join(os.getenv('TICKS_HOME'),
+                                                group,
+                                                source,
+                                                exchange,
+                                                symbol,
+                                                contract)
+                            # Write tick data to files.
+                            print("Writing ticks for {0}{1}...").format(
+                                                                   symbol,
+                                                                   contract)
+                            write_ticks(start, end, symbol, data, path)
             else:
-                # Read ticks from file if non-zero size.
-                if os.stat(os.path.join(srcdir,
-                                        symbol + '.tks')).st_size != 0:
+                # Read ticks from file if it exists and is non-zero size.
+                fname = os.path.join(srcdir, symbol + '.tks')
+                if (os.path.isfile(fname) and os.stat(fname).st_size != 0):
                     data = read_file(srcdir, symbol + '.tks')
                     # Set path for writing tick files.
                     path = os.path.join(os.getenv('TICKS_HOME'),
