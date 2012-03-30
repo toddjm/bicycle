@@ -2,10 +2,10 @@
 """Read tick files and create ticker plant.
 
 Command line arguments:
---group asset class (futures, equities, or fx)
---source data source (ib)
---start start date and time (2011-11-01 00:00:00)
---end end date and time (2011-11-02 00:00:00)
+--group : asset class (futures, equities, or fx)
+--source : data source (ib)
+--start : start date and time (2011-11-01 00:00:00)
+--end : end date and time (2011-11-02 00:00:00)
 
 """
 
@@ -202,41 +202,16 @@ def main():
     config = configobj.ConfigObj(os.path.join(os.getenv('BICYCLE_HOME'),
                                                         'config.ini'))
 
-    # Define parser and collect command line arguments.
-#    parser = argparse.ArgumentParser(description='Load ticker plant.')
-#    parser.add_argument('--group',
-#                        choices=['equities', 'futures', 'fx'],
-#                        default='equities',
-#                        dest='group',
-#                        help='One of: %(choices)s '
-#                             '(default: %(default)s)')
-#    parser.add_argument('--source',
-#                        choices=['ib'],
-#                        default='ib',
-#                        dest='source',
-#                        help='One of: ib'
-#                             '(default: %(default)s)')
-#    parser.add_argument('--start',
-#                        default='2011-11-01 00:00:00',
-#                        dest='start',
-#                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
-#                             '(default: %(default)s)')
-#    parser.add_argument('--end',
-#                        default='2011-11-02 00:00:00',
-#                        dest='end',
-#                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
-#                             '(default: %(default)s)')
-
     # Parse command line arguments, set local variables.
     parser = set_parser()
     group = parser.parse_args().group
     source = parser.parse_args().source
     srcdir = config[group]['srcdir']
+    start = parser.parse_args().start
+    end = parser.parse_args().end
+    start = datetime.datetime.strptime(start, '%Y-%m-%d %H:%M:%S')
+    end = datetime.datetime.strptime(end, '%Y-%m-%d %H:%M:%S')
     exchanges, symbols = set_exchanges_symbols(config, group, source)
-    start = datetime.datetime.strptime(parser.parse_args().start,
-                                       '%Y-%m-%d %H:%M:%S')
-    end = datetime.datetime.strptime(parser.parse_args().end,
-                                     '%Y-%m-%d %H:%M:%S')
 
     # Loop over exchanges and symbols.
     for exchange in exchanges:
