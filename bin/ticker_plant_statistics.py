@@ -34,7 +34,8 @@ def check_date(date):
     # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
-    return False
+    else:
+        return False
 
 
 def find_duplicates(root, **kwargs):
@@ -57,7 +58,8 @@ def find_ge(values, threshold):
     i = bisect.bisect_left(values, threshold)
     if i != len(values):
         return i
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def find_le(values, threshold):
@@ -65,7 +67,8 @@ def find_le(values, threshold):
     i = bisect.bisect_right(values, threshold)
     if i:
         return i
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def get_duplicates(infile):
@@ -243,6 +246,86 @@ def set_symbols(root, exchanges):
     return values
 
 
+def show_duplicates(root, exchanges, symbols, **kwargs):
+    """Print list containing lines of full path to ticks files
+    containing duplicate entries.
+
+    """
+    exchanges = kwargs.get('exchanges', "")
+    expiry = kwargs.get('expiry', "")
+    symbols = kwargs.get('symbols', "")
+    for exchange in exchanges:
+        for symbol in symbols[exchange]:
+            if expiry:
+                for expiration in expiry[symbol]:
+                    values = find_duplicates(root,
+                                             exchange=exchange,
+                                             symbol=symbol,
+                                             expiry=expiration)
+                    if values != None:
+                        print values
+            else:
+                values = find_duplicates(root,
+                                         exchange=exchange,
+                                         symbol=symbol)
+                if values != None:
+                    print values
+    return
+
+
+def show_collected_data(root, exchanges, symbols, **kwargs):
+    """Print list indexed by [exchange symbol [expiry]] with
+    [date_collected start_time end_time] for collected data.
+
+    """
+    exchanges = kwargs.get('exchanges', "")
+    expiry = kwargs.get('expiry', "")
+    symbols = kwargs.get('symbols', "")
+    for exchange in exchanges:
+        for symbol in symbols[exchange]:
+            if expiry:
+                for expiration in expiry[symbol]:
+                    label = [exchange, symbol, expiration]
+                    values = get_tks_datetime(root,
+                                              exchange=exchange,
+                                              symbol=symbol,
+                                              expiry=expiration)
+                    print label, values
+            else:
+                label = [exchange, symbol]
+                values = get_tks_datetime(root,
+                                          exchange=exchange,
+                                          symbol=symbol)
+                print label, values
+    return
+
+
+def show_information(root, exchanges, symbols, **kwargs):
+    """Print list containing lines such as:
+    [exchange, symbol + expiry, year_collected, month_collected,
+    day_collected, start_time, end_time, number_of_entries]
+
+    """
+    exchanges = kwargs.get('exchanges', "")
+    expiry = kwargs.get('expiry', "")
+    symbols = kwargs.get('symbols', "")
+    for exchange in exchanges:
+        for symbol in symbols[exchange]:
+            if expiry:
+                for expiration in expiry[symbol]:
+                    values = read_ticks_files(root,
+                                              exchange=exchange,
+                                              symbol=symbol,
+                                              expiry=expiration)
+                    print(values)
+            else:
+                values = read_ticks_files(root,
+                                          exchange=exchange,
+                                          symbol=symbol)
+                print(values)
+    return
+
+
 def write_ticks(start, end, symbol, data, path):
     """Write ticks to files with .tks suffix."""
     # Extract list of timestamps from data.
@@ -292,68 +375,72 @@ def main():
     # Print list containing lines such as:
     # [exchange, symbol + expiry, year_collected, month_collected,
     #  day_collected, start_time, end_time, number_of_entries]
-    if (group == 'futures'):
-        for exchange in exchanges:
-            for symbol in symbols[exchange]:
-                for expiration in expiry[symbol]:
-                    values = read_ticks_files(root,
-                                              exchange=exchange,
-                                              symbol=symbol,
-                                              expiry=expiration)
-                    print(values)
-    else:
-        # For equities and fx.
-        for exchange in exchanges:
-            for symbol in symbols[exchange]:
-                values = read_ticks_files(root,
-                                          exchange=exchange,
-                                          symbol=symbol)
-                print(values)
+#    if (group == 'futures'):
+#        for exchange in exchanges:
+#            for symbol in symbols[exchange]:
+#                for expiration in expiry[symbol]:
+#                    values = read_ticks_files(root,
+#                                              exchange=exchange,
+#                                              symbol=symbol,
+#                                              expiry=expiration)
+#                    print(values)
+#    else:
+#        # For equities and fx.
+#        for exchange in exchanges:
+#            for symbol in symbols[exchange]:
+#                values = read_ticks_files(root,
+#                                          exchange=exchange,
+#                                          symbol=symbol)
+#                print(values)
 
-    # Print list indexed by [exchange symbol expiry] with
+    # Print list indexed by [exchange symbol [expiry]] with
     # [date_collected start_time end_time] for collected data.
-    if (group == 'futures'):
-        for exchange in exchanges:
-            for symbol in symbols[exchange]:
-                for expiration in expiry[symbol]:
-                    label = [exchange, symbol, expiration]
-                    values = get_tks_datetime(root,
-                                              exchange=exchange,
-                                              symbol=symbol,
-                                              expiry=expiration)
-                    print label, values
-    else:
-        # For equities and fx.
-        for exchange in exchanges:
-            for symbol in symbols[exchange]:
-                label = [exchange, symbol]
-                values = get_tks_datetime(root,
-                                          exchange=exchange,
-                                          symbol=symbol)
-                print label, values
+#    if (group == 'futures'):
+#        for exchange in exchanges:
+#            for symbol in symbols[exchange]:
+#                for expiration in expiry[symbol]:
+#                    label = [exchange, symbol, expiration]
+#                    values = get_tks_datetime(root,
+#                                              exchange=exchange,
+#                                              symbol=symbol,
+#                                              expiry=expiration)
+#                    print label, values
+#    else:
+#        # For equities and fx.
+#        for exchange in exchanges:
+#            for symbol in symbols[exchange]:
+#                label = [exchange, symbol]
+#                values = get_tks_datetime(root,
+#                                          exchange=exchange,
+#                                          symbol=symbol)
+#                print label, values
+
+    show_information(root, exchanges, symbols, expiry=expiry)
+    show_collected_data(root, exchanges, symbols, expiry=expiry)
+    show_duplicates(root, exchanges, symbols, expiry=expiry)
 
     # Print list containing lines of full path to ticks files
     # containing duplicate entries.
-    if (group == 'futures'):
-        for exchange in exchanges:
-            for symbol in symbols[exchange]:
-                for expiration in expiry[symbol]:
-                    label = [exchange, symbol, expiration]
-                    values = find_duplicates(root,
-                                             exchange=exchange,
-                                             symbol=symbol,
-                                             expiry=expiration)
-                    if values != None:
-                        print values
-    else:
-        # For equities and fx.
-        for exchange in exchanges:
-            for symbol in symbols[exchange]:
-                values = find_duplicates(root,
-                                         exchange=exchange,
-                                         symbol=symbol)
-                if values != None:
-                    print values
+#    if (group == 'futures'):
+#        for exchange in exchanges:
+#            for symbol in symbols[exchange]:
+#                for expiration in expiry[symbol]:
+#                    label = [exchange, symbol, expiration]
+#                    values = find_duplicates(root,
+#                                             exchange=exchange,
+#                                             symbol=symbol,
+#                                             expiry=expiration)
+#                    if values != None:
+#                        print values
+#    else:
+#        # For equities and fx.
+#        for exchange in exchanges:
+#            for symbol in symbols[exchange]:
+#                values = find_duplicates(root,
+#                                         exchange=exchange,
+#                                         symbol=symbol)
+#                if values != None:
+#                    print values
 
 
 if __name__ == '__main__':
