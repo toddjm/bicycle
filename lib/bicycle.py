@@ -36,7 +36,8 @@ def find_ge(values, threshold):
     i = bisect.bisect_left(values, threshold)
     if i != len(values):
         return i
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def find_le(values, threshold):
@@ -44,7 +45,8 @@ def find_le(values, threshold):
     i = bisect.bisect_right(values, threshold)
     if i:
         return i
-    raise ValueError
+    else:
+        raise ValueError
 
 
 def get_duplicates(values):
