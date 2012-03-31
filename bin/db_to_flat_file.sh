@@ -24,15 +24,6 @@ then
   exit 1
 fi
 
-#mysqldump \
-#--no-create-info \
-#--tab=$outdir \
-#--tz-utc \
-#--force \
-#--ignore-table="$asset_class"_15sec.collect \
-#--ignore-table="$asset_class"_15sec.collect_IB_errors \
-#"$asset_class"_15sec
-
 mysqldump \
 --no-create-info \
 --tab=$outdir \
@@ -40,8 +31,17 @@ mysqldump \
 --force \
 --ignore-table="$asset_class"_15sec.collect \
 --ignore-table="$asset_class"_15sec.collect_IB_errors \
---where="date(ts) >= '2011-12-14'" \
 "$asset_class"_15sec
+
+#mysqldump \
+#--no-create-info \
+#--tab=$outdir \
+#--tz-utc \
+#--force \
+#--ignore-table="$asset_class"_15sec.collect \
+#--ignore-table="$asset_class"_15sec.collect_IB_errors \
+#--where="date(ts) >= '2012-03-01' and date(ts) <= '2012-03-02'" \
+#"$asset_class"_15sec
 
 cd $outdir
 
