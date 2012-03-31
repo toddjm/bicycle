@@ -251,9 +251,7 @@ def show_duplicates(root, exchanges, symbols, **kwargs):
     containing duplicate entries.
 
     """
-    exchanges = kwargs.get('exchanges', "")
     expiry = kwargs.get('expiry', "")
-    symbols = kwargs.get('symbols', "")
     for exchange in exchanges:
         for symbol in symbols[exchange]:
             if expiry:
@@ -278,9 +276,7 @@ def show_collected_data(root, exchanges, symbols, **kwargs):
     [date_collected start_time end_time] for collected data.
 
     """
-    exchanges = kwargs.get('exchanges', "")
     expiry = kwargs.get('expiry', "")
-    symbols = kwargs.get('symbols', "")
     for exchange in exchanges:
         for symbol in symbols[exchange]:
             if expiry:
@@ -306,9 +302,7 @@ def show_information(root, exchanges, symbols, **kwargs):
     day_collected, start_time, end_time, number_of_entries]
 
     """
-    exchanges = kwargs.get('exchanges', "")
     expiry = kwargs.get('expiry', "")
-    symbols = kwargs.get('symbols', "")
     for exchange in exchanges:
         for symbol in symbols[exchange]:
             if expiry:
@@ -372,75 +366,9 @@ def main():
     if (group == 'futures'):
         expiry = set_expiry(root, exchanges, symbols)
 
-    # Print list containing lines such as:
-    # [exchange, symbol + expiry, year_collected, month_collected,
-    #  day_collected, start_time, end_time, number_of_entries]
-#    if (group == 'futures'):
-#        for exchange in exchanges:
-#            for symbol in symbols[exchange]:
-#                for expiration in expiry[symbol]:
-#                    values = read_ticks_files(root,
-#                                              exchange=exchange,
-#                                              symbol=symbol,
-#                                              expiry=expiration)
-#                    print(values)
-#    else:
-#        # For equities and fx.
-#        for exchange in exchanges:
-#            for symbol in symbols[exchange]:
-#                values = read_ticks_files(root,
-#                                          exchange=exchange,
-#                                          symbol=symbol)
-#                print(values)
-
-    # Print list indexed by [exchange symbol [expiry]] with
-    # [date_collected start_time end_time] for collected data.
-#    if (group == 'futures'):
-#        for exchange in exchanges:
-#            for symbol in symbols[exchange]:
-#                for expiration in expiry[symbol]:
-#                    label = [exchange, symbol, expiration]
-#                    values = get_tks_datetime(root,
-#                                              exchange=exchange,
-#                                              symbol=symbol,
-#                                              expiry=expiration)
-#                    print label, values
-#    else:
-#        # For equities and fx.
-#        for exchange in exchanges:
-#            for symbol in symbols[exchange]:
-#                label = [exchange, symbol]
-#                values = get_tks_datetime(root,
-#                                          exchange=exchange,
-#                                          symbol=symbol)
-#                print label, values
-
-    show_information(root, exchanges, symbols, expiry=expiry)
-    show_collected_data(root, exchanges, symbols, expiry=expiry)
+#    show_information(root, exchanges, symbols, expiry=expiry)
+#    show_collected_data(root, exchanges, symbols, expiry=expiry)
     show_duplicates(root, exchanges, symbols, expiry=expiry)
-
-    # Print list containing lines of full path to ticks files
-    # containing duplicate entries.
-#    if (group == 'futures'):
-#        for exchange in exchanges:
-#            for symbol in symbols[exchange]:
-#                for expiration in expiry[symbol]:
-#                    label = [exchange, symbol, expiration]
-#                    values = find_duplicates(root,
-#                                             exchange=exchange,
-#                                             symbol=symbol,
-#                                             expiry=expiration)
-#                    if values != None:
-#                        print values
-#    else:
-#        # For equities and fx.
-#        for exchange in exchanges:
-#            for symbol in symbols[exchange]:
-#                values = find_duplicates(root,
-#                                         exchange=exchange,
-#                                         symbol=symbol)
-#                if values != None:
-#                    print values
 
 
 if __name__ == '__main__':
