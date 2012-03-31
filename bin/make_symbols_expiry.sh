@@ -1,6 +1,6 @@
 #!/bin/bash
 
-srcdir=/tmp/futures
+srcdir=~/tmp/futures
 
 if [[ ! -d $srcdir ]]
 then
