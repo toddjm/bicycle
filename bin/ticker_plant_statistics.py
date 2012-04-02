@@ -48,7 +48,7 @@ def find_duplicates(root, **kwargs):
         for month in os.listdir(os.path.join(cwd, year)):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
-                if not os.stat(infile).st_size == 0:
+                if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
                     if get_duplicates(infile) is True:
                         return infile
 
@@ -144,7 +144,7 @@ def get_tks_datetime(root, **kwargs):
         for month in os.listdir(os.path.join(cwd, year)):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
-                if not os.stat(infile).st_size == 0:
+                if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
                     with open(infile, 'r') as tmp:
                         tks = tmp.readlines()
                     tks = [i.strip() for i in tks]
@@ -164,7 +164,7 @@ def read_ticks_files(root, **kwargs):
         for month in os.listdir(os.path.join(cwd, year)):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
-                if not os.stat(infile).st_size == 0:
+                if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
                     with open(infile, 'r') as tmp:
                         tks = tmp.readlines()
                     tks = [i.strip() for i in tks]
@@ -340,12 +340,14 @@ def write_ticks(start, end, symbol, data, path):
                 os.makedirs(outdir, 0755)
             # Set tks file for output.
             tks = os.path.join(outdir, symbol + '.tks')
-            # Create outfile in append mode.
-            with open(tks, 'a') as outfile:
-                for i in range(len(subset)):
-                    # Append newline before writing to file.
-                    outfile.write(subset[i] + '\n')
-        now += datetime.timedelta(days=1)
+            # If tks file does not exist or is zero size,
+            # create/append tks file.
+            if not os.path.isfile(tks) or os.stat(tks).st_size == 0:
+                with open(tks, 'a') as outfile:
+                    for i in range(len(subset)):
+                        # Append newline before writing to file.
+                        outfile.write(subset[i] + '\n')
+            now += datetime.timedelta(days=1)
     return
 
 
