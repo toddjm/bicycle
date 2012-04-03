@@ -367,10 +367,13 @@ def main():
 
     if (group == 'futures'):
         expiry = set_expiry(root, exchanges, symbols)
-
-#    show_information(root, exchanges, symbols, expiry=expiry)
-#    show_collected_data(root, exchanges, symbols, expiry=expiry)
-    show_duplicates(root, exchanges, symbols, expiry=expiry)
+#        show_information(root, exchanges, symbols, expiry=expiry)
+#        show_collected_data(root, exchanges, symbols, expiry=expiry)
+        show_duplicates(root, exchanges, symbols, expiry=expiry)
+    else:
+#        show_information(root, exchanges, symbols)
+#        show_collected_data(root, exchanges, symbols)
+        show_duplicates(root, exchanges, symbols)
 
 
 if __name__ == '__main__':
