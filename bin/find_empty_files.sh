@@ -20,15 +20,16 @@ fi
 dir=~/bicycleticks/"$asset_class"/ib
 
 cd $dir
+rm -f *.txt
 
 case $asset_class in
   futures)
     for i in `ls -1 | sed 's/\///'`
     do
-      find $i -empty | awk 'FS="/" {print $2$3, $4$5$6}' > "$i"_empty.txt
+      find $i -empty | awk 'FS="/" {print $2, $3, $4$5$6}' > "$i"_empty.txt
     done
   ;;
-  equities fx)
+  equities | fx)
     for i in `ls -1 | sed 's/\///'`
     do
       find $i -empty | awk 'FS="/" {print $2, $3$4$5}' > "$i"_empty.txt
