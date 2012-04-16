@@ -2,13 +2,13 @@
 
 if [[ -n $BASH_VERSION ]]
 then
-  if [[ -f $HOME/.bashrc ]]
+  if [[ -f ~/.bashrc ]]
   then
-    . $HOME/.bashrc
+    . ~/.bashrc
   fi
 fi
 
-if [[ -d $HOME/bin ]]
+if [[ -d ~/bin ]]
 then
-  PATH=$HOME/bin:$PATH
+  export PATH=~/bin:$PATH
 fi
