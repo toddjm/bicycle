@@ -33,6 +33,19 @@ fi
 #--ignore-table="$asset_class"_15sec.collect_IB_errors \
 #"$asset_class"_15sec
 
+#mysqldump \
+#--no-create-info \
+#--tab=$outdir \
+#--tz-utc \
+#--force \
+#--ignore-table="$asset_class"_15sec.collect \
+#--ignore-table="$asset_class"_15sec.collect_IB_errors \
+#--where="date(ts) >= '2011-02-01' and date(ts) <= '2012-04-09'" \
+#"$asset_class"_15sec NG201201_tks NG201202_tks NG201203_tks NG201204_tks \
+#NG201205_tks NG201206_tks NG201207_tks NG201208_tks NG201209_tks NG201210_tks \
+#NG201211_tks NG201212_tks NG201105_tks NG201106_tks NG201107_tks NG201108_tks \
+#NG201109_tks NG201110_tks NG201111_tks NG201112_tks
+
 mysqldump \
 --no-create-info \
 --tab=$outdir \
@@ -40,7 +53,7 @@ mysqldump \
 --force \
 --ignore-table="$asset_class"_15sec.collect \
 --ignore-table="$asset_class"_15sec.collect_IB_errors \
---where="date(ts) >= '2012-03-29' and date(ts) <= '2012-04-02'" \
+--where="date(ts) >= '2012-04-01' and date(ts) <= '2012-04-13'" \
 "$asset_class"_15sec
 
 cd $outdir

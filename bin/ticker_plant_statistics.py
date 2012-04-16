@@ -90,6 +90,22 @@ def get_duplicates(infile):
     return flag
 
 
+def get_missing_tks(root, **kwargs):
+    """Return list of dates for which there are zero-length tks files."""
+    exchange = kwargs.get('exchange', "")
+    expiry = kwargs.get('expiry', "")
+    symbol = kwargs.get('symbol', "")
+    cwd = os.path.join(root, exchange, symbol, expiry)
+    dates = []
+    for year in os.listdir(cwd):
+        for month in os.listdir(os.path.join(cwd, year)):
+            for day in os.listdir(os.path.join(cwd, year, month)):
+                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
+                if (os.path.isfile(infile) and os.stat(infile).st_size == 0):
+                    dates.append(year + '/' + month + '/' + day)
+    return dates
+
+
 def get_start_end_datetime(tks):
     """Return tuple of start and end times for a tks file."""
     start = datetime.datetime.utcfromtimestamp(
@@ -216,6 +232,16 @@ def set_parser():
                         dest='exchanges',
                         help='Space-separated names (default: %(default)s)',
                         nargs='+')
+    values.add_argument('--start',
+                        default='2011-11-01 00:00:00',
+                        dest='start',
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+                             '(default: %(default)s)')
+    values.add_argument('--end',
+                        default='2012-01-01 00:00:00',
+                        dest='end',
+                        help='Date string format %%Y-%%m-%%d %%H:%%M:%%S '
+                             '(default: %(default)s)')
     return values
 
 
@@ -272,8 +298,8 @@ def show_duplicates(root, exchanges, symbols, **kwargs):
 
 
 def show_collected_data(root, exchanges, symbols, **kwargs):
-    """Print list indexed by [exchange symbol [expiry]] with
-    [date_collected start_time end_time] for collected data.
+    """Construct dict keyed on exchange with values comprised
+    of dicts keyed on symbol[expiry], values collected data dates.
 
     """
     expiry = kwargs.get('expiry', "")
@@ -281,14 +307,14 @@ def show_collected_data(root, exchanges, symbols, **kwargs):
         for symbol in symbols[exchange]:
             if expiry:
                 for expiration in expiry[symbol]:
-                    label = [exchange, symbol, expiration]
+                    label = [symbol + expiration, exchange]
                     values = get_tks_datetime(root,
                                               exchange=exchange,
                                               symbol=symbol,
                                               expiry=expiration)
                     print label, values
             else:
-                label = [exchange, symbol]
+                label = [symbol, exchange]
                 values = get_tks_datetime(root,
                                           exchange=exchange,
                                           symbol=symbol)
@@ -298,7 +324,7 @@ def show_collected_data(root, exchanges, symbols, **kwargs):
 
 def show_information(root, exchanges, symbols, **kwargs):
     """Print list containing lines such as:
-    [exchange, symbol + expiry, year_collected, month_collected,
+    [exchange, symbol [expiry], year_collected, month_collected,
     day_collected, start_time, end_time, number_of_entries]
 
     """
@@ -318,6 +344,32 @@ def show_information(root, exchanges, symbols, **kwargs):
                                           symbol=symbol)
                 print(values)
     return
+
+
+def show_missing_data(root, exchanges, symbols, **kwargs):
+    """Construct dict keyed on exchange with values comprised
+    of dicts keyed on symbol[expiry], values collected data dates.
+
+    """
+    expiry = kwargs.get('expiry', "")
+    missing = {}
+    for exchange in exchanges:
+        for symbol in symbols[exchange]:
+            if expiry:
+                for expiration in expiry[symbol]:
+                    values = get_missing_tks(root,
+                                             exchange=exchange,
+                                             symbol=symbol,
+                                             expiry=expiration)
+                    if len(values) != 0:
+                        missing[symbol + expiration] = values
+            else:
+                values = get_missing_tks(root,
+                                         exchange=exchange,
+                                         symbol=symbol)
+                if len(values) != 0:
+                    missing[symbol] = values
+    return missing
 
 
 def write_ticks(start, end, symbol, data, path):
@@ -359,21 +411,26 @@ def main():
     """
     # Parse command line arguments, set local variables.
     parser = set_parser()
+    end = parser.parse_args().end
+    end = datetime.datetime.strptime(end, '%Y-%m-%d %H:%M:%S')
+    exchanges = parser.parse_args().exchanges
     group = parser.parse_args().group
     source = parser.parse_args().source
-    exchanges = parser.parse_args().exchanges
+    start = parser.parse_args().start
+    start = datetime.datetime.strptime(start, '%Y-%m-%d %H:%M:%S')
+
     root = os.path.join(os.getenv('TICKS_HOME'), group, source)
     symbols = set_symbols(root, exchanges)
 
     if (group == 'futures'):
         expiry = set_expiry(root, exchanges, symbols)
 #        show_information(root, exchanges, symbols, expiry=expiry)
-#        show_collected_data(root, exchanges, symbols, expiry=expiry)
-        show_duplicates(root, exchanges, symbols, expiry=expiry)
+        show_collected_data(root, exchanges, symbols, expiry=expiry)
+#        show_duplicates(root, exchanges, symbols, expiry=expiry)
     else:
 #        show_information(root, exchanges, symbols)
-#        show_collected_data(root, exchanges, symbols)
-        show_duplicates(root, exchanges, symbols)
+        show_collected_data(root, exchanges, symbols)
+#        show_duplicates(root, exchanges, symbols)
 
 
 if __name__ == '__main__':
