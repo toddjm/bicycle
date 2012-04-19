@@ -6,7 +6,7 @@
 #
 # Usage: drop_tables.sh <asset class> <symbol>
 # 
-# Copyright 2011 bicycle trading, llc.
+# Copyright 2011, 2012 bicycle trading, llc.
 ################################################################################
 
 asset_class=$1
