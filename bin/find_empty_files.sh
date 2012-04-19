@@ -20,7 +20,7 @@ fi
 
 dir=~/bicycleticks/"$asset_class"/ib
 
-rm -f ~/tmp/*_empty.txt
+rm -f ~/tmp/*_empty*
 cd $dir
 
 case $asset_class in
