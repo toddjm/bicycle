@@ -5,6 +5,7 @@ import argparse
 import bisect
 import collections
 import datetime
+import numpy
 import os
 
 __author__ = "Todd Minehardt"
@@ -73,14 +74,11 @@ def find_le(values, threshold):
 
 def get_duplicates(infile):
     """Return True if file contains duplicate timestamps, else False."""
-    with open(infile, 'r') as tmp:
-        tks = tmp.readlines()
-    tks = [i.strip() for i in tks]
-    tmp.close()
-    values = []
-    for i in range(len(tks)):
-        values.append(datetime.datetime.utcfromtimestamp(
-            float(tks[i].split()[0])))
+    recordtype = ([('timestamp', float), ('open', float), ('high', float),
+                   ('low', float), ('close', float), ('volume', int),
+                   ('orders', int), ('vwap', float), ('gaps', bool)])
+    tks = numpy.loadtxt(infile, dtype=recordtype)
+    values = [tks[i][0] for i in range(len(tks))]
     values.sort()
     counter = collections.Counter(values)
     flag = False
@@ -106,12 +104,12 @@ def get_missing_tks(root, **kwargs):
     return dates
 
 
-def get_start_end_datetime(tks):
-    """Return tuple of start and end times for a tks file."""
+def get_start_end_datetime(data):
+    """Return tuple of start date and time and end time for a data file."""
     start = datetime.datetime.utcfromtimestamp(
-             float(tks[0].split()[0])).strftime('%Y/%m/%d %H:%M:%S')
+             data[0][0]).strftime('%Y/%m/%d %H:%M:%S.%f')
     end = datetime.datetime.utcfromtimestamp(
-           float(tks[-1].split()[0])).strftime('%H:%M:%S')
+           data[-1][0]).strftime('%H:%M:%S.%f')
     return start, end
 
 
@@ -135,10 +133,7 @@ def get_subset(index, values, threshold):
 
 def get_timestamps(data):
     """Return list of sorted timestamps from first column of data."""
-    values = []
-    for i in range(len(data)):
-        values.append(datetime.datetime.utcfromtimestamp(
-            float(data[i].split()[0])))
+    values = [data[i][0] for i in range(len(data))]
     values.sort()
     return values
 
@@ -155,15 +150,16 @@ def get_tks_datetime(root, **kwargs):
     expiry = kwargs.get('expiry', "")
     symbol = kwargs.get('symbol', "")
     cwd = os.path.join(root, exchange, symbol, expiry)
+    recordtype = ([('timestamp', float), ('open', float), ('high', float),
+                   ('low', float), ('close', float), ('volume', int),
+                   ('orders', int), ('vwap', float), ('gaps', bool)])
     values = []
     for year in os.listdir(cwd):
         for month in os.listdir(os.path.join(cwd, year)):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
                 if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
-                    with open(infile, 'r') as tmp:
-                        tks = tmp.readlines()
-                    tks = [i.strip() for i in tks]
+                    tks = numpy.loadtxt(infile, dtype=recordtype)
                     start, end = get_start_end_datetime(tks)
                     values.append(start + ' ' + end)
     return values
@@ -175,27 +171,27 @@ def read_ticks_files(root, **kwargs):
     expiry = kwargs.get('expiry', "")
     symbol = kwargs.get('symbol', "")
     cwd = os.path.join(root, exchange, symbol, expiry)
+    recordtype = ([('timestamp', float), ('open', float), ('high', float),
+                   ('low', float), ('close', float), ('volume', int),
+                   ('orders', int), ('vwap', float), ('gaps', bool)])
     values = []
     for year in os.listdir(cwd):
         for month in os.listdir(os.path.join(cwd, year)):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
                 if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
-                    with open(infile, 'r') as tmp:
-                        tks = tmp.readlines()
-                    tks = [i.strip() for i in tks]
-                    tmp.close()
+                    tks = numpy.loadtxt(infile, dtype=recordtype)
                     values.append([exchange,
                                    symbol + expiry,
                                    year,
                                    month,
                                    day,
                                    datetime.datetime.utcfromtimestamp(
-                                   float(tks[0].split()[0])).strftime(
-                                   '%Y/%m/%d %H:%M:%S'),
+                                     tks[0][0]).strftime(
+                                     '%Y/%m/%d %H:%M:%S.%f'),
                                    datetime.datetime.utcfromtimestamp(
-                                   float(tks[-1].split()[0])).strftime(
-                                   '%Y/%m/%d %H:%M:%S'),
+                                     tks[-1][0]).strftime(
+                                     '%Y/%m/%d %H:%M:%S.%f'),
                                    len(tks)])
     return values
 
@@ -205,7 +201,8 @@ def set_expiry(root, exchanges, symbols):
     values = {}
     for i in exchanges:
         for j in symbols[i]:
-            values[j] = os.listdir(os.path.join(root, i, j))
+            if os.path.isdir(os.path.join(root, i, j)):
+                values[j] = os.listdir(os.path.join(root, i, j))
     return values
 
 
@@ -251,10 +248,8 @@ def set_start_end(start, end, data):
     and/or times are before/after start/end.
 
     """
-    first = datetime.datetime.utcfromtimestamp(float(
-                                               data[0].split()[0])).date()
-    last = datetime.datetime.utcfromtimestamp(float(
-                                              data[-1].split()[0])).date()
+    first = datetime.datetime.utcfromtimestamp(data[0][0]).date()
+    last = datetime.datetime.utcfromtimestamp(data[-1][0]).date()
     start = start.date()
     end = end.date()
     if first:
