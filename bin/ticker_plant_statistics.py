@@ -45,13 +45,24 @@ def find_duplicates(root, **kwargs):
     expiry = kwargs.get('expiry', "")
     symbol = kwargs.get('symbol', "")
     cwd = os.path.join(root, exchange, symbol, expiry)
+    duplicates = []
+    recordtype = ([('timestamp', float), ('open', float), ('high', float),
+                   ('low', float), ('close', float), ('volume', int),
+                   ('orders', int), ('vwap', float), ('gaps', bool)])
     for year in os.listdir(cwd):
         for month in os.listdir(os.path.join(cwd, year)):
             for day in os.listdir(os.path.join(cwd, year, month)):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
                 if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
-                    if get_duplicates(infile) is True:
-                        return infile
+                    tks = numpy.loadtxt(infile, dtype=recordtype)
+                    timestamps = []
+                    if tks.ndim != 0:
+                        timestamps = [tks[i][0] for i in range(len(tks))]
+                        timestamps.sort()
+                        counter = collections.Counter(timestamps)
+                        if bool([i for i in counter.values() if i > 1]):
+                            duplicates.append(infile)
+    return duplicates
 
 
 def find_ge(values, threshold):
@@ -70,22 +81,6 @@ def find_le(values, threshold):
         return i
     else:
         raise ValueError
-
-
-def get_duplicates(infile):
-    """Return True if file contains duplicate timestamps, else False."""
-    recordtype = ([('timestamp', float), ('open', float), ('high', float),
-                   ('low', float), ('close', float), ('volume', int),
-                   ('orders', int), ('vwap', float), ('gaps', bool)])
-    tks = numpy.loadtxt(infile, dtype=recordtype)
-    values = [tks[i][0] for i in range(len(tks))]
-    values.sort()
-    counter = collections.Counter(values)
-    flag = False
-    for i in counter:
-        if counter[i] > 1:
-            flag = True
-    return flag
 
 
 def get_missing_tks(root, **kwargs):
@@ -281,13 +276,13 @@ def show_duplicates(root, exchanges, symbols, **kwargs):
                                              exchange=exchange,
                                              symbol=symbol,
                                              expiry=expiration)
-                    if values != None:
+                    if len(values) > 0:
                         print values
             else:
                 values = find_duplicates(root,
                                          exchange=exchange,
                                          symbol=symbol)
-                if values != None:
+                if len(values) > 0:
                     print values
     return
 
