@@ -39,13 +39,12 @@ def check_date(date):
         return False
 
 
-def find_duplicates(root, **kwargs):
-    """Return full path names of tick files containing duplicate entries."""
+def remove_duplicates(root, **kwargs):
+    """Remove duplicate rows in tks files, write new file."""
     exchange = kwargs.get('exchange', "")
     expiry = kwargs.get('expiry', "")
     symbol = kwargs.get('symbol', "")
     cwd = os.path.join(root, exchange, symbol, expiry)
-    duplicates = []
     recordtype = ([('timestamp', float), ('open', float), ('high', float),
                    ('low', float), ('close', float), ('volume', int),
                    ('orders', int), ('vwap', float), ('gaps', bool)])
@@ -61,8 +60,17 @@ def find_duplicates(root, **kwargs):
                         timestamps.sort()
                         counter = collections.Counter(timestamps)
                         if bool([i for i in counter.values() if i > 1]):
-                            duplicates.append(infile)
-    return duplicates
+                            numpy.savetxt(infile + '.original', tks)
+                            outlist = []
+                            added_keys = set()
+                            for i in tks:
+                                lookup = tuple(i)[:1]
+                                if lookup not in added_keys:
+                                    outlist.append(i)
+                                    added_keys.add(lookup)
+                            outlist = numpy.asarray(outlist, dtype=recordtype)
+                            numpy.savetxt(infile, outlist)
+    return
 
 
 def find_ge(values, threshold):
@@ -215,11 +223,7 @@ def set_parser():
                         default='ib',
                         dest='source',
                         help='Default: %(default)s)')
-    # 'exchanges' must be returned as a list, even for one member.
     values.add_argument('--exchanges',
-                        choices=['smart', 'idealpro', 'cfe', 'dtb', 'ecbot',
-                                 'globex', 'ipe', 'liffe', 'nybot', 'nymex',
-                                 'nyseliffe'],
                         default=['nymex'],
                         dest='exchanges',
                         help='Space-separated names (default: %(default)s)',
@@ -260,31 +264,6 @@ def set_symbols(root, exchanges):
     for i in exchanges:
         values[i] = os.listdir(os.path.join(root, i))
     return values
-
-
-def show_duplicates(root, exchanges, symbols, **kwargs):
-    """Print list containing lines of full path to ticks files
-    containing duplicate entries.
-
-    """
-    expiry = kwargs.get('expiry', "")
-    for exchange in exchanges:
-        for symbol in symbols[exchange]:
-            if expiry:
-                for expiration in expiry[symbol]:
-                    values = find_duplicates(root,
-                                             exchange=exchange,
-                                             symbol=symbol,
-                                             expiry=expiration)
-                    if len(values) > 0:
-                        print values
-            else:
-                values = find_duplicates(root,
-                                         exchange=exchange,
-                                         symbol=symbol)
-                if len(values) > 0:
-                    print values
-    return
 
 
 def show_collected_data(root, exchanges, symbols, **kwargs):
@@ -414,13 +393,19 @@ def main():
 
     if (group == 'futures'):
         expiry = set_expiry(root, exchanges, symbols)
-#        show_information(root, exchanges, symbols, expiry=expiry)
-        show_collected_data(root, exchanges, symbols, expiry=expiry)
-#        show_duplicates(root, exchanges, symbols, expiry=expiry)
-    else:
-#        show_information(root, exchanges, symbols)
-        show_collected_data(root, exchanges, symbols)
-#        show_duplicates(root, exchanges, symbols)
+
+    for exchange in exchanges:
+        for symbol in symbols[exchange]:
+            if expiry:
+                for expiration in expiry[symbol]:
+                    remove_duplicates(root,
+                                      exchange=exchange,
+                                      symbol=symbol,
+                                      expiry=expiration)
+            else:
+                remove_duplicates(root,
+                                  exchange=exchange,
+                                  symbol=symbol)
 
 
 if __name__ == '__main__':
