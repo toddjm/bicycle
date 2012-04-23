@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Gather statistics for entries in the ticker plant."""
+"""Find/remove duplicate rows in tks files and rewrite file."""
 
 import argparse
 import bisect
@@ -95,22 +95,6 @@ def find_le(values, threshold):
         raise ValueError
 
 
-def get_missing_tks(root, **kwargs):
-    """Return list of dates for which there are zero-length tks files."""
-    exchange = kwargs.get('exchange', "")
-    expiry = kwargs.get('expiry', "")
-    symbol = kwargs.get('symbol', "")
-    cwd = os.path.join(root, exchange, symbol, expiry)
-    dates = []
-    for year in os.listdir(cwd):
-        for month in os.listdir(os.path.join(cwd, year)):
-            for day in os.listdir(os.path.join(cwd, year, month)):
-                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
-                if (os.path.isfile(infile) and os.stat(infile).st_size == 0):
-                    dates.append(year + '/' + month + '/' + day)
-    return dates
-
-
 def get_start_end_datetime(data):
     """Return tuple of start date and time and end time for a data file."""
     start = datetime.datetime.utcfromtimestamp(
@@ -170,6 +154,43 @@ def get_tks_datetime(root, **kwargs):
                     start, end = get_start_end_datetime(tks)
                     values.append(start + ' ' + end)
     return values
+
+
+def read_file(fname):
+    """Read file and return a list of strings without newlines."""
+    if not os.path.isfile(fname):
+        print("{0} is not a file.").format(fname)
+        sys.exit()
+    values = []
+    with open(fname, 'r') as infile:
+        values = infile.readlines()
+    values = [i.strip() for i in values]
+    return values
+
+
+def read_tks_files(root, **kwargs):
+    """Read and return tks file as list of lists."""
+    exchange = kwargs.get('exchange', "")
+    expiry = kwargs.get('expiry', "")
+    symbol = kwargs.get('symbol', "")
+    cwd = os.path.join(root, exchange, symbol, expiry)
+    recordtype = ([('timestamp', float), ('open', float), ('high', float),
+                   ('low', float), ('close', float), ('volume', int),
+                   ('orders', int), ('vwap', float), ('gaps', bool)])
+    values = []
+    for year in os.listdir(cwd):
+        for month in os.listdir(os.path.join(cwd, year)):
+            for day in os.listdir(os.path.join(cwd, year, month)):
+                infile = os.path.join(cwd, year, month, day, symbol + '.tks')
+                if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
+                    timestamps = []
+                    if tks.ndim != 0:
+                        timestamps = [tks[i][0] for i in range(len(tks))]
+                        timestamps.sort()
+                        counter = collections.Counter(timestamps)
+                        if bool([i for i in counter.values() if i > 1]):
+                            tks = numpy.loadtxt(infile, dtype=recordtype)
+    return tks
 
 
 def read_ticks_files(root, **kwargs):
