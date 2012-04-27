@@ -9,10 +9,10 @@ then
 fi
 
 cd $srcdir
+rm -f *.expiry
 
 for i in `ls *.tks`
 do
   file="${i:: -10}.expiry"
   echo ${i: -10: -4} >> $file
 done
-     
