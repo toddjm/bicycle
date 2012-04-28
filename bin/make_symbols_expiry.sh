@@ -11,8 +11,8 @@ fi
 cd $srcdir
 rm -f *.expiry
 
-for i in `ls *.tks`
+for i in `find -O3 . \! -empty -name "*.tks"`
 do
-  file="${i:: -10}.expiry"
+  file=${i:: -10}.expiry
   echo ${i: -10: -4} >> $file
 done
