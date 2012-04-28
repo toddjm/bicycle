@@ -60,6 +60,18 @@ cd $outdir
 
 for i in `find -O3 . \! -empty -name "*_tks.txt"`
 do
-  n=${i%"_tks.txt"}
-  date_to_ts.py $i | sort -unk1 > $n.tks
+  f=${i%"_tks.txt"}.tks
+  date_to_ts.py $i | sort -unk1 > $f
 done
+
+if [[ $asset_class == futures ]]
+then
+  rm -f *.expiry
+  for i in `find -O3 . \! -empty -name "*.tks"`
+    do
+      length=${i#}
+      end=$((length - 10))
+      file=${i:0:$end}.expiry
+      echo ${i:$end:6} >> $file
+    done
+fi
