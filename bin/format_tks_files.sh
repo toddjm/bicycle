@@ -24,7 +24,7 @@ cd $dir
 case $asset_class in
   equities)
   cd smart
-  for i in `ls -1 | sed 's/\///'`
+  for i in `ls -1`
   do 
     for j in `find $i ! -empty -name "*.tks" -print`
     do 

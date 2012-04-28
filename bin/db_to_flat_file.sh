@@ -46,39 +46,20 @@ fi
 #NG201211_tks NG201212_tks NG201105_tks NG201106_tks NG201107_tks NG201108_tks \
 #NG201109_tks NG201110_tks NG201111_tks NG201112_tks
 
-mysqldump \
---no-create-info \
---tab=$outdir \
---tz-utc \
---force \
---ignore-table="$asset_class"_15sec.collect \
---ignore-table="$asset_class"_15sec.collect_IB_errors \
---where="date(ts) >= '2012-04-01' and date(ts) <= '2012-04-05'" \
-"$asset_class"_15sec CL201206_tks ZB201209_tks WTI201212_tks
+#mysqldump \
+#--no-create-info \
+#--tab=$outdir \
+#--tz-utc \
+#--force \
+#--ignore-table="$asset_class"_15sec.collect \
+#--ignore-table="$asset_class"_15sec.collect_IB_errors \
+#--where="date(ts) >= '2012-01-01' and date(ts) <= '2012-04-26'" \
+#"$asset_class"_15sec
 
 cd $outdir
 
-case $asset_class in
-  equities | futures)
-    for i in `ls *_tks.txt`
-    do
-      n=${i%"_tks.txt"}
-      awk -F"\t" 'system("date -ud \""$1"\" +%s")' $i > t
-      awk -F"\t" '{printf "%f %f %f %f %d %d %f %d\n", $2, $3, $4, $5, $6, $9, $7, $8}' $i > d
-      paste -d" " t d > f
-      sort -unk1 f > $n.tks
-      rm -f t d f
-    done
-    ;;
-  fx)
-    for i in `ls *_tks.txt`
-    do
-      n=${i%"_tks.txt"}
-      awk -F"\t" 'system("date -ud \""$1"\" +%s")' $i > t
-      awk -F"\t" '{printf "%f %f %f %f %d %d %d %d\n", $2, $3, $4, $5, $6, $9, $7, $8}' $i > d
-      paste -d" " t d > f
-      sort -unk1 f > $n.tks
-      rm -f t d f
-    done
-    ;;
-esac
+for i in `find -O3 . \! -empty -name "*_tks.txt"`
+do
+  n=${i%"_tks.txt"}
+  date_to_ts.py $i | sort -unk1 > $n.tks
+done

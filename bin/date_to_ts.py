@@ -34,7 +34,7 @@ def main():
     """Read old-type files and write new-type to stdout."""
     with open(sys.argv[1], 'r') as infile:
         for line in infile:
-            timestamp = date_to_ts(line.split()[0] + ' ' + line.split()[1])
+            t_stamp = date_to_ts(line.split()[0] + ' ' + line.split()[1])
             open_price = float(line.split()[2])
             high_price = float(line.split()[3])
             low_price = float(line.split()[4])
@@ -43,16 +43,18 @@ def main():
             vwap = float(line.split()[7])
             gaps = line.split()[8]
             count = line.split()[9]
-            print('{0} {1} {2} {3} {4} {5} {6} {7} {8}').format(
-              timestamp,
-              open_price,
-              high_price,
-              low_price,
-              close_price,
-              volume,
-              count,
-              vwap,
-              gaps)
+            print('{0:0f} {1:0f} {2:0f} {3:0f} {4:0f} '
+                  '{5} {6} {7:0f} {8}').format(
+                  t_stamp,
+                  open_price,
+                  high_price,
+                  low_price,
+                  close_price,
+                  volume,
+                  count,
+                  vwap,
+                  gaps)
+
 
 if __name__ == '__main__':
     main()
