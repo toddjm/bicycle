@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 """
 Convert UTC timestamp strings from mysqldump to
 UNIX timestamps and reorganize output for tick files to be:
