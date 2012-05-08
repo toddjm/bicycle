@@ -35,6 +35,7 @@ def check_date(date):
     # Ensure that date is not a Saturday, Sunday, or holiday.
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
+    return False
     else:
         return False
 
@@ -68,10 +69,6 @@ def remove_duplicates(root, **kwargs):
                                 if lookup not in added_keys:
                                     outlist.append(i)
                                     added_keys.add(lookup)
-#                            outlist = outlist.tolist()
-#                            with open(infile, 'w') as outfile:
-#                                for i in outlist:
-#                                    outfile.write(str(i) + '\n')
                             outlist = numpy.asarray(outlist, dtype=recordtype)
                             numpy.savetxt(infile, outlist)
     return
