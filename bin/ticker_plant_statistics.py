@@ -36,8 +36,6 @@ def check_date(date):
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
     return False
-    else:
-        return False
 
 
 def remove_duplicates(root, **kwargs):
@@ -55,11 +53,10 @@ def remove_duplicates(root, **kwargs):
                 infile = os.path.join(cwd, year, month, day, symbol + '.tks')
                 if (os.path.isfile(infile) and os.stat(infile).st_size != 0):
                     tks = numpy.loadtxt(infile, dtype=recordtype)
-                    timestamps = []
+                    tmstmp = []
                     if tks.ndim != 0:
-                        timestamps = [tks[i][0] for i in range(len(tks))]
-                        timestamps.sort()
-                        counter = collections.Counter(timestamps)
+                        tmstmp = sorted([tks[i][0] for i in range(len(tks))])
+                        counter = collections.Counter(tmstmp)
                         if bool([i for i in counter.values() if i > 1]):
                             numpy.savetxt(infile + '.original', tks)
                             outlist = []
@@ -79,8 +76,7 @@ def find_ge(values, threshold):
     i = bisect.bisect_left(values, threshold)
     if i != len(values):
         return i
-    else:
-        raise ValueError
+    raise ValueError
 
 
 def find_le(values, threshold):
@@ -88,8 +84,7 @@ def find_le(values, threshold):
     i = bisect.bisect_right(values, threshold)
     if i:
         return i
-    else:
-        raise ValueError
+    raise ValueError
 
 
 def get_missing_tks(root, **kwargs):
@@ -138,8 +133,7 @@ def get_subset(index, values, threshold):
 def get_timestamps(data):
     """Return list of sorted timestamps from first column of data."""
     values = [data[i][0] for i in range(len(data))]
-    values.sort()
-    return values
+    return sorted(values)
 
 
 def get_tks_datetime(root, **kwargs):
@@ -345,14 +339,14 @@ def show_missing_data(root, exchanges, symbols, **kwargs):
 def write_ticks(start, end, symbol, data, path):
     """Write ticks to files with .tks suffix."""
     # Extract list of timestamps from data.
-    timestamps = get_timestamps(data)
+    tmstmp = get_timestamps(data)
     # Adjust beginning ('now') and end ('end') if needed.
     now, then = set_start_end(start, end, data)
     while now <= then:
         # Make sure date is not on a weekend or holiday.
         if check_date(now):
             # Extract subset of data for this day only.
-            subset = get_subset(timestamps, data, now)
+            subset = get_subset(tmstmp, data, now)
             # Set directory for writing ticks; create if required.
             outdir = os.path.join(path,
                                   '{0:04d}'.format(now.year),

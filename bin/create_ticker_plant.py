@@ -21,10 +21,17 @@ __copyright__ = "Copyright 2011, 2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
-HOLIDAYS = []
-with open('/home/bicycle/bicycletrading/share/dates/holidays.txt', 'r') as fn:
-    HOLIDAYS = fn.readlines()
-HOLIDAYS = [line.strip() for line in HOLIDAYS]
+class Holiday(object):
+    """Holidays class."""
+    infile = os.path.join(os.getenv('BICYCLE_HOME'),
+                                    'share/dates/holidays.txt')
+    with open(infile, 'r') as tmp:
+        values = tmp.readlines()
+    values = [i.strip() for i in values]
+    holidays = values
+
+
+HOLIDAYS = Holiday.holidays
 
 
 def check_date(date):
@@ -35,8 +42,7 @@ def check_date(date):
     """
     if (date.weekday() < 5) and (date.strftime('%Y-%m-%d') not in HOLIDAYS):
         return True
-    else:
-        return False
+    return False
 
 
 def find_ge(values, threshold):
@@ -44,8 +50,7 @@ def find_ge(values, threshold):
     i = bisect.bisect_left(values, threshold)
     if i != len(values):
         return i
-    else:
-        raise ValueError
+    raise ValueError
 
 
 def find_le(values, threshold):
@@ -53,8 +58,7 @@ def find_le(values, threshold):
     i = bisect.bisect_right(values, threshold)
     if i:
         return i
-    else:
-        raise ValueError
+    raise ValueError
 
 
 def get_subset(index, values, threshold):
@@ -81,8 +85,7 @@ def get_timestamps(data):
     for i in range(len(data)):
         values.append(datetime.datetime.utcfromtimestamp(
             float(data[i].split()[0])))
-    values.sort()
-    return values
+    return sorted(values)
 
 
 def read_file(path, name):
