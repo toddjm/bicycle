@@ -14,7 +14,7 @@ outdir="$HOME/tmp/$asset_class"
 
 if [[ $# != 1 ]]
 then
-  echo "Usage: $0 asset_class"
+  echo "Usage: $0 <asset class>"
   exit 1
 fi
 
