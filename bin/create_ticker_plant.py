@@ -177,22 +177,23 @@ def write_ticks(start, end, symbol, data, path):
         if check_date(now):
             # Extract subset of data for this day only.
             subset = get_subset(timestamps, data, now)
-            # Set directory for writing ticks; create if required.
-            outdir = os.path.join(path,
-                                  '{0:04d}'.format(now.year),
-                                  '{0:02d}'.format(now.month),
-                                  '{0:02d}'.format(now.day))
-            if not os.path.isdir(outdir):
-                os.makedirs(outdir, 0755)
-            # Set tks file for output.
-            tks = os.path.join(outdir, symbol + '.tks')
-            # If tks file does not exist or is zero size,
-            # create/append tks file.
-            if not os.path.isfile(tks) or os.stat(tks).st_size == 0:
-                with open(tks, 'a') as outfile:
-                    for i in range(len(subset)):
-                        # Append newline before writing to file.
-                        outfile.write(subset[i] + '\n')
+            # Make sure subset length is non-zero.
+            if len(subset) != 0:
+                # Set directory for writing ticks; create if required.
+                outdir = os.path.join(path,
+                                      '{0:04d}'.format(now.year),
+                                      '{0:02d}'.format(now.month),
+                                      '{0:02d}'.format(now.day))
+                if not os.path.isdir(outdir):
+                    os.makedirs(outdir, 0755) # Set tks file for output.
+                tks = os.path.join(outdir, symbol + '.tks')
+                # If tks file does not exist or is zero size,
+                # create/append tks file.
+                if not os.path.isfile(tks) or os.stat(tks).st_size == 0:
+                    with open(tks, 'a') as outfile:
+                        for i in range(len(subset)):
+                            # Append newline before writing to file.
+                            outfile.write(subset[i] + '\n')
         now += datetime.timedelta(days=1)
     return
 
