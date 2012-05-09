@@ -2,7 +2,7 @@
 ################################################################################
 # Name: db_to_flat_file.sh
 #
-# Creates sorted flat .tks files from mysqldump.
+# Creates sorted uniquely-indexed flat .tks files from mysqldump.
 #
 # Usage: db_to_flat_file.sh <asset class>
 #
