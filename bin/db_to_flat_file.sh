@@ -24,6 +24,8 @@ then
   exit 1
 fi
 
+echo "Dumping tables from mysql..."
+
 mysqldump \
 --no-create-info \
 --tab=$outdir \
@@ -35,10 +37,9 @@ mysqldump \
 "$asset_class"_15sec
 
 cd $outdir
+rm -f *.*
 
-rm -f *.sql
-
-find -O3 $outdir -empty -name "*_tks.txt" -exec rm -f '{}' \;
+echo "Processing mysqldump files to tks files..."
 
 for i in `find -O3 $outdir \! -empty -name "*_tks.txt"`
 do
@@ -48,7 +49,6 @@ done
 
 if [[ $asset_class == futures ]]
 then
-  rm -f *.expiry
   for i in `find -O3 $outdir \! -empty -name "*.tks"`
     do
       length=${#i}
@@ -58,4 +58,4 @@ then
     done
 fi
 
-find -O3 $outdir -name "*_tks.txt" -exec rm -f '{}' \;
+find -O3 $outdir \! -name "*.tks" -exec rm -f '{}' \;
