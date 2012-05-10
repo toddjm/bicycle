@@ -188,7 +188,7 @@ def write_ticks(start, end, symbol, data, path):
                                       '{0:02d}'.format(now.month),
                                       '{0:02d}'.format(now.day))
                 if not os.path.isdir(outdir):
-                    os.makedirs(outdir, 0755) # Set tks file for output.
+                    os.makedirs(outdir, 0755)  # Set tks file for output.
                 tks = os.path.join(outdir, symbol + '.tks')
                 # If tks file does not exist or is zero size,
                 # create/append tks file.
