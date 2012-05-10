@@ -246,7 +246,7 @@ def set_start_end(start, end, data):
     last = datetime.datetime.utcfromtimestamp(data[-1][0]).date()
     start = start.date()
     end = end.date()
-    if first:
+    if first > start:
         start = first
     if last < end:
         end = last
