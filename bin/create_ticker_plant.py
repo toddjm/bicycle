@@ -69,14 +69,15 @@ def get_subset(index, values, threshold):
     End time is set as threshold: year, month, day + 1 day, 0, 0, 0.
 
     """
-    start_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
-    start_idx = find_ge(index, start_time)
-    end_time = datetime.datetime.combine(threshold +
-                                         datetime.timedelta(days=1),
-                                         datetime.time(0, 0, 0))
-    end_idx = find_le(index, end_time)
-    values = values[start_idx:end_idx]
-    return values
+    subset = []
+    s_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
+    s_indx = find_ge(index, s_time)
+    e_time = datetime.datetime.combine(threshold +
+                                       datetime.timedelta(days=1),
+                                       datetime.time(0, 0, 0))
+    e_indx = find_le(index, e_time)
+    subset = values[s_indx:e_indx]
+    return subset
 
 
 def get_timestamps(data):
@@ -97,6 +98,7 @@ def read_file(path, name):
         print("{0} is not a file.").format(name)
         sys.exit()
     filename = os.path.join(path, name)
+    values = []
     with open(filename, 'r') as infile:
         values = infile.readlines()
     values = [i.strip() for i in values]
@@ -133,7 +135,7 @@ def set_parser():
                         choices=['ib'],
                         default='ib',
                         dest='source',
-                        help='One of: ib'
+                        help='One of: ib '
                              '(default: %(default)s)')
     values.add_argument('--start',
                         default='2011-11-01 00:00:00',
@@ -150,8 +152,9 @@ def set_parser():
 
 def set_start_end(start, end, data):
     """
-    Return tuple of start and end dates modifed if data start
-    and/or times are before/after start/end.
+    Return tuple of start/end date modifed if data first (last)
+    date is after (before) start (end) date given by user.
+
     """
     first = datetime.datetime.utcfromtimestamp(float(
                                                data[0].split()[0])).date()
@@ -159,7 +162,7 @@ def set_start_end(start, end, data):
                                               data[-1].split()[0])).date()
     start = start.date()
     end = end.date()
-    if first:
+    if first > start:
         start = first
     if last < end:
         end = last
