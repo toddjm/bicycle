@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 """Find/remove duplicate rows in tks files and rewrite file."""
 
 import argparse

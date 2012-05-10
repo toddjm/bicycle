@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 """Gather statistics for entries in the ticker plant."""
 
 import argparse

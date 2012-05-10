@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 """Read tick files and create ticker plant.
 
 Command line arguments:

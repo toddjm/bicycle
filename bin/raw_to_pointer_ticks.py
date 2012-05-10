@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 """
 Convert raw ticks to pointer ticks for futures contracts.
 Write pointer ticks to files.
