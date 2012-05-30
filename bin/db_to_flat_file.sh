@@ -24,6 +24,10 @@ then
   exit 1
 fi
 
+cd $outdir
+
+rm -f $outdir/*.*
+
 mysqldump \
 --no-create-info \
 --tab=$outdir \
@@ -31,10 +35,8 @@ mysqldump \
 --force \
 --ignore-table="$asset_class"_15sec.collect \
 --ignore-table="$asset_class"_15sec.collect_IB_errors \
---where="date(ts) >= '2012-04-27' and date(ts) < '2012-05-10'" \
+--where="date(ts) = '2012-02-23'" \
 "$asset_class"_15sec
-
-cd $outdir
 
 for i in `find -O3 $outdir \! -empty -name "*_tks.txt"`
 do
