@@ -4,9 +4,9 @@
 #
 # Deletes rows from mysql tables.
 #
-# Usage: delete_rows_from_tables.sh <asset class>
+# Usage: delete_rows_from_tables.sh <asset class> <start date> <end date>
 # 
-# Copyright 2011 bicycle trading, llc.
+# Copyright 2011, 2012 bicycle trading, llc.
 ################################################################################
 
 asset_class=$1
