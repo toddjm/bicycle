@@ -12,6 +12,7 @@ equities | futures | fx)
   dates=unicycle."$class"_valid_1day
   db="$class"_1day
   s_date=$(date +%s -d "now - 6 months")
+  d_date="2012-01-01"
   ;;
 *)
   echo "Unknown asset class"
@@ -49,14 +50,20 @@ then
     if (( t_date >= s_date ))
     then
       echo ${i::(-4)}
+#      mysql -N -s -e "select date(t1.ts) from "$dates" \\
+#                      as t1 left join "$db"."$i" \\
+#                      as t2 on (date(t1.ts) = date(t2.ts)) \\
+#                      where date(t2.ts) is null and \\
+#                      date(t1.ts) <= (select max(date(ts)) \\
+#                      from "$db"."$i") and \\
+#                      date(t1.ts) >= date_sub(now(), \\
+#                      interval 6 month);"
       mysql -N -s -e "select date(t1.ts) from "$dates" \\
                       as t1 left join "$db"."$i" \\
                       as t2 on (date(t1.ts) = date(t2.ts)) \\
                       where date(t2.ts) is null and \\
                       date(t1.ts) <= (select max(date(ts)) \\
-                      from "$db"."$i") and \\
-                      date(t1.ts) >= date_sub(now(), \\
-                      interval 6 month);"
+                      from "$db"."$i") and date(t1.ts) >= '$d_date';"
       echo
     fi
   done
