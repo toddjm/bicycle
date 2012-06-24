@@ -4,49 +4,60 @@
 #
 # Creates sorted uniquely-indexed flat .tks files from mysqldump.
 #
-# Usage: db_to_flat_file.sh <asset class>
+# Usage: db_to_flat_file.sh <asset class> <start date> [<end date>]
 #
 # Copyright 2011, 2012 bicycle trading, llc.
 ################################################################################
 
-asset_class=$1
-outdir="$HOME/tmp/$asset_class"
-
-if [[ $# != 1 ]]
+if [[ $# < 2 || $# > 3 ]]
 then
-  echo "Usage: $0 <asset class>"
+  echo "Usage: `basename $0` asset-class start-date [end-date]"
   exit 1
 fi
 
-if [[ ! -d $outdir ]]
+class=$1
+s_date=$2
+if [[ $# = 3 ]]
 then
-  echo "$outdir not found. Exiting..."
+  e_date=$3
+else
+  e_date=$(date +%Y-%m-%d)
+fi
+
+o_dir="$HOME/tmp/$class"
+
+if [[ ! -d $o_dir ]]
+then
+  echo "$o_dir not found."
   exit 1
 fi
 
-cd $outdir
-
-rm -f $outdir/*.*
+cd $o_dir
+rm -f $o_dir/*.*
 
 mysqldump \
 --no-create-info \
---tab=$outdir \
+--tab=$o_dir \
 --tz-utc \
 --force \
---ignore-table="$asset_class"_15sec.collect \
---ignore-table="$asset_class"_15sec.collect_IB_errors \
---where="date(ts) = '2012-02-23'" \
-"$asset_class"_15sec
+--ignore-table="$class"_15sec.collect \
+--ignore-table="$class"_15sec.collect_IB_errors \
+--where="date(ts) >= '"$s_date"' and date(ts) <= '"$e_date"'" \
+"$class"_15sec
+#--where="date(ts) >= '2012-01-01' and date(ts) <= '2012-06-15'" \
+#"$class"_15sec
 
-for i in `find -O3 $outdir \! -empty -name "*_tks.txt"`
+list=$(find -O3 $o_dir \! -empty -name "*_tks.txt")
+for i in $list
 do
   file=${i%"_tks.txt"}.tks
   date_to_ts.py $i | sort -unk1 > $file
 done
 
-if [[ $asset_class == futures ]]
+if [[ $class = futures ]]
 then
-  for i in `find -O3 $outdir \! -empty -name "*.tks"`
+  list=$(find -O3 $o_dir \! -empty -name "*.tks")
+  for i in $list
     do
       length=${#i}
       end=$((length - 10))
