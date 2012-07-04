@@ -14,7 +14,7 @@ year=$2
 
 if [[ $# != 2 ]]
 then
-  echo "Usage: $0 <asset class> <year>" 
+  echo "Usage: `basename $0` <asset class> <year>" 
   exit 1
 fi
 
