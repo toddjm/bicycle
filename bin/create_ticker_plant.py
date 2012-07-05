@@ -182,21 +182,24 @@ def write_ticks(start, end, symbol, data, path):
             subset = get_subset(timestamps, data, now)
             # Make sure subset length is non-zero.
             if len(subset) != 0:
-                # Set directory for writing ticks; create if required.
+                # Set directory for writing ticks.
                 outdir = os.path.join(path,
                                       '{0:04d}'.format(now.year),
                                       '{0:02d}'.format(now.month),
                                       '{0:02d}'.format(now.day))
+                # Create directory if required.
                 if not os.path.isdir(outdir):
-                    os.makedirs(outdir, 0755)  # Set tks file for output.
+                    os.makedirs(outdir, 0755)
+                # Set tks file for output.
                 tks = os.path.join(outdir, symbol + '.tks')
-                # If tks file does not exist or is zero size,
-                # create/append tks file.
-                if not os.path.isfile(tks) or os.stat(tks).st_size == 0:
-                    with open(tks, 'a') as outfile:
-                        for i in range(len(subset)):
-                            # Append newline before writing to file.
-                            outfile.write(subset[i] + '\n')
+                # If tks file exists and is zero bytes, remove it.
+                if os.path.isfile(tks) and not os.path.getsize(tks):
+                    os.remove(tks)
+                # Create tks file.
+                with open(tks, 'w') as outfile:
+                    for i in range(len(subset)):
+                        # Append newline before writing to file.
+                        outfile.write(subset[i] + '\n')
         now += datetime.timedelta(days=1)
     return
 
@@ -229,7 +232,7 @@ def main():
             if group == 'futures':
                 # Read expiry files if they exist and are non-zero size.
                 fname = os.path.join(srcdir, symbol + '.expiry')
-                if (os.path.isfile(fname) and os.stat(fname).st_size != 0):
+                if os.path.isfile(fname) and os.path.getsize(fname):
                     expiry = read_file(srcdir, symbol + '.expiry')
                     # Loop over expiry entries for each symbol.
                     for contract in expiry:
@@ -239,8 +242,7 @@ def main():
                                              symbol +
                                              contract +
                                              '.tks')
-                        if (os.path.isfile(fname) and
-                            os.stat(fname).st_size != 0):
+                        if os.path.isfile(fname) and os.path.getsize(fname):
                             data = read_file(srcdir,
                                              symbol +
                                              contract +
@@ -260,7 +262,7 @@ def main():
             else:
                 # Read ticks from file if it exists and is non-zero size.
                 fname = os.path.join(srcdir, symbol + '.tks')
-                if (os.path.isfile(fname) and os.stat(fname).st_size != 0):
+                if os.path.isfile(fname) and os.path.getsize(fname):
                     data = read_file(srcdir, symbol + '.tks')
                     # Set path for writing tick files.
                     path = os.path.join(os.getenv('TICKS_HOME'),
