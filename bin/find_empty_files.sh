@@ -9,34 +9,34 @@
 # Copyright 2011, 2012 bicycle trading, llc.
 ################################################################################
 
-asset_class=$1
-year=$2
-
 if [[ $# != 2 ]]
 then
   echo "Usage: `basename $0` <asset class> <year>" 
   exit 1
 fi
 
-dir=~/bicycleticks/"$asset_class"/ib
+class=$1
+year=$2
+
+dir=~/bicycleticks/"$class"/ib
 
 rm -f ~/tmp/*_empty*
 rm -f $dir/*_empty*
 cd $dir
 
-case $asset_class in
+case $class in
   futures)
     for i in `ls -1 | sed 's/\///'`
     do
       find $i -empty | awk "BEGIN {FS=\"/\"} \$4 == \"$year\" \\
-        {print \$2, \$3, \$4\$5\$6}" > ~/tmp/"$asset_class"_"$i"_"$year"_empty.txt
+        {print \$2, \$3, \$4\$5\$6}" > ~/tmp/"$class"_"$i"_"$year"_empty.txt
     done
   ;;
   equities | fx)
     for i in `ls -1 | sed 's/\///'`
     do
       find $i -empty | awk "BEGIN {FS=\"/\"} \$3 == \"$year\" \\
-        {print \$2, \$3\$4\$5}" > ~/tmp/"$asset_class"_"$i"_"$year"_empty.txt
+        {print \$2, \$3\$4\$5}" > ~/tmp/"$class"_"$i"_"$year"_empty.txt
     done
   ;;
 esac
