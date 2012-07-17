@@ -36,7 +36,8 @@ esac
 
 case $# in
 1 | 2)
-  start_date=$(date +%s -d "now - 6 months")
+#  start_date=$(date +%s -d "now - 6 months")
+  start_date=$(date +%s -d "2009-09-01")
   end_date=$(date +%s -d "now")
   ;;
 3)
@@ -52,6 +53,8 @@ case $# in
   fi
   ;;
 esac
+
+delta_t=$((end_date - start_date))
 
 if [[ ${#tables} = 0 ]]
 then
@@ -77,7 +80,9 @@ then
                       date(t1.ts) <= (select max(date(ts)) \\
                       from "$db"."$i") and \\
                       date(t1.ts) >= date_sub(now(), \\
-                      interval 6 month);"
+                      interval "$delta_t" second);"
+#                      date(t1.ts) >= date_sub(now(), \\
+#                      interval 6 month);"
       echo
     fi
   done
