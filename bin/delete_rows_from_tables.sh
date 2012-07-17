@@ -15,20 +15,21 @@ end_date=$3
 
 if [[ $# != 3 ]]
 then
-  echo "Usage: $0 <asset class> <start date> <end date>"
+  echo "Usage: `basename $0` <asset class> <start date> <end date>"
   exit 1
 fi
-
 
 case $asset_class in
   equities | futures | fx)
   for i in 1day 15min 1min 15sec
-    do mysql -e "show tables in "$asset_class"_"$i";" | grep _tks > ~/tmp/"$asset_class"_"$i".tables
-    done
+  do 
+    mysql -e "show tables in "$asset_class"_"$i";" |
+    grep _tks > ~/tmp/"$asset_class"_"$i".tables
+  done
   ;;
   *)
-    echo "$asset_class does not exist."
-    exit 1
+  echo "$asset_class does not exist."
+  exit 1
   ;;
 esac
 
@@ -40,12 +41,13 @@ case $asset_class in
   do
     for j in `cat ~/tmp/"$asset_class"_"$i".tables`
     do 
-      mysql -e "delete from "$asset_class"_"$i"."$j" where date(ts) >= '$start_date' and date(ts) <= '$end_date';"
+      mysql -e "delete from "$asset_class"_"$i"."$j" where \\
+      date(ts) >= '$start_date' and date(ts) <= '$end_date';"
     done
   done
   ;;
   *)
-    echo "$asset_class does not exist."
-    exit 1
+  echo "$asset_class does not exist."
+  exit 1
   ;;
 esac
