@@ -46,6 +46,7 @@ mysqldump \
 --where="date(ts) >= '"$begin"' and date(ts) <= '"$end"'" \
 "$class"_15sec
 
+
 list=$(find -O3 $outdir \! -empty -name "*_tks.txt")
 for i in $list
 do
@@ -57,10 +58,10 @@ if [[ $class = futures ]]
 then
   list=$(find -O3 $outdir \! -empty -name "*.tks")
   for i in $list
-    do
-      length=${#i}
-      end=$((length - 10))
-      file=${i:0:$end}.expiry
-      echo ${i:$end:6} >> $file
-    done
+  do
+    length=${#i}
+    end=$((length - 10))
+    expiry_file=${i:0:$end}.expiry
+    echo ${i:$end:6} >> $expiry_file
+  done
 fi

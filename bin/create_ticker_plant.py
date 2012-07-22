@@ -21,17 +21,17 @@ __copyright__ = "Copyright 2011, 2012 bicycle trading, llc"
 __email__ = "todd@bicycletrading.com"
 
 
-class Holiday(object):
-    """Holidays class."""
+def holidays():
+    """Return holiday dates from text file."""
     infile = os.path.join(os.getenv('BICYCLE_HOME'),
-                                    'share/dates/holidays.txt')
+                          'share/dates/holidays.txt')
     with open(infile, 'r') as tmp:
         values = tmp.readlines()
     values = [i.strip() for i in values]
-    holidays = values
+    return values
 
 
-HOLIDAYS = Holiday.holidays
+HOLIDAYS = holidays()
 
 
 def check_date(date):
@@ -53,13 +53,16 @@ def create_tks_files(config, options):
     end = options.parse_args().end
     start = datetime.datetime.strptime(start, '%Y-%m-%d %H:%M:%S')
     end = datetime.datetime.strptime(end, '%Y-%m-%d %H:%M:%S')
-    srcdir = config[group]['srcdir']
-    exchanges, symbols = get_exchanges_symbols(config, group, source)
+    #
+    root = config[group]['root']
+    srcdir = os.path.join(root, source)  # like /home/bicycle/tmp/futures/ib
+    symbols = get_symbols(srcdir)  # from the symbols.txt file
 
-    for exchange in exchanges:
-        for symbol in symbols[exchange]:
-            if group == 'futures':
-                expiry = get_expiry(srcdir, symbols[exchange])
+
+    if group == 'futures':
+        for exchange in exchanges:
+            expiry = get_expiry(srcdir, symbols)
+            for symbol in expiry.keys():
                 for contract in expiry[symbol]:
                     data = read_tks_file(srcdir, symbol, contract=contract)
                     path = os.path.join(os.getenv('TICKS_HOME'),
@@ -70,13 +73,15 @@ def create_tks_files(config, options):
                                         contract)
                     print("Writing ticks for {0}{1}...").format(symbol,
                                                                 contract)
-                    write_ticks(start, end, symbol, data, path)
-            else:
+                    write_tks_file(start, end, symbol, data, path)
+    else:
+        for exchange in exchanges:
+            for symbol in symbols[exchange]:
                 data = read_tks_file(srcdir, symbol)
                 path = os.path.join(os.getenv('TICKS_HOME'), group, source,
                                     exchange, symbol)
                 print("Writing ticks for {0}...").format(symbol)
-                write_ticks(start, end, symbol, data, path)
+                write_tks_file(start, end, symbol, data, path)
     return
 
 
@@ -96,25 +101,26 @@ def find_le(values, threshold):
     raise ValueError
 
 
-def get_expiry(source_dir, symbol_list):
+def get_expiry(source_dir, symbols):
     """Returns a dict of contract expirations keyed on symbol."""
     values = {}
-    for symbol in symbol_list:
-        infile = os.path.join(source_dir, symbol + '.expiry')
-        if os.path.isfile(infile) and os.path.getsize(infile):
+    for i in os.listdir(source_dir):
+        if i.endswith('.expiry'):
             values[symbol] = read_file(source_dir, symbol + '.expiry')
     return values
 
 
-def get_subset(index, values, threshold):
+def get_subset(values, threshold):
     """
-    Return subset of values for a given threshold by indexing on index.
+    Return subset of values, indexed on first column, for a given threshold.
 
     Start time is set as threshold: year, month, day, 0, 0, 0.
     End time is set as threshold: year, month, day + 1 day, 0, 0, 0.
 
     """
     subset = []
+    index = [datetime.datetime.utcfromtimestamp(float(i.split()[0]))
+             for i in values]
     s_time = datetime.datetime.combine(threshold, datetime.time(0, 0, 0))
     s_indx = find_ge(index, s_time)
     e_time = datetime.datetime.combine(threshold +
@@ -125,13 +131,12 @@ def get_subset(index, values, threshold):
     return subset
 
 
-def get_timestamps(data):
-    """Return list of sorted timestamps from first column of data."""
+def get_symbols(source_dir):
+    """Returns list of symbols."""
     values = []
-    for i in range(len(data)):
-        values.append(datetime.datetime.utcfromtimestamp(
-            float(data[i].split()[0])))
-    return sorted(values)
+    if os.path.isfile(os.path.join(source_dir, 'symbols.txt')):
+        values = read_file(source_dir, 'symbols.txt')
+    return values
 
 
 def read_file(path, name):
@@ -150,40 +155,37 @@ def read_file(path, name):
     return values
 
 
-def get_exchanges_symbols(config, group, source):
-    """Returns exchanges list and symbols dict as pair of tuples."""
-    exchanges = [key for key in config[group][source].iterkeys()]
-    symbols = {}
-    if group == 'equities':
-        symbol_file = {}
-        for key in config[group][source].iterkeys():
-            symbol_file[key] = config[group][source][key]
-            with open(symbol_file[key], 'r') as infile:
-                symbol_list = infile.readlines()
-            symbols[key] = [i.strip() for i in symbol_list]
-    else:
-        for key in config[group][source].iterkeys():
-            symbols[key] = config[group][source][key]
-    return exchanges, symbols
+#def get_exchanges_symbols(config, group, source):
+#    """Returns exchanges list and symbols dict as pair of tuples."""
+#    exchanges = [i for i in config[group][source].iterkeys()]
+#    symbols = {}
+#    if group == 'equities':
+#        symbol_file = {}
+#        for i in config[group][source].iterkeys():
+#            symbol_file[i] = config[group][source][i]
+#            with open(symbol_file[i], 'r') as infile:
+#                symbol_list = infile.readlines()
+#            symbols[i] = [i.strip() for i in symbol_list]
+#    else:
+#        for i in config[group][source].iterkeys():
+#            symbols[i] = config[group][source][i]
+#    return exchanges, symbols
+
+
 
 
 def read_tks_file(source_dir, symbol, **kwargs):
-    """
-    Read tks file, return list for equities and fx. For futures,
-    return dict of values keyed on contract.
-
-    """
+    """Read tks file, return list sorted on timestamp. """
     contract = kwargs.get('contract', "")
-
     infile = os.path.join(source_dir, symbol + contract + '.tks')
     if os.path.isfile(infile) and os.path.getsize(infile):
         values = read_file(source_dir, symbol + contract + '.tks')
-    return values
+    return sorted(values, key=lambda x: x[0])
 
 
 def set_parser():
     """Return parser for command line arguments."""
-    values = argparse.ArgumentParser(description='Create ticker plant.')
+    values = argparse.ArgumentParser(description='Create ticks files.')
     values.add_argument('--group',
                         choices=['equities', 'futures', 'fx'],
                         default='equities',
@@ -215,10 +217,10 @@ def set_start_end(start, end, data):
     date is after (before) start (end) date given by user.
 
     """
-    first = datetime.datetime.utcfromtimestamp(float(
-                                               data[0].split()[0])).date()
-    last = datetime.datetime.utcfromtimestamp(float(
-                                              data[-1].split()[0])).date()
+    first = datetime.datetime.utcfromtimestamp(
+            float(data[0].split()[0])).date()
+    last = datetime.datetime.utcfromtimestamp(
+            float(data[-1].split()[0])).date()
     start = start.date()
     end = end.date()
     if first > start:
@@ -228,19 +230,17 @@ def set_start_end(start, end, data):
     return start, end
 
 
-def write_ticks(start, end, symbol, data, path):
+def write_tks_file(start, end, symbol, data, path):
     """Write ticks to files with .tks suffix."""
-    # Extract list of timestamps from data.
-    timestamps = get_timestamps(data)
     # Adjust beginning ('now') and end ('end') if needed.
     now, then = set_start_end(start, end, data)
     while now <= then:
         # Make sure date is not on a weekend or holiday.
         if check_date(now):
             # Extract subset of data for this day only.
-            subset = get_subset(timestamps, data, now)
+            subset = get_subset(data, now)
             # Make sure subset length is non-zero.
-            if len(subset) != 0:
+            if subset:
                 # Set directory for writing ticks.
                 outdir = os.path.join(path,
                                       '{0:04d}'.format(now.year),
@@ -256,9 +256,8 @@ def write_ticks(start, end, symbol, data, path):
                     os.remove(tks)
                 # Create tks file.
                 with open(tks, 'w') as outfile:
-                    for i in range(len(subset)):
-                        # Append newline before writing to file.
-                        outfile.write(subset[i] + '\n')
+                    for i in subset:
+                        outfile.write(i + '\n')
         now += datetime.timedelta(days=1)
     return
 
@@ -269,71 +268,12 @@ def main():
     appropriate directories therein.
 
     """
-    # Read configuration file.
+    # Read configuration file, parse command line arguments.
     cfg = configobj.ConfigObj(os.path.join(os.getenv('BICYCLE_HOME'),
                                            'config.ini'))
-
-    # Parse command line arguments, set local variables.
     parser = set_parser()
-#    group = parser.parse_args().group
-#    source = parser.parse_args().source
-#    start = parser.parse_args().start
-#    end = parser.parse_args().end
-#    start = datetime.datetime.strptime(start, '%Y-%m-%d %H:%M:%S')
-#    end = datetime.datetime.strptime(end, '%Y-%m-%d %H:%M:%S')
-#    srcdir = cfg[group]['srcdir']
-#    exchanges, symbols = get_exchanges_symbols(config, group, source)
 
     create_tks_files(cfg, parser)
-
-#    # Loop over exchanges and symbols.
-#    for exchange in exchanges:
-#        for symbol in symbols[exchange]:
-#            # Set path for per-symbol expiry file for futures.
-#            if group == 'futures':
-#                # Read expiry files if they exist and are non-zero size.
-#                fname = os.path.join(srcdir, symbol + '.expiry')
-#                if os.path.isfile(fname) and os.path.getsize(fname):
-#                    expiry = read_file(srcdir, symbol + '.expiry')
-#                    # Loop over expiry entries for each symbol.
-#                    for contract in expiry:
-#                        # Read ticks from file if it exists and is
-#                        # non-zero size.
-#                        fname = os.path.join(srcdir,
-#                                             symbol +
-#                                             contract +
-#                                             '.tks')
-#                        if os.path.isfile(fname) and os.path.getsize(fname):
-#                            data = read_file(srcdir,
-#                                             symbol +
-#                                             contract +
-#                                             '.tks')
-#                            # Set path for writing tick files.
-#                            path = os.path.join(os.getenv('TICKS_HOME'),
-#                                                group,
-#                                                source,
-#                                                exchange,
-#                                                symbol,
-#                                                contract)
-#                            # Write tick data to files.
-#                            print("Writing ticks for {0}{1}...").format(
-#                                                                   symbol,
-#                                                                   contract)
-#                            write_ticks(start, end, symbol, data, path)
-#            else:
-#                # Read ticks from file if it exists and is non-zero size.
-#                fname = os.path.join(srcdir, symbol + '.tks')
-#                if os.path.isfile(fname) and os.path.getsize(fname):
-#                    data = read_file(srcdir, symbol + '.tks')
-#                    # Set path for writing tick files.
-#                    path = os.path.join(os.getenv('TICKS_HOME'),
-#                                        group,
-#                                        source,
-#                                        exchange,
-#                                        symbol)
-#                    # Write tick data to files.
-#                    print("Writing ticks for {0}...").format(symbol)
-#                    write_ticks(start, end, symbol, data, path)
 
 
 if __name__ == '__main__':
