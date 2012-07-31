@@ -267,7 +267,7 @@ def write_tks_file(start, end, symbol, data, path):
                 # Set tks file for output.
                 tks = os.path.join(outdir, symbol + '.tks')
                 # If tks file exists and is zero bytes, remove and re-create.
-                if os.path.isfile(tks) and not os.path.getsize(tks):
+                if os.path.isfile(tks) and os.stat(tks).st_size == 0:
                     os.remove(tks)
                 with open(tks, 'w') as outfile:
                     for i in subset:
