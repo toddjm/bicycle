@@ -26,7 +26,7 @@ else
   end=$(date +%Y-%m-%d)
 fi
 
-outdir="$HOME/tmp/by_symbol/$class"
+outdir="$HOME/tmp/$class"
 
 if [[ ! -d $outdir ]]
 then
@@ -35,7 +35,7 @@ then
 fi
 
 cd $outdir
-rm -f $outdir/*.*
+rm -f $outdir/"$symbol".*
 
 mysqldump \
 --no-create-info \

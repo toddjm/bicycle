@@ -36,6 +36,8 @@ fi
 
 dir=$TICKS_HOME
 hosts="x0 x1 x2 x3 y0 y1 y2"
+#hosts="y0 y1 y2"
+#hosts="y1 x0 x1 x2 x3"
 options="-aPuvz --delete --ignore-existing"
 
 for i in $classes
