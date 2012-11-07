@@ -48,4 +48,5 @@ do
   done
 done
 
+echo
 echo $?
