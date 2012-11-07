@@ -11,6 +11,7 @@ Command line arguments:
 
 import argparse
 import bisect
+import bz2
 import configobj
 import datetime
 import os
@@ -264,11 +265,20 @@ def write_tks_file(start, end, symbol, data, path):
                                       '{0:02d}'.format(now.day))
                 if not os.path.isdir(outdir):
                     os.makedirs(outdir, 0755)
-                # Set tks file for output.
-                tks = os.path.join(outdir, symbol + '.tks')
-                with open(tks, 'w') as outfile:
-                    for i in subset:
-                        outfile.write(i + '\n')
+                    tks = os.path.join(outdir, symbol + '.tks.bz2')
+                    #if not os.path.isfile(tks):
+                    #    outfile = bz2.BZ2File(tks, 'wb')
+                    #    try:
+                    #        for i in subset:
+                    #            outfile.write(i + '\n')
+                    #    finally:
+                    #        outfile.close()
+                    outfile = bz2.BZ2File(tks, 'wb')
+                    try:
+                        for i in subset:
+                            outfile.write(i + '\n')
+                    finally:
+                        outfile.close()
         now += datetime.timedelta(days=1)
     return
 
