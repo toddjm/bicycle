@@ -43,7 +43,7 @@ options="-aPuvz --delete --ignore-existing"
 for i in $classes
 do
   for j in $hosts
-  do 
+  do
     rsync $options $dir/$i bicycle@$j:$dir
   done
 done
