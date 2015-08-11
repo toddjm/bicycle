@@ -16,7 +16,7 @@ __copyright__ = "Copyright 2011, bicycle trading, llc"
 __maintainer__ = "Todd Minehardt"
 __email__ = "todd@bicycletrading.com"
 
-if os.getenv("TICKS_HOME") == None:
+if os.getenv("TICKS_HOME") is None:
     return 0
 
 parser = argparse.ArgumentParser(description='Create rolling futures ticks files.')
