@@ -220,9 +220,9 @@ def set_start_end(start, end, data):
 
     """
     first = datetime.datetime.utcfromtimestamp(
-            float(data[0].split()[0])).date()
+        float(data[0].split()[0])).date()
     last = datetime.datetime.utcfromtimestamp(
-            float(data[-1].split()[0])).date()
+        float(data[-1].split()[0])).date()
     start = start.date()
     end = end.date()
     if first > start:
@@ -266,7 +266,7 @@ def write_tks_file(start, end, symbol, data, path):
                 if not os.path.isdir(outdir):
                     os.makedirs(outdir, 0755)
                     tks = os.path.join(outdir, symbol + '.tks.bz2')
-                    #if not os.path.isfile(tks):
+                    # if not os.path.isfile(tks):
                     #    outfile = bz2.BZ2File(tks, 'wb')
                     #    try:
                     #        for i in subset:
